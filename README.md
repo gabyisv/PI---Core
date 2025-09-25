@@ -27,5 +27,6 @@ Ferramentas: GitHub, Trello, VirtualBox, VS Code, Arduino IDE
 ## 👥 Equipe
 - Anna Karolina
 - Gabriel Leal
+- Gabrielly Silva
 - Luã Chaves
 - Vinicius Mendes
