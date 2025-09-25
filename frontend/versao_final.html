@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Riscos - MonAREX</title>
+    <link rel="stylesheet" href="versao_final.css">
+</head>
+<body>
+    <div class="topo">
+      <div class="topo_titulo">
+        <h1>Calcule os Riscos com Amônia</h1>
+      </div>
+
+      <p class="topo_descricao">
+        Descubra os riscos financeiros e ambientais que<br>
+        sua empresa pode enfrentar em caso de falhas!
+      </p>
+    </div>
+
+    <div class="container">
+        <div class="container-direito">
+            Selecione o porte da sua empresa
+            <select id="select_porte">
+                <option selected disabled>Selecione uma opção</option>
+                <option value="pequeno">Pequeno (Até 10 câmaras frias)</option>
+                <option value="medio">Médio (11 a 30 câmaras frias)</option>
+                <option value="grande">Grande (Mais de 30 câmaras frias)</option>
+            </select>
+
+            <br><br>
+            Quantidade de funcionários na área de refrigeração
+            <input type="text" id="input_funcionarios">
+
+            <br><br>
+            Idade média dos funcionários
+            <input type="text" id="input_idade">
+
+            <br><br>
+            Salário médio dos funcionários
+            <input type="text" id="input_salario">
+
+            <br><br>
+            Custo anual de manutenção em seus sistemas de refrigeração
+            <input type="text" id="input_custo_manutencao">
+
+            <br><br>
+            Número médio de acidentes por ano
+            <input type="text" id="input_acidentes">
+
+            <br><br>
+            <button onclick="calcular()">Calcule agora</button>
+        </div>
+
+        <div class="container-esquerdo">
+            <br><br>
+            <div id="div_mensagem"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var tempo_parada = 0;
+
+    function calcular() {
+        var manutencao = Number(input_custo_manutencao.value); 
+        var qtd_funcionarios = Number(input_funcionarios.value); 
+        var salario = Number(input_salario.value);
+        var idade = Number(input_idade.value);
+
+        var acidentes = Number(input_acidentes.value);
+        var porte = select_porte.value;
+
+        var pequeno_porte = 6; // tempo em meses em que a empresa fica parada
+        var medio_porte = 8;   // tempo em meses em que a empresa fica parada
+        var grande_porte = 12; // tempo em meses em que a empresa fica parada
+        
+        var salarios_pagos = 0;
+        var num_sensores = 0;
+        var custo_sensor_instalacao = 0;
+
+
+        if (porte == "pequeno") {
+            tempo_parada = pequeno_porte; // seleciona o tempo que cada empresa de cada porte fica parada em manutenção
+            num_sensores = 10 * 15;       // número de camaras frias vezes quantidade de sensores
+        } else if (porte == "medio") {
+            tempo_parada = medio_porte;
+            num_sensores += 25 * 15;
+        } else if (porte == "grande") {
+            tempo_parada = grande_porte;
+            num_sensores += 50 * 15;
+        }
+
+        salarios_pagos = tempo_parada * salario * qtd_funcionarios; // total de salarios pagos em tempo de manutenção
+        custo_sensor_instalacao = (num_sensores / 5) * 100;         // 100 o custo de instalção do sensor (divido por 5 porque instalar 5 sensores é como instalar 1)
+
+        var custo_total = salarios_pagos * acidentes; // custo total SEM nosso produto
+        var margem_liquida = custo_total - custo_sensor_instalacao; // quanto PODE economizar comprando os sensores
+
+        var minimo_acidentes = qtd_funcionarios * (0.05 * (salario * 13 * (76.8 - idade))); // 76.8 - expectativa de vida 
+        var maximo_acidentes = qtd_funcionarios * (0.8 * (salario * 13 * (76.8 - idade)));
+        // calculando indenizações:  percentual da multa em relação ao tempo de vida do funcionário
+
+
+        div_mensagem.innerHTML = `Sua empresa pode perder até <b> R$ ${custo_total.toFixed(2)} </b> no número de incidentes fornecidos, sem considerar multas, indenizações e lucros perdidos.`;
+
+        div_mensagem.innerHTML += `<br>Sua empresa pode perder entre R$ ${minimo_acidentes.toFixed(2)} e R$ ${maximo_acidentes.toFixed(2)} em pagamentos de indenizações, em caso de acidente.`
+
+        div_mensagem.innerHTML += `<br>Esse valor é evitado pelo custo de instalação completa de ${num_sensores} sensores no<b> custo máximo de R$ ${custo_sensor_instalacao.toFixed(2)}</b><br><br>Com nosso sistema, você pode economizar até <b>R$ ${margem_liquida.toFixed(2)}</b>!`;
+    }
+
+
+    
+</script>
