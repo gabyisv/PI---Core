@@ -23,4 +23,21 @@
 
 /*Páginas*/
 @import url('./home.css');
-@import url('./faleConosco.css')
+@import url('./faleConosco.css');
+@import url('./cadastro.css');
+
+
+/*Regras*/
+
+/*Pagina Home*/
+.index{
+    color: #9FD8A1;
+}
+
+.index:hover{
+    color: #F3FFEC;
+}
+
+.outros:hover{
+     color: #9FD8A1;
+}

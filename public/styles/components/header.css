@@ -2,6 +2,8 @@ header{
     display: flex;
     position: fixed;
     padding-top: 10px;
+    background-color: #003D02;
+    width: 100%;
 
     
 }
@@ -9,6 +11,7 @@ header{
 .logo img{
     width: auto;
     height: 50px;
+    padding-bottom: 13px;
 }
 
 header nav ul{

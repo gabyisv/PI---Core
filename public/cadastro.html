@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Monarex </title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="monarex.js"></script>
+</head>
+<body>
+    <div class="body-container">
+    <div class="left">
+        <div class="container-left">
+            <div class="image-left">
+                <img src="./docs/logo.png" alt="" class="logo">
+                <h1>Sensores de Amônia</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="container-right">
+            <h1> CADASTRO </h1>
+
+            <div class="cadastro-input-container">
+
+                <div class="container-nome container">
+                <label for=""> Razão Social</label>
+                <input type="text" placeholder="Digite a razão social da sua empresa" id="input_razaoEmpresa">
+                </div>
+
+                <div class="container-email container">
+                <label for=""> E-mail </label>
+                <input type="text" placeholder="Digite o seu E-mail" id="input_email" oninput="email()">
+                <div id="msg"></div>
+                </div>
+
+                <div class="container-cnpj container">
+                <label for=""> CNPJ </label>
+                <input type="text" placeholder="Digite o CNPJ da empresa" id="input_cnpj" maxlength="14" oninput="cnpj()">
+                </div>
+
+                <div class="container-senha container">
+                <label for=""> Senha </label>
+                <input type="password" placeholder="Crie uma senha forte" id="input_senha" oninput="senha()">
+                <div id="msgsenha"></div>
+                <p class="text-pass"> Na senha tem que haver ao menos 1 caracter especial, 1 letra maiúscula e 1 número</p>
+                </div>
+
+                <div class="container-senha container">
+                <label for=""> Confirme a sua Senha </label>
+                <input type="password" placeholder="Repita a senha criada" id="input_senhaConfirmar" oninput="confirmarSenha()">
+                <div id="msgConfirm"></div>
+                </div>
+
+                <button class="button-cadastro button" onclick="cadastrar()"> Cadastrar </button>
+            </div>
+
+            <div class="cadastro-text-container">
+                <p>Já é cadastrado? <a href="login.html"> Logue Aqui </a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
