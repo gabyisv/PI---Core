@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="C:\Users\PICHAU\OneDrive\Desktop\faleConosco.css">
-    <title>Document</title>
+   <link rel="stylesheet" href="./styles/style.css">    <title>Document</title>
 </head>
 <body>
 
+<header>
 
+        <div class="logo">
+            <img src="./docs/Logo-Monarex.png" alt="logo">
+        </div>
+        <!--Navegação-->
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Serviços</a></li>
+                <li><a href="">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <div class="img">
 <div class="botoes"><br>
-    <button onclick="homear()">Home</button>
-    <button onclick="serviçar()">Serviços</button>
-    <button onclick="entrar()">Entrar</button>
+  
 </div>
 
 
@@ -44,11 +54,41 @@
    <div class="pergunta">
     <div id="duvida">
       <span>Sugestão/Dúvida</span>
-      <input type="text" id="input_duvida"placeholder="Digite aqui..."">
+      <input type="text" id="input_duvida"placeholder="Digite aqui...">
      </div>
    </div>
    <button onclik="enviar"><span>Enviar</span></button>
 </div>
+
+    <footer>
+        <div class="container-footer">
+            <div class="redes-footer">
+                <p>Encontre a gente nas redes sociais</p>
+                <div class="imgs-footer">
+                    
+                <img src="./docs/instagram 1.png" alt="">
+                <img src="./docs/whatsapp 1.png" alt="">
+                <img src="./docs/facebook 1.png" alt="">
+                </div>
+            </div>
+            <div class="explore-footer">
+                <p class="titulo-footer">Explore</p>
+                <p>Home</p>
+                <p>Serviços</p>
+            </div>
+            <div class="contato-footer">
+                <p class="titulo-footer">Endereço</p>
+                <p>Rua Haddock Lobo 595, São Paulo,<br> SP 01414-905  </p>
+                <br>
+                <p class="titulo-footer">Contato</p>
+                <p>monarex@gmail.com</p>
+                <p>+55 11 4002-8922</p>
+            </div>
+        </div>
+        <div class="direitos-footer">
+            <p>© 2025 Core. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
