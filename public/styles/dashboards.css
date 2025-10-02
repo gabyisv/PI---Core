@@ -1,0 +1,48 @@
+*{
+     box-sizing: border-box; /*Estabelece o tamanho dos elementos de cada página*/
+}
+
+.perfil{
+display: flex;
+justify-content: end;
+flex-direction: row;
+height: 100px; 
+width: 100px;
+align-content:flex-end ;
+}
+
+.dash{
+    background-color: #049409;
+    width: 100%;
+}
+
+.dados{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dados .graficos{
+    display: flex;
+}
+
+.dados .sensores{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #049409;
+    font-weight: bold;
+}
+
+
+.select-box label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #0d3b27;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
