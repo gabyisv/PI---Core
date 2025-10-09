@@ -1,0 +1,46 @@
+/*
+--Paleta de cores--
+
+#134215 - Core 
+#9FD8A1 - Monarex 
+#2AD5A1 - Amonia 
+#4CAF50 - MQ137 
+#003D02 - Sensor 
+#0DFF17 - Gas 
+
+#F3FFEC - Titulo
+#EFFFEB - Texto
+#F5FFF4 - Botão
+
+*/
+
+/*Estilização Global*/
+@import url('./global.css');
+
+/*Componentes*/
+@import url('./components/footer.css');
+@import url('./components/header.css');
+
+/*Páginas*/
+@import url('./home.css');
+@import url('./faleConosco.css');
+@import url('./cadastro.css');
+@import url('./funcionarios.css');
+@import url('./sensores.css');
+@import url('./dashboards.css');
+
+
+/*Regras*/
+
+/*Pagina Home*/
+.index{
+    color: #9FD8A1;
+}
+
+.index:hover{
+    color: #F3FFEC;
+}
+
+.outros:hover{
+     color: #9FD8A1;
+}

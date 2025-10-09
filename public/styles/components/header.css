@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    position: fixed;
+    padding-top: 10px;
+    background-color: #003D02;
+    width: 100%;
+
+    
+}
+
+.logo img{
+    width: auto;
+    height: 50px;
+    padding-bottom: 13px;
+}
+
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 50px;
+}
+
+header nav ul a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #F3FFEC;
+}
