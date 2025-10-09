@@ -84,7 +84,7 @@ function login() {
     if (email != 'brandao61@gmail.com' || senha != 'Sptech@123') {
         msg.innerHTML = `E-mail ou senha incorreto.`
     } else {
-        window.location.href = "home.html";
+        window.location.href = "dashboard.html";
     }
 
 }

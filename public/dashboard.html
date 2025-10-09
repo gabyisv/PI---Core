@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/dashboards.css">
     <title>Dashboard</title>
 </head>
 <body>
@@ -12,15 +11,16 @@
     <!--Header-->
     <header class="dash">
         <div class="logo">
-            <img src="./docs/Logo-Monarex.png" alt="logo">
+            <a href="./index.html"><img  src="./docs/Logo-Monarex.png" alt="logo"></a>
         </div>
         <!--Navegação-->
         <nav>
             <ul>
                 <li style="font-weight: 700; color: white;">|</li>
-                <li><a href="">Dashboard</a></li>
+                <li><a href="#">Dashboard</a></li>
                 <li><a href=".\sensores.html">Sensores</a></li>
                 <li><a href=".\funcionarios.html">Funcionários</a></li>
+                
             </ul>
         </nav>
         <!-- <div class="perfil">
@@ -32,12 +32,33 @@
             <img src="./docs/gráfico.png" alt="logo">
         </div>
         <div class="sensores">
-            Selecione o Sensor:
-            <select>
-                    <option>A01-25</option>
-                    <option>A01-26</option>
-                    <option>A01-25</option>
-            </select>
+            <div class="selecione">
+                Selecione o Sensor:
+                 <input id="input_sensores" type="text" placeholder="Selecione o sensor" list="lista_sensores">
+                 
+                 <datalist id="lista_sensores">
+                    <option>GGVU87J</option>
+                    <option>GGSD68</option>
+                 </datalist>
+            </div>
+            <section class="card gerenciamento-sensores">
+                <table>
+                    <tbody class="tabela">
+                        <tr>
+                            <td class="titulo_tabelaa">Codigo do sensor</td>
+                            <td class="titulo-borda">GGVU87J</td>
+                        </tr>
+                        <tr>
+                            <td class="titulo_tabela">Local Sensor</td>
+                            <td class="titulo-borda">Valvula 1</td>
+                        </tr>
+                        <tr>
+                            <td class="titulo_tabelaaa">PPM: </td>
+                            <td >0.23%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </div>
 
     </div>

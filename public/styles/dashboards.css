@@ -27,22 +27,87 @@ align-content:flex-end ;
 }
 
 .dados .sensores{
-    width: 40%;
+    width: auto;
     display: flex;
-    align-items: center;
+    align-items: left;
     font-size: 30px;
     color: #049409;
     font-weight: bold;
+    flex-direction: column;
+    gap: 40px;
+}
+.sensores .selecione{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    font-size: 15px;
 }
 
 
-.select-box label {
-  font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
-  color: #0d3b27;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+.selecione input{
+    border: 2px solid #049408;
+    border-radius: 15px;
+    width: auto;
+    padding: 10px;
+    background-image: url('../docs/seta.png');
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 3%;
 }
+
+.dados{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px;
+
+}
+.graficos{  
+    padding: 20px;
+    background-color: #f7f4f4;
+    border-radius: 20px;
+}
+.graficos img{
+    height: 400px;
+    width: 400px;
+}
+
+table, table td {
+    margin: 0;
+    padding: 15px 30px 15px 30px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    width: auto;
+    border: white;
+}
+
+
+.gerenciamento-sensores{
+    border-radius: 20px;
+    border: solid 2px #049409ed;
+}
+
+.titulo_tabelaa{
+    border-top-left-radius: 15px;
+    background-color: #049409;
+    color: #ffff;
+    border-bottom: solid 2px #ffff;
+}
+.titulo-borda{
+    border-bottom: solid 2px #049409;
+}
+
+.titulo_tabela{
+    background-color: #049409;
+    color: #ffff;
+    border-radius: 0;
+    border-bottom: solid 2px #ffff;
+}
+.titulo_tabelaaa{
+    border-bottom-left-radius: 15px;
+    background-color: #049409;
+    color: #ffff;
+}
+
