@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Dashboard</title>
+    <script src="calculadora.js"></script>
+</head>
+<body>
+
+    <!--Header-->
+    <header class="dash">
+        <div class="logo">
+            <a href="./index-brandao.html"><img  src="./docs/Logo-Monarex.png" alt="logo"></a>
+        </div>
+        <!--Navegação-->
+        <nav>
+            <ul>
+                <li style="font-weight: 700; color: white;">|</li>
+                <li><a href="./index-brandao.html">Ínicio</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href=".\sensores.html">Sensores</a></li>
+                <li><a href=".\funcionarios.html">Funcionários</a></li>
+                <li><a href="./calculadora.html">Simulação</a></li>
+
+            </ul>
+        </nav>
+        <!-- <div class="perfil">
+            <img src="./docs/usuario.png" alt="logo" >
+        </div> -->
+    </header>
+
+    
+    <div class="container-body-calc">
+        
+    <div class="container-calc">
+        
+    <div class="container-content">
+        <div class="title-align">
+            <h1 class="title-calc">Descubra os riscos financeiros e ambientais que sua empresa pode enfrentar em caso de falhas!</h1>
+        </div>
+        
+
+
+    <div class="container-pergunta">
+    <div class="pergunta">
+      <span>Selecione o porte da sua empresa:</span>
+      <select id="select_porte">
+        <option value="" selected disabled>Selecione uma opção</option>
+        <option value="pequeno">Pequeno (Até 10 câmaras frias)</option>
+        <option value="medio">Médio (11 a 30 câmaras frias)</option>
+        <option value="grande">Grande (Mais de 30 câmaras frias)</option>
+      </select>
+    </div>
+
+    <div class="pergunta">
+      <span>Quantidade de funcionários na área de refrigeração:</span>
+      <input type="text" id="input_funcionarios" placeholder="Número de funcionários" /> 
+    </div>
+
+    <div class="pergunta">
+      <span>Idade média dos funcionários:</span>
+      <input type="text" id="input_idade" placeholder="Idade média" />
+    </div>
+
+    <div class="pergunta">
+      <span>Salário médio dos funcionários (R$):</span>
+      <input type="text" id="input_salario" placeholder="Salário médio" /> </div>
+
+      <div class="pergunta">
+      <span>Selecione o cenário do acidente:</span>
+      <select id="select_cenario">
+        <option value="" selected disabled>Selecione um cenário</option>
+        <option value="baixo">Baixo impacto</option>
+        <option value="moderado">Moderado impacto</option>
+        <option value="grave">Grave impacto</option>
+      </select>
+      </div>
+
+
+      <button onclick="calcular()" class="button-calcular">Calcule agora</button>
+    </div> 
+    </div>
+    
+    
+    </div>
+
+    <div class="container_mensagem">
+        <div class="mensagem-align">
+      <div id="div_mensagem">  </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

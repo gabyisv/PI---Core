@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Document</title>
-    <script src="monarex.js"></script>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
             <ul>
                 <li><a class="outros" href="./index.html">Home</a></li>
                 <li><a class="index" href="#">Fale Conosco</a></li>
-                <li><a class="outros" href="./login.html">Entrar</a></li>
+                <li class="perfil-li"><a href="./dashboard.html"> Olá, Fernando Brandão! Visite seu perfil.</a></li>
                 <li><a href="./calculadora.html">Simulação</a></li>
 
             </ul>
@@ -40,7 +39,7 @@
 
         </div>
     </div>
-    <div class="perguntas" id="pergunta_tela">
+    <div class="perguntas">
 
         <div class="pergunta">
             <span>Nome:</span>
@@ -53,22 +52,15 @@
         </div>
 
         <div class="pergunta">
-            <span>Sugestão/Dúvida</span>
-            <input type="text" id="input_duvida" placeholder="Digite aqui...">
+                <span>Sugestão/Dúvida</span>
+                <input type="text" id="input_duvida" placeholder="Digite aqui...">
         </div>
-        <button onclick="enviar()"><span>Enviar</span></button>
-        <div id="msg_pergunta_tela" style="display :none;">
-            <p class="msg-pergunta" "> Mensagem enviada com Sucesso! </p>
-    </div></div>
-    
+        <button onclik="enviar()"><span>Enviar</span></button>
     </div>
-    
-
-    
 
 
     <footer>
-        <div class=" container-footer">
+        <div class="container-footer">
             <div class="redes-footer">
                 <p>Encontre a gente nas redes sociais</p>
                 <div class="imgs-footer">
@@ -95,7 +87,7 @@
         <div class="direitos-footer">
             <p>© 2025 Core. Todos os direitos reservados.</p>
         </div>
-        </footer>
+    </footer>
 
 </body>
 

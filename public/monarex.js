@@ -83,9 +83,17 @@ function login() {
     
     if (email != 'brandao61@gmail.com' || senha != 'Sptech@123') {
         msg.innerHTML = `E-mail ou senha incorreto.`
-    } else {
-        window.location.href = "dashboard.html";
+    } else {    
+        window.location.href = "index-brandao.html";
     }
 
 }
+
+
+function enviar() {
+    msg_pergunta_tela.style.display = "block";
+    pergunta_tela.style.display = "none";
+}
+
+
 
