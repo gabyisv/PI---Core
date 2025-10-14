@@ -1,0 +1,148 @@
+/* Aqui se inicia a sessão 1 */
+.logo img{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.sessao1 {
+    justify-content: first baseline;
+    display: flex;
+    background-image:
+    linear-gradient(90deg,rgb(157, 228, 161) 50%, rgba(76, 175, 80, 0.13) 100%),
+    url('../docs/homem-um-tecnico-eletrico-que-trabalha-em-um-quadro-de-distribuicao-com-fusiveis-usa-um-tablet\ 1.png'),
+    url('../docs/homem-um-tecnico-eletrico-que-trabalha-em-um-quadro-de-distribuicao-com-fusiveis-usa-um-tablet\ 1.png');
+    background-size:contain;
+    background-position: left, right, left;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70vh;
+    padding: 0 60px;
+}
+
+.sessao1-texto {
+    color: white;
+    max-width: 50%;
+    align-items: flex-start;
+  }
+
+.sessao1 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    margin-left: -3px;
+}
+
+.sessao1 h2 {
+    font-size: 20px;
+    color: #083D0A;
+    font-weight: 500;
+
+}
+
+.sessao1 img{
+    display: flex;
+    width: 300px;
+    margin-left: -44px;
+}
+
+.btn-sobre {
+    background-color: #083D0A;
+    color: #F5FFF4;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    height: 3rem;
+    cursor: pointer;
+    padding: 0 20px;
+  }
+
+/* Aqui se encerra a sessão 1 */
+
+
+/* Aqui se inicia a sessão 2 */
+
+.sessao2 {
+    background-color: #003D02;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #F3FFEC;
+}
+
+.sessao2 p {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.sessao2 p span {
+    color: #a3d7a6;
+} 
+
+.sessao2 h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+/* Aqui se encerra a sessão 2 */
+
+
+/* Aqui se inicia a sessão 3 */
+
+.sessao3 {
+    background-color: #F3FFEC;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.sessao3 h1 {
+    color: #003D02;
+    margin: 0;
+}
+
+.sessao3 img {
+    width: 300px;
+}
+
+h3 {
+    color: #003D02;
+}
+
+.logo-sessao3 {
+    width: 150px;
+    margin: 10px auto 20px auto;
+    display: block;
+}
+
+.cards-funcionalidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 85px;
+    padding-bottom: 40px;
+    background-color: #F3FFEC;
+  }
+
+.card img {
+    width: 70px;
+}
+.card {
+    background: #a3d7a6;
+    padding: 40px;
+    border-radius: 8px;
+    width: 30%;
+    height: 290px;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    font-weight: 400;
+  }
+
+  /* Aqui se encerra a sessão 3 */
