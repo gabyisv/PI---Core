@@ -31,6 +31,8 @@
 @import url('./dashboards.css');
 @import url('./calculadora.css');
 @import url('./sobre.css');
+@import url('./components/navLateral.css');
+@import url('./dashDiaria.css');
 @import url('./dashMes.css');
 
 
