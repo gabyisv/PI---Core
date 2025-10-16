@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://kit.fontawesome.com/eebdb6e4f5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="menu-nav">
+        <div class="logo-nav">
+            <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+            <ul>
+                <li>
+                    <img src="./docs/do-utilizador 1.png" class="img-perfil">
+                </li>
+                <li>
+                    <p> Seja Bem-Vindo, Brandão </p>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-table-columns fa-lg"></i>Ínicio</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sair-nav">
+            <p>Sair</p>
+            <img src="./docs/exit-icon.png" alt="sair" />
+        </div>
+    </nav>
+
+    <section class="container-dashboard"> 
+  <!-- PERFIL -->
+  <div class="section-box">
+    <h2>Perfil</h2>
+    <div class="row">
+      <div class="field">
+        <label>Nome:</label>
+        <input type="text" placeholder="Digite o seu nome..." id="input_nome">
+      </div>
+      <div class="field">
+        <label>Sobrenome:</label>
+        <input type="text" placeholder="Digite o seu sobrenome..." id="input_sobrenome">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Email:</label>
+        <input type="text" placeholder="Digite o seu E-mail..." id="input_email">
+      </div>
+        <div class="field small">
+        <label>Telefone:</label>
+        <input type="text" placeholder="Digite o seu telefone..." id="input_telefone">
+      </div>
+      <div class="field small">
+        <label>Cargo:</label>
+        <input type="text" placeholder="Digite o seu cargo..." id="input_cargo">
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>CNPJ:</label>
+        <input type="text" placeholder="Digite o CNPJ da Empresa..." id="input_cnpj">
+      </div>
+      <div class="field">
+        <label>Nome da empresa:</label>
+        <input type="text" placeholder="Digite o Nome da Empresa..." id="input_nomeEmpresa">
+      </div>
+    </div>
+  </div>
+
+  <!-- SENHA + ENDEREÇO -->
+  <div class="section-box two-columns">
+    <div>
+      <h2>Senha</h2>
+      <div class="field">
+        <label>Senha Antiga</label>
+        <input type="password" placeholder="Digite sua senha antiga...">
+      </div>
+      <div class="field">
+        <label>Nova Senha</label>
+        <input type="password" placeholder="Digite a nova senha...">
+      </div>
+      <div class="field">
+        <label>Confirme a Nova Senha</label>
+        <input type="password" placeholder="Confirme a nova senha...">
+      </div>
+    </div>
+
+    <div>
+      <h2>Endereço</h2>
+      <div class="row">
+        <div class="field">
+          <label>CEP</label>
+          <input type="text" placeholder="00000-000">
+        </div>
+        <div class="field tiny">
+          <label>UF</label>
+          <select>
+            <option value="">UF</option>
+            <option value="SP">SP</option>
+            <option value="RJ">RJ</option>
+            <option value="MG">MG</option>
+            <!-- Adicione os demais estados -->
+          </select>
+        </div>
+        <div class="field tiny">
+          <label>Número</label>
+          <input type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Complemento</label>
+          <input type="text">
+        </div>
+        <div class="field">
+          <label>Logradouro</label>
+          <input type="text">
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn edit">Editar</button>
+        <button class="btn save">Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- <section class="container-dashboard">
+        <div class="container-sections">
+        <p> Perfil </p>
+        <div class="container-align-section">
+            <div class="container-info-section">
+                <p> Nome: </p>
+                <input type="text" placeholder="Digite o seu nome..." id="input_nome">
+            </div>
+            <div class="container-info-section">
+                <p> Sobrenome: </p>
+                <input type="text" id="input_sobrenome" placeholder="Digite o seu Sobrenome...">
+            </div>
+        </div>
+        </div>
+        <div class="container-sections">
+        <div class="container-align-section section-width">
+            <div class="container-info-section">
+                <p> E-mail: </p>
+                <input type="text" id="input_email" placeholder="Digite o seu E-mail...">
+            </div>
+            <div class="container-info-section section-tel-cargo">
+                <p> Telefone: </p>
+                <input type="text" id="input_telefone" placeholder="Digite o seu Telefone...">
+            </div>
+            <div class="container-info-section section-tel-cargo">
+                <p> Cargo: </p>
+                <input type="text" id="input_cargo" placeholder="Digite o seu Cargo...">
+            </div>
+        </div>
+        </div>
+
+        <div class="container-sections">
+        <div class="container-align-section">
+            <div class="container-info-section">
+                <p>CNPJ: </p>
+                <input type="text" id="input_cnpj" placeholder="Digite o CNPJ da Empresa...">
+            </div>
+            <div class="container-info-section">
+                <p> Nome da Empresa: </p>
+                <input type="text" id="input_nomeEmpresa" placeholder="Digite o Nome da Empresa...">
+            </div>
+        </div>
+        </div>
+
+
+
+        <div class="container-sections">
+            <div class="container-password">
+                <p> Senha: </p>
+                <div class="container-align-section align-password">
+                    <div class="container-info-section">
+                        <p> Senha Antiga </p>
+                        <input type="text" placeholder="Digite sua senha antiga..." id="input_nome">
+                    </div>
+                    <div class="container-info-section">
+                        <p> Nova Senha: </p>
+                        <input type="text" id="input_sobrenome" placeholder="Digite a sua Nova Senha..">
+                    </div>
+                    <div class="container-info-section">
+                        <p> Confirme a Nova Senha: </p>
+                        <input type="text" id="input_email" placeholder="Digite a sua nova senha...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-endereco">
+                <p> Endereço</p>
+                <div class="container-info-section">
+                    <p> CEP: </p>
+                    <input type="text" id="input_cep" placeholder="Digite o CEP do endereço...">
+                </div>
+                <div class=" container-info-section section-tel-cargo">
+                    <p> UF: </p>
+                    <select id="estado" name="estado">
+                        <option value="" selected disabled>UF</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+                <div class="container-info-section section-tel-cargo">
+                    <p> Número: </p>
+                    <input type="text" id="input_numeroRua" placeholder="Digite o número da rua:">
+                </div>
+            </div>
+        </div>
+
+    </section> -->
+</body>
+
+</html>
