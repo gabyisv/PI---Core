@@ -1,101 +1,85 @@
-.dados-empresa{
+
+
+.camara-text-sensor {
+    color: #003D02;
+    font-weight: 600;
     display: flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    gap: 45px;
+    margin: 0px 30px 0px 30px;
 }
 
-.campo span{
-    color: #0d3b27;
-    font-weight: bold;
+.container-camara-selects-sensor {
+    gap: 0;
+    margin: 0px 30px 0px 30px;
+    display: flex;
 }
-.campo input{
-    border: 3px solid green;
-    border-radius: 7px;
+
+
+.elementos-02-sensor {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.elementos-tabela-row {
+    display: flex;
     width: 100%;
-    padding: 7px;
+    gap: 12px;
 }
 
-.campo input::placeholder{
-    padding-left: 10px;
-    background-image: url('../docs/lapis.png');
-    background-repeat: no-repeat;
-    background-position: 95%;
-    background-size: 5%;
+.flex-row-box-sensor {
+    font-weight: 600;
+    padding: 5px;
+
+    margin-left: 20px;
 }
 
-.card-empresa{
-    margin-top: 100px;
-}
-
-.gerenciamento{
+.container-table-sensor{
     width: 100%;
+}
+
+.header-table-sensor th{
+    background-color: #003D02;
+    
+    color: #ffffff;
+    padding: 3px;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+}
+
+.tr01-sensor td {
+    background-color: #59965bb2;
+    border-radius: 0;
+    padding: 2px;
+}
+
+.tr02-sensor td {
+    background-color:#59965bd8;;
+    border-radius: 0;
+    padding: 2px;
+}
+
+.elementos-03-sensor{
     display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 90%;
+  margin: 0;
+}
+
+.container-elementos-sensores{
+     display: flex;
+}
+
+.container-elementos-grafico{
+    display: flex;
     flex-direction: column;
+    width: 50%;
+    gap: 20px;
 }
 
-h2{
-    font-weight: bold;
-    color: #0d3b27;
-}
-
-table th, table td {
-  border: 2px solid green;
-  padding: 10px;
-  text-align: left;
-  border-radius: 5px;
-  font-family:Arial, Helvetica, sans-serif;
-
-}
-
-table {
-  width: 50%;
-  border-collapse: collapse;
-  margin-bottom: 15px;
-}
-
-table th {
-  background: #f0f5f2;
-  color: #0d3b27;
-}
-
-.botoes{
-   width: 50%;
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
-   flex-direction: row;
-}
-
-.botoes .cadastro{
-    padding: 10px;
-    background-color: green;
-    color: white;
-    font-weight: bold ;
-    border: 2px solid green;
-    border-radius: 15px;
-    width: auto;
- }
-
-.botoes .deletar{
-    padding: 10px;
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    border: 2px solid red;
-    border-radius: 15px;
-    width: auto;
- }
-
-.botoes .atualizar{
-    padding: 10px;
-    background-color: orange;
-    color: white;
-    font-weight: bold;
-    border: 2px solid orange;
-    border-radius: 15px;
-    width: auto;
+@media (min-width: 1440px) {
 }

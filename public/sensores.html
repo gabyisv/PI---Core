@@ -1,62 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Sensores</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="https://kit.fontawesome.com/eebdb6e4f5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Document</title>
 </head>
-<body>
 
-    <!--Header-->
-    <header class="dash">
-        <div class="logo">
-            <a href="./index-brandao.html"><img  src="./docs/Logo-Monarex.png" alt="logo"></a>
+<body class="Dashboard">
+  <nav class="menu-nav">
+    <div class="logo-nav">
+      <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      <ul>
+        <li>
+          <a href=""><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sair-nav">
+      <p>Sair</p>
+      <img src="./docs/exit-icon.png" alt="sair" />
+    </div>
+  </nav>
+
+  <div class="container-dashboard">
+    <!--Cabecalho-->
+    <div class="cabecalho-mensal">
+      <h1>Sensores</h1>
+      <div class="imagem-cabecalho">
+        <i class="fa-solid fa-bell"></i>
+        <a href=""><img src="./docs/fernando-brandao-icon.jpg" alt="" /></a>
+      </div>
+    </div>
+
+    <!--Status-->
+    <section class="elementos-01">
+      <div class="status">
+        <div class="texto-status">
+          <div class="icone-status">
+            <i class="fa fa-refresh fa-2xs"></i>
+          </div>
+          <div class="titulo-status">
+            <p>Status</p>
+          </div>
         </div>
-        <!--Navegação-->
-        <nav>
-            <ul>
-                <li style="font-weight: 700; color: white;">|</li>
-                <li><a href="./index-brandao.html">Ínicio</a></li>
-                <li><a href=".\dashboard.html">Dashboard</a></li>
-                <li><a href="">Sensores</a></li>
-                <li class="perfil-li"><a href=".\funcionarios.html">Funcionários</a></li>
-                <li><a href="./calculadora.html">Simulação</a></li>
-
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Dados da Empresa  -->
-
-<div class="dados-empresa">
-
-    <div class="container">
-      <div class="card card-empresa">
-        <h2>Seus Dados</h2>
-        <div class="formulario">
-          <div class="campo">
-            <span>Razão Social:</span>
-            <input id="input_razaoSoc" type="text" placeholder="Nome da Empresa" />
+        <div class="saida-status">
+          <div class="icone-saida">
+            <i class="fa-solid fa-triangle-exclamation fa-xs"></i>
           </div>
-          <div class="campo">
-            <span>Porte da sua empresa:</span>
-            <input id="input_porte" type="text" placeholder="MEI" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="input_email" type="text" placeholder="E-mail" />
-          </div>
-          <div class="campo">
-            <span>CNPJ:</span>
-            <input id="input_cnpj" type="text" placeholder="CNPJ" />
-          </div>
-          <div class="campo">
-            <span>Definir Nova Senha:</span>
-            <input id="input_senha" type="password" placeholder="******" />
+          <div class="titulo-saida">
+            <p>Critíco</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
+      <div class="container-camara">
+        <div class="camara-text-sensor">
+          <p> Selecione a Câmara </p>
+          <p> Período </p>
+          <p> Sensor </p>
+        </div>
+
+        <div class="container-camara-selects-sensor">
+          <select name="#" id="#" class="camara-select">
+            <option value="#" disabled selected> Selecione </option>
+            <option value="camara-01"> Câmara 01</option>
+            <option value="camara-02">Câmara 02</option>
+            <option value="camara-03">Câmara 03</option>
+            <option value="camara-04">Câmara 04</option>
+            <option value="camara-05">Câmara 05</option>
+          </select>
+
+          <select name="#" id="#" class="temp-select">
+            <option value="#" disabled selected> Selecione </option>
+            <option value="24-horas">Últimas 24 horas</option>
+            <option value="7-dias">Últimos 7 dias</option>
+            <option value="30-dias">Últimos 30 dias</option>
+            <option value="mes-atual">Mês Atual</option>
+            <option value="mes-anterior">Mês Anterior</option>
+            <option value="ano-atual">Ano Atual</option>
+            <option value="ano-anterior">Ano Anterior</option>
+          </select>
+
+          <select name="#" id="#" class="sensor-select">
+            <option value="#" disabled selected> Selecione </option>
+            <option value="sensor-01">Sensor 01</option>
+            <option value="sensor-02">Sensor 02</option>
+            <option value="sensor-03">Sensor 03</option>
+            <option value="sensor-04">Sensor 04</option>
+            <option value="sensor-05">Sensor 05</option>
+            <option value="sensor-06">Sensor 06</option>
+            <option value="sensor-07">Sensor 07</option>
+            <option value="sensor-08">Sensor 08</option>
+            <option value="sensor-09">Sensor 09</option>
+            <option value="sensor-10">Sensor 10</option>
+            <option value="sensor-11">Sensor 11</option>
+            <option value="sensor-12">Sensor 12</option>
+            <option value="sensor-13">Sensor 13</option>
+            <option value="sensor-14">Sensor 14</option>
+            <option value="sensor-15">Sensor 15</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PPM -->
+      <div class="ppm-container">
+        <div class="titulo-ppm">
+          <i class="fa-solid fa-atom"></i>
+          <p>Visão Geral dos Sensores</p>
+        </div>
+        <div class="card">
+          <div class="card-ppm">
+            <p><span class="saida-ppm">30</span></p>
+            <p>Sensores Ativos</p>
+
+          </div>
+          <div class="card-ppm">
+            <p><span class="saida-ppm">30</span></p>
+            <p>Sensores Inativos</p>
+
+          </div>
+          <div class="card-ppm">
+            <p><span class="saida-ppm">30</span></p>
+            <p>Sensores Em Alerta</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <div class="container-elementos-sensores">
+        <div class="container-elementos-grafico">
+        <section class="elementos-02-sensor">
+          <div class="chart-container">
+            <div class="chart-titulo">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <p>Horários de Picos</p>
+            </div>
+            <canvas id="chart-horario"></canvas>
+          </div>
+        </section>
+
+        <section class="elementos-03-sensor">
+          <div class="chart-container">
+            <div class="chart-titulo">
+              <i class="fa-solid fa-chart-simple"></i>
+              <p>Incidentes</p>
+            </div>
+            <canvas id="chart-incidentes"></canvas>
+          </div>
+        </section>
+        </div>
+
+        <div class="container-table-sensor">
+        <div class="flex-row-box-sensor">
+          <p> Histórico </p>
+        </div>
+        <table>
+          <thead class="header-table-sensor">
+            <tr>
+              <th>Sensor</th>
+              <th>Status</th>
+              <th>PPM</th>
+              <th>Leitura</th>
+              <th>Tempo de Alerta</th>
+            </tr>
+          </thead>
+          <tbody class="body-table">
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr02-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+            <tr class="tr01-sensor">
+              <td>01</td>
+              <td>Normal</td>
+              <td>02</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      
+
+
+
+
+
+
+    <!-- <div class="ranking-card">
+            <div class="titulo-ranking">
+              <p>Top 5 Sensores por Incidentes</p>
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+          </div>
+          <div class="tabela-ranking"></div>
+          -->
+
+
+
+
+</body>
+
+</html>
+<script>
+  const cth = document.getElementById("chart-horario");
+  const ctm = document.getElementById("chart-maximo");
+  const cti = document.getElementById("chart-incidentes");
+  const cts = document.getElementById("chart-seguranca");
+
+  const data = {
+    labels: [
+      "00",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+    ],
+    datasets: [
+      {
+        label: "Horário de Pico",
+        data: [
+          2, 1, 8, 5, 6, 5, 0, 5, 5, 0, 1, 6, 5, 0, 5, 9, 0, 8, 5, 5, 4, 1, 3,
+          0,
+        ],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.1,
+        backgroundColor: "#4CAF50",
+        borderColor: "#4CAF50",
+        pointRadius: 0,
+      },
+    ],
+  };
+
+  const config = {
+    type: "line",
+    data: data,
+    options: {
+      layout: {
+        padding: {
+          bottom: 9
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            font: {
+              size: 8
+            }
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: 0,
+          max: 80,
+          ticks: {
+            font: {
+              size: 7,
+            },
+          },
+        },
+
+        x: {
+          ticks: {
+            font: {
+              size: 7,
+            },
+          },
+        },
+      },
+    },
+  };
+
+  new Chart(cth, config);
+
+  new Chart(ctm, {
+    type: "bar",
+    data: {
+      labels: [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+      ],
+      datasets: [
+        {
+          label: "Máximo de PPM por dia",
+          data: [
+            12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19,
+            3, 5, 2, 3, 12, 19, 3, 5, 2, 3,
+          ],
+          borderWidth: 1,
+          backgroundColor: "#134215",
+          borderColor: "#134215",
+          borderRadius: 50,
+        },
+      ],
+    },
+    options: {
+      layout: {
+        padding: {
+          bottom: 9
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            font: {
+              size: 8
+            }
+          }
+        }
+      },
+
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: 0,
+          max: 80,
+          ticks: {
+            font: {
+              size: 7,
+            },
+          },
+        },
+
+        x: {
+          ticks: {
+            font: {
+              size: 7,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  new Chart(cti, {
+    type: "bar",
+    data: {
+      labels: ["1"],
+      datasets: [
+        {
+          label: "Critíco",
+          data: [10],
+          borderWidth: 1,
+          backgroundColor: "#D67A7680",
+          borderColor: "#D67A7680",
+          borderRadius: 50,
+        },
+        {
+          label: "Alerta",
+          data: [7],
+          borderWidth: 0,
+          backgroundColor: "#FFCF0080",
+          borderColor: "#FFCF0080",
+          borderRadius: 50,
+        },
+        {
+          label: "Normal",
+          data: [5],
+          borderWidth: 0,
+          backgroundColor: "#9DDEFF80",
+          borderColor: "#9DDEFF80",
+          borderRadius: 50,
+        }
+      ],
+    },
+    options: {
+      layout: {
+        padding: {
+          bottom: 9
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            font: {
+              size: 8
+            }
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: 0,
+          max: 20,
+          ticks: {
+            font: {
+              size: 7,
+            },
+          },
+        },
+
+        x: {
+          ticks: {
+            font: {
+              size: 7,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  new Chart(cts, {
+    type: "pie",
+    data: {
+      labels: ["Seguro", "Moderado", "Critico"],
+      datasets: [
+        {
+          label: "My First Dataset",
+          data: [300, 50, 100],
+          backgroundColor: ["#134215", "#2A862E", "#9FD8A1"],
+          hoverOffset: 4,
+        },
+      ],
+    },
+    options: {
+      layout: {
+        padding: {
+          bottom: 9
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            font: {
+              size: 8
+            }
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
+
+
+</script>
