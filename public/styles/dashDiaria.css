@@ -38,16 +38,17 @@
 }
 
 .container-dashboard-content {
-    margin-left: 270px;
-    height: 100%;
     display: flex;
+
+    margin: 5px 20px 0px 245px;
+    height: calc(100vh - 20px);
+    
 }
 
 .section-graphic {
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin-left: 50px;
 }
 
 

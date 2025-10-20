@@ -20,6 +20,7 @@
 /*Componentes*/
 @import url('./components/footer.css');
 @import url('./components/header.css');
+@import url('./components/navLateral.css');
 
 /*Páginas*/
 @import url('./home.css');
@@ -32,7 +33,7 @@
 @import url('./sobre.css');
 @import url('./components/navLateral.css');
 @import url('./dashDiaria.css');
-@import url('./perfil.css');
+@import url('./dashMes.css');
 
 /*Regras*/
 
