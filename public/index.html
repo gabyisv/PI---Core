@@ -1,122 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="dashMes.html"></script>
     <title>Document</title>
-</head>
-<body class="corpo-index">
-
-     <!--Header-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://kit.fontawesome.com/eebdb6e4f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1"></script>
+  </head>
+  <body class="corpo-index">
+    <!--Header-->
     <header>
-        <div class="logo">
-            <a href="#"><img  src="./docs/Logo-Monarex.png" alt="logo"></a>
-        </div>
-        <!--Navegação-->
-        <nav>
-            <ul>
-                <li><a class="index" href="#">Home</a></li>
-                <li><a class="outros" href="./faleConosco.html">Fale Conosco</a></li>
-                <li><a class="outros" href="./sobre.html">Sobre</a></li>
-                <li><a class="outros" href="./login.html">Entrar</a></li>
-                <li><a class="outros" href="./dashMes.html">dashMes</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      </div>
+      <!--Navegação-->
+      <nav>
+        <ul>
+          <li><a class="index" href="#">Home</a></li>
+          <li><a class="outros" href="./faleConosco.html">Fale Conosco</a></li>
+          <li><a class="outros" href="./sobre.html">Sobre</a></li>
+          <li><a class="outros" href="./login.html">Entrar</a></li>
+          <li><a class="outros" href="./dashMes.html">dashMes</a></li>
+        </ul>
+      </nav>
     </header>
-   
 
     <!--Banner-->
     <section class="hero">
-
-        <div class="container-hero">
-            <div class="titulo-hero">
-                <h1>Proteja o <span>coração</span> da<br> sua operação!</h1>
-            </div>
-
-            <div class="btn-hero">
-               <a href="./calculadora.html"><button>Simule Agora</button></a><button>Fale Conosco</button>
-            </div>
+      <div class="container-hero">
+        <div class="titulo-hero">
+          <h1>
+            Proteja o <span>coração</span> da<br />
+            sua operação!
+          </h1>
         </div>
 
+        <div class="btn-hero">
+          <a href="./calculadora.html"><button>Simule Agora</button></a
+          ><button>Fale Conosco</button>
+        </div>
+      </div>
     </section>
 
     <!--Seção-01-->
     <section class="sobre-nos">
-        <h2 style="color: aliceblue;">Conheça a Monarex</h2>
+      <h2 style="color: aliceblue">Conheça a Monarex</h2>
 
-        <p>
-           Somos a Core, uma empresa de tecnologia e inovação fundada por alunos da São Paulo Tech School. Cuja missão é proteger vidas e operações na indústria frigorífica, prevenindo acidentes através de monitoramento inteligente e contínuo de amônia, garantindo segurança máxima para os nossos clientes.  
-        </p>
-        <p>
-           Para realizarmos isso, desenvolvemos a MonARex, uma solução IoT completa para detecção precoce e análise preditiva de vazamentos de amônia em frigoríficos. Nosso propósito é transformar a segurança operacional, protegendo vidas através de dados inteligentes.  
-        </p>
-        <p>
-            Nossa visão é ser a líder de pensamento em segurança para frigoríficos, transformando a indústria ao prevenir incidentes em vez de apenas remediá-los, protegendo simultaneamente pessoas e dados, e potencializando as operações dos nossos clientes através da inteligência de dados.
-        </p>
+      <p>
+        Somos a Core, uma empresa de tecnologia e inovação fundada por alunos da
+        São Paulo Tech School. Cuja missão é proteger vidas e operações na
+        indústria frigorífica, prevenindo acidentes através de monitoramento
+        inteligente e contínuo de amônia, garantindo segurança máxima para os
+        nossos clientes.
+      </p>
+      <p>
+        Para realizarmos isso, desenvolvemos a MonARex, uma solução IoT completa
+        para detecção precoce e análise preditiva de vazamentos de amônia em
+        frigoríficos. Nosso propósito é transformar a segurança operacional,
+        protegendo vidas através de dados inteligentes.
+      </p>
+      <p>
+        Nossa visão é ser a líder de pensamento em segurança para frigoríficos,
+        transformando a indústria ao prevenir incidentes em vez de apenas
+        remediá-los, protegendo simultaneamente pessoas e dados, e
+        potencializando as operações dos nossos clientes através da inteligência
+        de dados.
+      </p>
     </section>
-        
+
     <!--Seção-02-->
     <section class="nossos-pilares">
-        <h3>Na Core, atuamos com base em três pilares essenciais, sempre <br> com o foco
- na segurança, confiança e cuidado com seus dados.
-        </h3>
-        <div class="container-pilar">
-            <div class="pilar">
-                <img src="./docs/cifrao 1.png" alt="">
-                <p>Oferecer tecnologia de ponta com simplicidade e custo acessível.</p>
-            </div>
-            <div class="pilar" style="border-color: #2A862E;">
-                <img src="./docs/aperto-de-mao 1.png" alt="">
-                <p>Ser a base precisa e confiável para a sua tomada de decisão crítica.</p>
-            </div>
-            <div class="pilar" style="border-color: #2A862E;">
-                <img src="./docs/cuidado 1.png" alt="">
-                <p>Zelar pelo bem-estar das pessoas e pela operação do seu negócio.</p>
-            </div>
-            <div class="pilar">
-                <img src="./docs/escudo 1.png" alt="">
-                <p>Garantir a proteção máxima dos colaboradores contra vazamentos de amônia.</p>
-            </div>
+      <h3>
+        Na Core, atuamos com base em três pilares essenciais, sempre <br />
+        com o foco na segurança, confiança e cuidado com seus dados.
+      </h3>
+      <div class="container-pilar">
+        <div class="pilar">
+          <img src="./docs/cifrao 1.png" alt="" />
+          <p>
+            Oferecer tecnologia de ponta com simplicidade e custo acessível.
+          </p>
         </div>
+        <div class="pilar" style="border-color: #2a862e">
+          <img src="./docs/aperto-de-mao 1.png" alt="" />
+          <p>
+            Ser a base precisa e confiável para a sua tomada de decisão crítica.
+          </p>
+        </div>
+        <div class="pilar" style="border-color: #2a862e">
+          <img src="./docs/cuidado 1.png" alt="" />
+          <p>
+            Zelar pelo bem-estar das pessoas e pela operação do seu negócio.
+          </p>
+        </div>
+        <div class="pilar">
+          <img src="./docs/escudo 1.png" alt="" />
+          <p>
+            Garantir a proteção máxima dos colaboradores contra vazamentos de
+            amônia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--Explicando os gráficos-->
+
+    <section class="features">
+      <h2>Transforme <span>dados</span> em descisçoes inteligentes</h2>
+      <div class="container-features">
+        <div id="chart-horario-css" class="chart-container">
+          <div class="chart-titulo">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <p>Horários de Picos</p>
+          </div>
+          <canvas id="chart-horario"></canvas>
+        </div>
+        <div id="chart-incidente" class="chart-container">
+          <div class="chart-titulo">
+            <i class="fa-solid fa-chart-simple"></i>
+            <p>Incidentes</p>
+          </div>
+          <canvas id="chart-incidentes"></canvas>
+        </div>
+        <div class="conteudo-features">
+          <div class="titulo-features">
+            <p>Gráficos Construtivos</p>
+          </div>
+          <div class="texto-features">
+            <p>
+              Deixe a complexidade de lado. Nossa plataforma converte números e
+              métricas em visualizações claras e intuitivas, permitindo que você
+              entenda o cenário rapidamente. Acompanhe tendências, identifique
+              padrões e tome decisões baseadas em informações precisas, não em
+              suposições.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container-features">
+        <div class="conteudo-features">
+          <div class="titulo-features">
+            <p>Constantes</p>
+          </div>
+          <div class="texto-features">
+            <p>
+              Fique por dentro de tudo o que acontece, no momento em que
+              acontece. Nosso sistema de monitoramento inteligente classifica
+              cada evento por nível de importância, desde a normalidade até
+              alertas que exigem sua atenção e eventos críticos que demandam
+              ação imediata.
+            </p>
+          </div>
+        </div>
+        <section class="elementos-01">
+        <div class="status">
+          <div class="texto-status">
+            <div class="icone-status">
+              <i class="fa fa-refresh fa-2xs"></i>
+            </div>
+            <div class="titulo-status">
+              <p>Status</p>
+            </div>
+          </div>
+          <div class="saida-status">
+            <div class="icone-saida">
+              <i class="fa-solid fa-triangle-exclamation fa-xs"></i>
+            </div>
+            <div class="titulo-saida">
+              <p>Critíco</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status" id="normal">
+          <div class="texto-status">
+            <div class="icone-status">
+              <i class="fa fa-refresh fa-2xs"></i>
+            </div>
+            <div class="titulo-status">
+              <p>Status</p>
+            </div>
+          </div>
+          <div class="saida-status">
+            <div class="icone-saida">
+              <i class="fa-solid fa-circle-check fa-xs"></i>
+            </div>
+            <div class="titulo-saida">
+              <p>Normal</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status" id="alert">
+          <div class="texto-status">
+            <div class="icone-status">
+              <i class="fa fa-refresh fa-2xs"></i>
+            </div>
+            <div class="titulo-status">
+              <p>Status</p>
+            </div>
+          </div>
+          <div class="saida-status">
+            <div class="icone-saida">
+              <i class="fa-solid fa-exclamation fa-xs"></i>
+            </div>
+            <div class="titulo-saida">
+              <p>Alerta</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="last-section">
+      <div class="container-last">
+        <div class="conteudo-last">
+          <h3>Tudo isso em um único lugar!</h3>
+        <p>Clareza total. Controle Absoluto. Junte seus insghts e antecipe o futuro do seu negócio</p>
+          <div class="btn-hero">
+          <a href="./calculadora.html"><button>Simule Agora</button></a>
+        </div>
+      </div>
+        
+        <div class="img-mes"><img src="./docs/Dashboard-mes.png" alt="dashboard mes"></div>
+        <div class="img-dia"><img src="./docs/Dashboard Dia.png" alt="dashboard diario"></div>
+      </div>
     </section>
 
     <!--Footer-->
 
     <footer>
-        <div class="container-footer">
-            <div class="redes-footer">
-                <p>Encontre a gente nas redes sociais</p>
-                <div class="imgs-footer">
-                    
-                <img src="./docs/instagram 1.png" alt="">
-                <img src="./docs/whatsapp 1.png" alt="">
-                <img src="./docs/facebook 1.png" alt="">
-                </div>
-            </div>
-            <div class="explore-footer">
-                <p class="titulo-footer">Explore</p>
-                <p>Home</p>
-                <p>Serviços</p>
-            </div>
-            <div class="contato-footer">
-                <p class="titulo-footer">Endereço</p>
-                <p>Rua Haddock Lobo 595, São Paulo,<br> SP 01414-905  </p>
-                <br>
-                <p class="titulo-footer">Contato</p>
-                <p>monarex@gmail.com</p>
-                <p>+55 11 4002-8922</p>
-            </div>
+      <div class="container-footer">
+        <div class="redes-footer">
+          <p>Encontre a gente nas redes sociais</p>
+          <div class="imgs-footer">
+            <img src="./docs/instagram 1.png" alt="" />
+            <img src="./docs/whatsapp 1.png" alt="" />
+            <img src="./docs/facebook 1.png" alt="" />
+          </div>
         </div>
-        <div class="direitos-footer">
-            <p>© 2025 Core. Todos os direitos reservados.</p>
+        <div class="explore-footer">
+          <p class="titulo-footer">Explore</p>
+          <p>Home</p>
+          <p>Serviços</p>
         </div>
+        <div class="contato-footer">
+          <p class="titulo-footer">Endereço</p>
+          <p>
+            Rua Haddock Lobo 595, São Paulo,<br />
+            SP 01414-905
+          </p>
+          <br />
+          <p class="titulo-footer">Contato</p>
+          <p>monarex@gmail.com</p>
+          <p>+55 11 4002-8922</p>
+        </div>
+      </div>
+      <div class="direitos-footer">
+        <p>© 2025 Core. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
-
-
-
-
-
-</body>
+    <script src="monarex.js"></script>
+  </body>
 </html>

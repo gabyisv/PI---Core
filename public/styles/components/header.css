@@ -4,6 +4,7 @@ header{
     padding-top: 10px;
     background-color: #003D02;
     width: 100%;
+    z-index: 15;
 
     
 }
