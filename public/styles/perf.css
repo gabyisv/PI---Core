@@ -1,0 +1,88 @@
+.container-dashboard-perfil {
+  margin: 5px 20px 0px 245px; /* igual ao dashboard principal */
+  height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.input-perfil {
+  padding: 8px;
+  border: none;
+  background: #d8e2d8;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 300px;
+  height: 25px;
+}
+
+.text-input {
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.text-title-perfil {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.perfil{
+    width: 650px;
+    display: flex;
+    height: 280px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.container-perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 0;
+    gap: 100px;
+
+}
+
+
+.container-forms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+.container-forms input{
+    padding: 8px;
+  border: none;
+  background: #d8e2d8;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 140px;
+}
+
+.container-layout{
+    display: flex;
+    flex-direction: column;
+}
+.senha{
+   width: 650px;
+    display: flex;
+    height: 280px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.container-endereco{
+    display: flex;
+    flex-direction: row;
+}
+.container-endereco input{
+    padding: 8px;
+  border: none;
+  background: #d8e2d8;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 140px;
+}

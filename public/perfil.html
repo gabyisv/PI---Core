@@ -1,140 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="https://kit.fontawesome.com/eebdb6e4f5.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/eebdb6e4f5.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="menu-nav">
-        <div class="logo-nav">
-            <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
-            <ul>
-                <li>
-                    <img src="./docs/do-utilizador 1.png" class="img-perfil">
-                </li>
-                <li>
-                    <p> Seja Bem-Vindo, Brandão </p>
-                </li>
-                <li>
-                    <a href=""><i class="fa-solid fa-table-columns fa-lg"></i>Ínicio</a>
-                </li>
-            </ul>
-        </div>
+      <div class="logo-nav">
+        <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+        <ul>
+          <li>
+            <img src="./docs/do-utilizador 1.png" class="img-perfil" />
+          </li>
+          <li>
+            <p>Seja Bem-Vindo, Brandão</p>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-table-columns fa-lg"></i>Ínicio</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="sair-nav">
-            <p>Sair</p>
-            <img src="./docs/exit-icon.png" alt="sair" />
-        </div>
+      <div class="sair-nav">
+        <p>Sair</p>
+        <img src="./docs/exit-icon.png" alt="sair" />
+      </div>
     </nav>
 
-    <section class="container-dashboard"> 
-  <!-- PERFIL -->
-  <div class="section-box">
-    <h2>Perfil</h2>
-    <div class="row">
-      <div class="field">
-        <label>Nome:</label>
-        <input type="text" placeholder="Digite o seu nome..." id="input_nome">
-      </div>
-      <div class="field">
-        <label>Sobrenome:</label>
-        <input type="text" placeholder="Digite o seu sobrenome..." id="input_sobrenome">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="field">
-        <label>Email:</label>
-        <input type="text" placeholder="Digite o seu E-mail..." id="input_email">
-      </div>
-        <div class="field small">
-        <label>Telefone:</label>
-        <input type="text" placeholder="Digite o seu telefone..." id="input_telefone">
-      </div>
-      <div class="field small">
-        <label>Cargo:</label>
-        <input type="text" placeholder="Digite o seu cargo..." id="input_cargo">
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="field">
-        <label>CNPJ:</label>
-        <input type="text" placeholder="Digite o CNPJ da Empresa..." id="input_cnpj">
-      </div>
-      <div class="field">
-        <label>Nome da empresa:</label>
-        <input type="text" placeholder="Digite o Nome da Empresa..." id="input_nomeEmpresa">
-      </div>
-    </div>
-  </div>
-
-  <!-- SENHA + ENDEREÇO -->
-  <div class="section-box two-columns">
-    <div>
-      <h2>Senha</h2>
-      <div class="field">
-        <label>Senha Antiga</label>
-        <input type="password" placeholder="Digite sua senha antiga...">
-      </div>
-      <div class="field">
-        <label>Nova Senha</label>
-        <input type="password" placeholder="Digite a nova senha...">
-      </div>
-      <div class="field">
-        <label>Confirme a Nova Senha</label>
-        <input type="password" placeholder="Confirme a nova senha...">
-      </div>
-    </div>
-
-    <div>
-      <h2>Endereço</h2>
-      <div class="row">
-        <div class="field">
-          <label>CEP</label>
-          <input type="text" placeholder="00000-000">
+    <section class="container-dashboard">
+      <!-- PERFIL -->
+      <div class="section-box">
+        <h2>Perfil</h2>
+        <div class="row">
+          <div class="field">
+            <label>Nome:</label>
+            <input
+              type="text"
+              placeholder="Digite o seu nome..."
+              id="input_nome"
+            />
+          </div>
+          <div class="field">
+            <label>Sobrenome:</label>
+            <input
+              type="text"
+              placeholder="Digite o seu sobrenome..."
+              id="input_sobrenome"
+            />
+          </div>
         </div>
-        <div class="field tiny">
-          <label>UF</label>
-          <select>
-            <option value="">UF</option>
-            <option value="SP">SP</option>
-            <option value="RJ">RJ</option>
-            <option value="MG">MG</option>
-            <!-- Adicione os demais estados -->
-          </select>
+
+        <div class="row">
+          <div class="field">
+            <label>Email:</label>
+            <input
+              type="text"
+              placeholder="Digite o seu E-mail..."
+              id="input_email"
+            />
+          </div>
+          <div class="field small">
+            <label>Telefone:</label>
+            <input
+              type="text"
+              placeholder="Digite o seu telefone..."
+              id="input_telefone"
+            />
+          </div>
+          <div class="field small">
+            <label>Cargo:</label>
+            <input
+              type="text"
+              placeholder="Digite o seu cargo..."
+              id="input_cargo"
+            />
+          </div>
         </div>
-        <div class="field tiny">
-          <label>Número</label>
-          <input type="text">
+
+        <div class="row">
+          <div class="field">
+            <label>CNPJ:</label>
+            <input
+              type="text"
+              placeholder="Digite o CNPJ da Empresa..."
+              id="input_cnpj"
+            />
+          </div>
+          <div class="field">
+            <label>Nome da empresa:</label>
+            <input
+              type="text"
+              placeholder="Digite o Nome da Empresa..."
+              id="input_nomeEmpresa"
+            />
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="field">
-          <label>Complemento</label>
-          <input type="text">
+
+      <!-- SENHA + ENDEREÇO -->
+      <div class="section-box two-columns">
+        <div>
+          <h2>Senha</h2>
+          <div class="field">
+            <label>Senha Antiga</label>
+            <input type="password" placeholder="Digite sua senha antiga..." />
+          </div>
+          <div class="field">
+            <label>Nova Senha</label>
+            <input type="password" placeholder="Digite a nova senha..." />
+          </div>
+          <div class="field">
+            <label>Confirme a Nova Senha</label>
+            <input type="password" placeholder="Confirme a nova senha..." />
+          </div>
         </div>
-        <div class="field">
-          <label>Logradouro</label>
-          <input type="text">
+
+        <div>
+          <h2>Endereço</h2>
+          <div class="row">
+            <div class="field">
+              <label>CEP</label>
+              <input type="text" placeholder="00000-000" />
+            </div>
+            <div class="field tiny">
+              <label>UF</label>
+              <select>
+                <option value="">UF</option>
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+                <option value="MG">MG</option>
+                <!-- Adicione os demais estados -->
+              </select>
+            </div>
+            <div class="field tiny">
+              <label>Número</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label>Complemento</label>
+              <input type="text" />
+            </div>
+            <div class="field">
+              <label>Logradouro</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="btn edit">Editar</button>
+            <button class="btn save">Salvar Alterações</button>
+          </div>
         </div>
       </div>
-      <div class="buttons">
-        <button class="btn edit">Editar</button>
-        <button class="btn save">Salvar Alterações</button>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- <section class="container-dashboard">
+    </section>
+
+     <section class="container-dashboard">
         <div class="container-sections">
         <p> Perfil </p>
         <div class="container-align-section">
@@ -245,7 +275,6 @@
             </div>
         </div>
 
-    </section> -->
-</body>
-
+    </section>
+  </body>
 </html>
