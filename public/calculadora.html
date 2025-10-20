@@ -1,97 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Dashboard</title>
-    <script src="calculadora.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Dashboard</title>
+  <script src="calculadora.js"></script>
 </head>
+
 <body>
 
-    <!--Header-->
-    <header class="dash">
-        <div class="logo">
-            <a href="./index-brandao.html"><img  src="./docs/Logo-Monarex.png" alt="logo"></a>
-        </div>
-        <!--Navegação-->
-        <nav>
-            <ul>
-                <li style="font-weight: 700; color: white;">|</li>
-                <li><a href="./index-brandao.html">Ínicio</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href=".\sensores.html">Sensores</a></li>
-                <li><a href=".\funcionarios.html">Funcionários</a></li>
-                <li><a href="./calculadora.html">Simulação</a></li>
+  <!--Header-->
+  <header>
+    <div class="logo">
+      <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo"></a>
+    </div>
+    <!--Navegação-->
+    <nav>
+      <ul>
+        <li><a class="index" href="#">Home</a></li>
+        <li><a class="outros" href="./faleConosco.html">Fale Conosco</a></li>
+        <li><a class="outros" href="./sobre.html">Sobre</a></li>
+        <li><a class="outros" href="./login.html">Entrar</a></li>
+        <li><a class="outros" href="./dashMes.html">dashMes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="titulo-header">
+    <img src="./docs/streamline-ultimate_cash-search-bold.png" alt="">
+    <h1>Simulador Financeiro</h1>
+  </div>
 
-            </ul>
-        </nav>
-        <!-- <div class="perfil">
-            <img src="./docs/usuario.png" alt="logo" >
-        </div> -->
-    </header>
 
-    
-    <div class="container-body-calc">
-        
+  <div class="container-body-calc">
+
     <div class="container-calc">
-        
-    <div class="container-content">
+
+      <div class="container-content">
         <div class="title-align">
-            <h1 class="title-calc">Descubra os riscos financeiros e ambientais que sua empresa pode enfrentar em caso de falhas!</h1>
+          <h1 class="title-calc">Descubra os riscos financeiros e ambientais que sua empresa pode enfrentar em caso de
+            falhas!</h1>
         </div>
-        
 
 
-    <div class="container-pergunta">
-    <div class="pergunta">
-      <span>Selecione o porte da sua empresa:</span>
-      <select id="select_porte">
-        <option value="" selected disabled>Selecione uma opção</option>
-        <option value="pequeno">Pequeno (Até 10 câmaras frias)</option>
-        <option value="medio">Médio (11 a 30 câmaras frias)</option>
-        <option value="grande">Grande (Mais de 30 câmaras frias)</option>
-      </select>
-    </div>
 
-    <div class="pergunta">
-      <span>Quantidade de funcionários na área de refrigeração:</span>
-      <input type="text" id="input_funcionarios" placeholder="Número de funcionários" /> 
-    </div>
+        <div class="container-pergunta">
+          <div class="row-pergunta">
+            <div class="pergunta">
+              <span>Selecione o porte da sua empresa:</span>
+              <select id="select_porte">
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="pequeno">Pequeno (Até 10 câmaras frias)</option>
+                <option value="medio">Médio (11 a 30 câmaras frias)</option>
+                <option value="grande">Grande (Mais de 30 câmaras frias)</option>
+              </select>
+            </div>
 
-    <div class="pergunta">
-      <span>Idade média dos funcionários:</span>
-      <input type="text" id="input_idade" placeholder="Idade média" />
-    </div>
 
-    <div class="pergunta">
-      <span>Salário médio dos funcionários (R$):</span>
-      <input type="text" id="input_salario" placeholder="Salário médio" /> </div>
+            <div class="pergunta">
+              <span>Quantidade de funcionários na área de refrigeração:</span>
+              <input type="text" id="input_funcionarios" placeholder="Número de funcionários" />
+            </div>
+          </div>
 
-      <div class="pergunta">
-      <span>Selecione o cenário do acidente:</span>
-      <select id="select_cenario">
-        <option value="" selected disabled>Selecione um cenário</option>
-        <option value="baixo">Baixo impacto</option>
-        <option value="moderado">Moderado impacto</option>
-        <option value="grave">Grave impacto</option>
-      </select>
+          <!-- <div class="row-pergunta">
+            <div class="pergunta">
+              <span>Idade média dos funcionários:</span>
+              <input type="text" id="input_idade" placeholder="Idade média" />
+            </div>
+
+
+            <div class="pergunta">
+              <span>Salário médio dos funcionários (R$):</span>
+              <input type="text" id="input_salario" placeholder="Salário médio" />
+            </div>
+          </div> -->
+
+          <div class="row-pergunta">
+            <div class="pergunta">
+              <span>Selecione o cenário do acidente:</span>
+              <select id="select_cenario">
+                <option value="" selected disabled>Selecione um cenário</option>
+                <option value="baixo">Baixo impacto</option>
+                <option value="moderado">Moderado impacto</option>
+                <option value="grave">Grave impacto</option>
+              </select>
+            </div>
+
+
+            <button onclick="calcular()" class="button-calcular">Calcule agora</button>
+          </div>
+        </div>
       </div>
 
 
-      <button onclick="calcular()" class="button-calcular">Calcule agora</button>
-    </div> 
+
     </div>
-    
-    
+    <div id="div_mensagem"> </div>
+  </div>
+  <div class="container-card-calculadora">
+    <div class="card-calculadora">
+      <div class="card-conteudo">
+        <img src="./docs/mynaui_globe.png" alt="">
+        <h1>Visão Geral Rápida</h1>
+        <p>Entenda em 1 minuto o impacto financeiro e ambiental estimado em caso de vazamento de amônia.</p>
+      </div>
     </div>
 
-    <div class="container_mensagem">
-        <div class="mensagem-align">
-      <div id="div_mensagem">  </div>
-        </div>
+    <div class="card-calculadora">
+      <div class="card-conteudo">
+        <img src="./docs/material-symbols_data-thresholding.png" alt="">
+        <h1> Cenários de Acidente</h1>
+        <p>Compare impacto entre cenários: baixo, moderado e grave para planejar respostas e orçamento.</p>
+      </div>
     </div>
+
+    <div class="card-calculadora">
+      <div class="card-conteudo">
+        <img src="./docs/material-symbols_ads-click.png" alt="">
+        <h1>Impacto por Pessoal</h1>
+        <p>Veja como número, idade e salário dos funcionários afetam custos trabalhistas e indenizações..</p>
+      </div>
+    </div>
+
+    <div class="card-calculadora">
+      <div class="card-conteudo">
+        <img src="./docs/Vector (5).png" alt="">
+        <h1>Resultado Claro e Ação</h1>
+        <p>Receba um valor estimado e recomendações práticas para reduzir risco e custo.</p>
+      </div>
     </div>
   </div>
+
+
+
 </body>
+
 </html>
