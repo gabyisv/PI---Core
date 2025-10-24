@@ -4,26 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/eebdb6e4f5.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body class="Dashboard">
-    <nav class="menu-nav">
+    <nav id="menu-nav" class="menu-nav">
       <div class="logo-nav">
         <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+        <div class="icon-nav">
+          <img src="./docs/fernando-brandao-icon.jpg" alt="">
+          <h2>Seja Bem-Vindo, Brandão</h2>
+        
         <ul>
           <li>
-            <a href=""><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
+            <a href="./dashMes.html"><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
           </li>
           <li>
-            <a href=""><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
+            <a href="./dashDiaria.html"
+              ><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a
+            >
           </li>
           <li>
-            <a href=""><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
+            <a href="./funcionarios.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
           </li>
           <li>
-            <a href=""><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
+            <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
           </li>
         </ul>
+        </div>
       </div>
 
       <div class="sair-nav">
@@ -109,8 +120,7 @@
         </div>
       </section>
 
-
-      <section class="Senha">
+      <section class="senha">
         <h1 class="text-title-perfil">Senha</h1>
         <div class="container-perfil">
           <div class="box-01-perfil">
@@ -143,65 +153,67 @@
             </div>
           </div>
           <div class="container-layout">
-            <div class="container-forms">
-              <div class="telefone-perfil">
-                <p class="text-input">telefone:</p>
+            <div class="container-forms-endereco">
+              <div class="cep-perfil">
+                <p class="text-input">CEP:</p>
                 <input
-                  placeholder="Digite seu telefone..."
+                  placeholder="Digite seu cep..."
                   class="input-perfil"
                   type="text"
                   id="input-nome"
                 />
               </div>
 
-              <div class="cargo-perfil">
-                <p class="text-input">cargo:</p>
+              <div class="uf-perfil">
+                <p class="text-input">UF:</p>
                 <input
-                  placeholder="Digite seu vargo..."
+                  placeholder="Digite seu UF..."
                   class="input-perfil"
                   type="text"
                   id="input-nome"
                 />
               </div>
-               <div class="cargo-perfil">
-                <p class="text-input">cargo:</p>
+              <div class="numero-perfil">
+                <p class="text-input">Número:</p>
                 <input
-                  placeholder="Digite seu vargo..."
+                  placeholder="Digite seu número..."
                   class="input-perfil"
                   type="text"
                   id="input-nome"
                 />
               </div>
             </div>
-            <div class="container-perfil">
-            <div class="complemento-perfil">
-              <p class="text-input">Complemento:</p>
-              <input
-                placeholder="Digite seu complemento..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
-              <div class="logradouro-perfil">
-              <p class="text-input">Logradouro:</p>
-              <input
-                placeholder="Digite seu logradouro..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
-            </div>
-            <div class="buttons-perfil">
+            <div class="container-perfil-2">
+              <div class="complemento-perfil">
+                <p class="text-input">Complemento:</p>
+                <input
+                  placeholder="Digite seu complemento..."
+                  class="input-perfil"
+                  type="text"
+                  id="input-nome"
+                />
+              </div>
+              <div class="complemento-perfil">
+                <p class="text-input">Logradouro:</p>
+                <input
+                  placeholder="Digite seu logradouro..."
+                  class="input-perfil"
+                  type="text"
+                  id="input-nome"
+                />
+              </div>
+              </div>
+              <div class="buttons-perfil">
                 <div class="editar-button-perfil">
-                    <button onclick="">Editar</button>
+                  <button onclick="">Editar</button>
                 </div>
                 <div class="salvar-button-perfil">
-                    <button onclick="">Salvar Alterações</button>
-                </div>
-            </div>
-            </div>
+                  <button onclick="">Salvar Alterações</button>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>

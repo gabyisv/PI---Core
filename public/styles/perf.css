@@ -1,11 +1,36 @@
 .container-dashboard-perfil {
-  margin: 5px 20px 0px 245px; /* igual ao dashboard principal */
+  margin: 5px 20px 0px 395px; /* igual ao dashboard principal */
   height: calc(100vh - 20px);
   display: flex;
   flex-direction: column;
   padding: 5px;
+    
+  
 }
+.Dashboard{
+  height: 100vw;
+    
+}
+#menu-nav{
+  width: 340px;
+  display: flex;
+  align-items: center ;
+}
+.icon-nav{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.icon-nav img{
+  border-radius: 100px;
+  height: 100px;
 
+}
+.icon-nav h2{
+  color: #ffff;
+  font-size: 1.3rem;
+}
 .input-perfil {
   padding: 8px;
   border: none;
@@ -29,60 +54,120 @@
   width: 100%;
 }
 
-.perfil{
-    width: 650px;
-    display: flex;
-    height: 280px;
-    flex-direction: column;
-    margin-bottom: 20px;
+.perfil {
+  width: 750px;
+  display: flex;
+  height: 280px;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
-.container-perfil{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 0;
-    gap: 100px;
-
+.container-perfil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+}
+.box-01-perfil{
+  width: 500px;
 }
 
-
-.container-forms{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+.container-forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100;
+  gap: 10px;
+}
+.container-forms input {
+  padding: 8px;
+  border: none;
+  background: #d8e2d8;
+  border-radius: 6px;
+  font-size: 14px;
 
 }
-.container-forms input{
-    padding: 8px;
+.container-perfil input{
+  padding: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.container-layout {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 50px;
+}
+.senha {
+  width: 750px;
+  display: flex;
+  height: 280px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 50px;
+}
+
+.container-endereco {
+  display: flex;
+  flex-direction: row;
+}
+.container-endereco input {
+  padding: 8px;
   border: none;
   background: #d8e2d8;
   border-radius: 6px;
   font-size: 14px;
   width: 140px;
+  height: 35px;
 }
 
-.container-layout{
-    display: flex;
-    flex-direction: column;
+.container-forms-endereco {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
-.senha{
-   width: 650px;
-    display: flex;
-    height: 280px;
-    flex-direction: column;
-    margin-bottom: 20px;
+.container-forms-endereco .cep-perfil input{
+  width: 120px;
+  height: 35px;
+}
+.container-forms-endereco .uf-perfil input{
+  width: 50px;
+  height: 35px;
 }
 
-.container-endereco{
-    display: flex;
-    flex-direction: row;
+.container-forms-endereco .numero-perfil input{
+  width: 120px;
+  height: 35px;
 }
-.container-endereco input{
-    padding: 8px;
+
+.buttons-perfil{
+  margin-bottom: 50px;
+}
+
+
+
+.container-perfil-2{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0;
+}
+.container-perfil-2 .complemento-perfil  input{
+  width: 25vh;
+  height: 35px;
+}
+
+.buttons-perfil button{
+  background-color: #134215;
   border: none;
-  background: #d8e2d8;
-  border-radius: 6px;
-  font-size: 14px;
-  width: 140px;
+  color: #ffff;
+  width: 100%;
+  font-size: 2.5vh;
+  padding: 2vh;
+  margin-bottom: 10px;
+  border-radius: 12px;
 }
