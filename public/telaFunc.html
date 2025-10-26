@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="\Users\PICHAU\OneDrive\Desktop\telaFunc.css">
+   <script
+      src="https://kit.fontawesome.com/eebdb6e4f5.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+
+  <nav class="menu-nav">
+    <div class="logo-nav">
+      <a href="./index.html"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      <ul>
+        <li>
+          <a href="./dashMes.html"><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
+        </li>
+        <li>
+          <a href="./funcionarios.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
+        </li>
+        <li>
+          <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sair-nav">
+      <p>Sair</p>
+      <img src="./docs/exit-icon.png" alt="sair" />
+    </div>
+  </nav>
+
+  <div class="cabecalho-mensal" style="margin-left: 245px; margin-right: 10px;">
+    <h1>Dashboard <span>Diário</span></h1>
+    <div class="imagem-cabecalho">
+      <i class="fa-solid fa-bell"></i>
+      <a href="./perf.html"><img src="./docs/fernando-brandao-icon.jpg" alt="" /></a>
+    </div>
+  </div>
+
+  <div class="container_func">
+    
+    <div class="container">
+      <div class="KPIs">
+      <div class="ativos">
+        <h1>21</h1>
+        <span>Funcionários ativos</span>
+      </div>
+      <div class="Temp_resposta">
+        <h1>02:25</h1>
+        <span>Tempo de resposta médio</span>
+      </div>
+      <div class="incidentes">
+        <h1>18</h1>
+        <span>Incidentes resolvidos</span>
+      </div>
+      </div>
+      <div class="add">
+        <strong>Adicionar funcionário</strong><br>
+        <span> ID
+        </span><br>
+        <input type="text" id="input_addFuncionario"><br>
+        <div class="icon-style">
+        <button  onclick="adicionar()"><span><i class="fa-solid fa-circle-plus"></i>Adicionar<span></button>
+      </div>
+      </div>
+    </div>
+    <div class="container2">
+      <input type="text" id="input_busca" placeholder="     Buscar...">
+      <select id="Cargos">
+        <option>Todos os cargos</option>
+      </select>
+    </div>
+    <table class="tabela-funcionarios">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nome</th>
+          <th>ID</th>
+          <th>Cargo</th>
+          <th>Departamento</th>
+          <th>Data de Admissão</th>
+          <th>Contato</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Gaby</td>
+          <td>1</td>
+          <td>Gerente</td>
+          <td>Câmara 1</td>
+          <td>01/02/2020</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Lucas</td>
+          <td>2</td>
+          <td>Supervisor</td>
+          <td>Câmara 2</td>
+          <td>10/05/2021</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Mariana</td>
+          <td>3</td>
+          <td>Assistente</td>
+          <td>Câmara 3</td>
+          <td>15/09/2019</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Carlos</td>
+          <td>4</td>
+          <td>Técnico</td>
+          <td>Câmara 4</td>
+          <td>20/11/2022</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Ana</td>
+          <td>5</td>
+          <td>Analista</td>
+          <td>Câmara 5</td>
+          <td>03/03/2023</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>João</td>
+          <td>6</td>
+          <td>Auxiliar</td>
+          <td>Câmara 6</td>
+          <td>12/01/2024</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Fernanda</td>
+          <td>7</td>
+          <td>Coordenadora</td>
+          <td>Câmara 7</td>
+          <td>22/07/2020</td>
+          <td>Ativo</td>
+          <td>Ativo</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="final">
+      <div id="final1">
+        <button onclick="editar()"><span><i class="fa-solid fa-pen"></i>Editar</span></button>
+      </div>
+      <div id="final2">
+        <button onclick="excluir()"><span><i class="fa-solid fa-trash"></i>Excluir</span></button>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

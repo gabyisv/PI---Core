@@ -1,0 +1,292 @@
+*body{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.container_func{
+    display: flex;
+    flex-direction: column;
+    margin-left: 23.5%;
+    background-color: #FFFFF2;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFF2;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 0px;
+}
+
+.KPIs{
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+    gap: 23px;
+    align-items: flex-start;
+    background-color: #FFFFF2;
+}
+
+.ativos{
+   
+    background-color: #EBF4EB;
+    width: 27%;
+    border-radius: 2vh;
+    height: 17vh;
+  
+}
+.ativos h1{
+    margin-top: 3%;
+    display: flex;
+    margin-bottom: 1%;
+    font-size: 320%;
+    margin-left: 10%;
+    color: #134215;
+}
+
+.ativos span{
+    display: flex;
+    margin-left: 10%;
+    font-size: 150%;
+    font-weight: 500;
+    margin-bottom: 20%;
+    color: #134215;
+}
+
+.Temp_resposta{
+
+    background-color: #EBF4EB;
+    width: 30%;
+    border-radius: 2vh;
+height: 17vh;
+}
+
+.Temp_resposta h1{
+    margin-top: 3%;
+    display: flex;
+    margin-bottom: 1%;
+    font-size: 320%;
+    margin-left: 10%;
+    color: #134215;
+}
+
+.Temp_resposta span{
+    display: flex;
+    margin-left: 10%;
+    font-size: 150%;
+    margin-bottom: 20%;
+    color: #134215;
+    font-weight: 500;
+}
+
+.incidentes{
+  
+  
+    background-color: #EBF4EB;
+    width: 27%;
+    border-radius: 2vh;
+    height: 17vh;
+  
+}
+
+.incidentes h1{
+    margin-top: 3%;
+    display: flex;
+    margin-bottom: 1%;
+    font-size: 320%;
+    margin-left: 10%;
+    color: #134215;
+}
+
+.incidentes span{
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    font-size: 150%;
+    margin-bottom: 20%;
+    color: #134215;
+    font-weight: 500;
+    gap: 10px;
+}
+
+.add{
+    margin-right: 20%;
+    margin-left: 2%;
+    background-color: #EBF4EB;
+    width: 40%;
+    border-radius: 2vh;
+    height: 25vh;
+}
+
+.add strong{
+  display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 150%;
+    margin-bottom: 20%;
+    color: #134215;
+    margin-bottom: -7%;
+}
+
+
+.add span{
+  
+    display: flex;
+      justify-content: center;
+    margin-top: 5%;
+    margin-left: 0%;
+    font-size: 150%;
+    margin-bottom: 20%;
+    color: #134215;
+    margin-bottom: 0%;
+    font-weight: 500;
+   
+}
+
+.add input{
+    background-color: #EBF4EB;
+    display: flex;
+    margin-left: 10%;
+    border-color: #134215;
+    height: 3vh;
+    width: 75%;
+    padding: 12px;
+    border-width: 3px;
+    border-radius: 1vh;
+    margin-bottom: 0%;
+}
+
+.add button{
+    background-color: #134215;
+    display: flex;
+    margin-left: 10%;
+    border-color: none;
+    height: 3.5vh;
+    width: 78%;
+    border-radius:1vh;
+}
+
+.add button span{
+    display: flex;
+    margin-top: 1%;
+    margin-left: 30%;
+    color: white;
+     gap: 10px;
+}
+
+.container2{
+  margin-top: -4%;
+  display: flex;
+
+}
+
+.container2 input{
+ 
+    width: 36%;
+    height: 5vh;
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+    background-color: #9FD8A18C ;
+    border: none;
+}
+
+.container2 select{
+    width: 21%;
+     border-top-right-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+     background-color: #134215; 
+}
+
+#Cargos{
+    font-size: larger;
+    color: white;
+}
+
+.tabela-funcionarios {
+  margin-top: 2%;
+  width: 57%;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  
+}
+
+.tabela-funcionarios thead {
+  background-color: #1b5e20;
+  color: white;
+}
+
+.tabela-funcionarios th, 
+.tabela-funcionarios td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #8bc34a;
+}
+
+.tabela-funcionarios th:first-child,
+.tabela-funcionarios td:first-child {
+  text-align: center;
+  width: 40px;
+}
+
+.tabela-funcionarios tbody tr:hover {
+  background-color: #e8f5e9;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #388e3c;
+}
+
+.tabela-funcionarios tbody td {
+  color: #2e7d32;
+}
+
+.tabela-funcionarios tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.final{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-left: 7%; 
+    gap: 300px;
+    
+}
+
+#final1 button{    
+  
+    background-color: #134215;
+    border-color: none;
+    height: 3.5vh;
+    width: 600%;
+    border-radius:1vh;
+    width: 350%;
+}
+
+#final2 button{
+     
+    background-color: #134215;
+    border-color: none;
+    height: 3.5vh;
+    width: 350%;
+    border-radius:1vh;
+}
+
+
+.final span{
+     display: flex;
+     align-items: center;
+     margin-top: 1%;
+    margin-left: 30%;
+    color: white;
+     gap: 10px;
+}
