@@ -100,43 +100,45 @@ function calcular() {
     div_mensagem.innerHTML = '';
 
     // Captura os valores dos inputs e selects
-    var qtd_funcionarios = Number(input_funcionarios.value);
+    var qtd_funcionarios = Number(input_funcionario.value);
     // var salario = Number(input_salario.value);
-    var porte = select_porte.value;
+    var camara = Number(input_camara.value);
     var cenario = select_cenario.value;
 
     // Verifica se todos os campos foram preenchidos
-    if (!qtd_funcionarios || !porte || !cenario) {
+    if (!qtd_funcionarios || !camara || !cenario) {
         div_mensagem.innerHTML = '<p class="div-msg-erro"> Por favor, preencha todos os campos! </p>';
-    }
+    } else if (qtd_funcionarios <= 0 || camara <= 0 ) {
+        div_mensagem.innerHTML = '<p class="div-msg-erro"> Digite um valor acima de 0 para a quantidade de funcionarios e camâras. </p>'
+    } else {
 
-    // Define o número de câmeras de acordo com o porte da empresa
-    var num_camaras = 0;
-        if (porte == 'pequeno') {
-          num_camaras = 10;
-        } else if (porte == 'medio') {
-           num_camaras = 25;
-        } else if (porte == 'grande') {
-          num_camaras = 50;
-        }
+    // // Define o número de câmeras de acordo com o porte da empresa
+    // var num_camaras = 0;
+    //     if (porte >= 1 && porte <= 10 ){
+    //       num_camaras = porte;
+    //     } else if (porte > 10 && porte <= 25 ) {
+    //        num_camaras = porte;
+    //     } else if (porte > 25) {
+    //       num_camaras = porte;
+    //     }
 
     // Calcula o número de sensores e o custo de instalação
-    var num_sensores = num_camaras * 15;
+    var num_sensores = camara * 15;
     var custo_sensor_instalacao = (num_sensores / 5) * 100;
 
     // Define o percentual de funcionários afetados e o valor médio de indenização
     var percentual_funcionarios_afetados = 0;
-    var valor_medio_indemnizacao = 0;
+    var valor_medio_indenizacao = 0;
 
     if (cenario === 'baixo') {
         percentual_funcionarios_afetados = 0.02;
-        valor_medio_indemnizacao = 10000;
+        valor_medio_indenizacao = 10000;
     } else if (cenario === 'moderado') {
         percentual_funcionarios_afetados = 0.15;
-        valor_medio_indemnizacao = 50000;
+        valor_medio_indenizacao = 50000;
     } else if (cenario === 'grave') {
         percentual_funcionarios_afetados = 0.7;
-        valor_medio_indemnizacao = 200000;
+        valor_medio_indenizacao = 200000;
     }
 
     // Calcula o número de funcionários afetados
@@ -144,7 +146,7 @@ function calcular() {
     funcionarios_afetados = parseInt(funcionarios_afetados + 0.9999);
 
     // Calcula o custo total de indenizações
-    var custo_indenizacoes = funcionarios_afetados * valor_medio_indemnizacao;
+    var custo_indenizacoes = funcionarios_afetados * valor_medio_indenizacao;
 
     // Calcula a economia potencial ao instalar os sensores
     var economia_potencial = custo_indenizacoes - custo_sensor_instalacao;
@@ -164,4 +166,4 @@ function calcular() {
         </div>
         </div>
     `;
-}
+    }}

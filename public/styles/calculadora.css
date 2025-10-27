@@ -218,3 +218,7 @@ background-color: #003d02;
     font-weight: bold;
     font-size: 18px;
 }
+
+.pergunta input {
+    color:black;
+}
