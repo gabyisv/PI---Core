@@ -19,16 +19,20 @@
     justify-content: space-between;
     border-radius: 15px;
     position: fixed;
+    gap: 20px;
 
 }
 
-.logo-nav img{
+
+.logo-nav-lateral img{
     width: auto;
     height: 60px;
-    padding-bottom: 13px;
+    display: flex;
+
+
 }
 
-.logo-nav ul{
+.logo-nav-lateral ul{
     list-style-type: none;
     display: flex;
     padding-left: 20px;
@@ -39,13 +43,13 @@
 }
 
 
-.logo-nav li i{
+.logo-nav-lateral li i{
     color: #ffff;
     width: 35px;
 
 }
 
-.logo-nav ul a{
+.logo-nav-lateral ul a{
     color: #ffff;
     font-weight: 500;
     font-size: 15px;

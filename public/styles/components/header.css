@@ -8,11 +8,19 @@ header{
 
     
 }
+.logo{
+    display: flex;
+    align-items: flex-start;
+}
 
 .logo img{
-    width: auto;
-    height: 50px;
-    padding-bottom: 13px;
+    height: 40px;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 40px;
 }
 
 header nav ul{
