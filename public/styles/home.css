@@ -62,20 +62,138 @@ a {
 }
 
 /*Seção-01*/
-.sobre-nos {
-  background-color: #003d02;
-  height: 100vh;
+.section-controller{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #f3ffec;
+  padding: 70px;
 }
-.sobre-nos p {
-  color: #efffeb;
-  font-weight: 500;
-  width: 70%;
+.title-controller{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  font-weight: 400;
+}
+.container-controller{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+
+}
+.container-controller img{
+  max-width: 50%;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+}
+@media(min-width: 1440px){
+  .container-controller img{
+    width: 1000px;
+  }
+
+}
+
+.box-controller{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 40%;
+  gap: 40px;
+
+}
+/*ACCORDEÃO*/
+
+.box-controller button{
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #164A1B;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  transition: 1s;
+  
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+  font-weight: 600;
+  animation: subir 1.5s ease-in;
+}
+
+.panel-style {
+  display: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  font-weight: 400;
+}
+
+
+/*Section Efficiency*/
+.section-efficiency{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #134215;
+  padding: 12rem 5rem 12rem;
+    gap: 25px;
+}
+
+.container-efficiency{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  color: #ffff;
+
+
+}
+
+.container-efficiency span{
+  font-weight: 300;
+}
+
+.container-efficiency p{
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.container-efficiency h3{
+  font-size: 2rem;
+  font-weight: 200;
+  color: #ffff;
+}
+
+.button-efficiency {
+ display: flex;
+ gap: 50px;
+}
+.button-efficiency button{
+  color: #000000;
+  padding: 20px 50px 20px 50px;
+  border: none;
+  font-weight: 600;
+  background-color: #ffff;
+  border-radius: 25px;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 /*Seção-02*/
@@ -90,7 +208,7 @@ a {
   background-size: 80vh, cover;
   background-repeat: no-repeat;
   background-position: 110% 20%;
-  padding: 20px;
+  padding: 60px 20px 60px 20px;
 }
 .pilar {
   width: 100%;
@@ -234,7 +352,6 @@ a {
 .container-last {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   gap: 18rem;
 }
@@ -277,11 +394,14 @@ a {
 .img-mes img {
   width: 30vw;
   height: 20vw;
+  
 }
 .img-dia img {
   width: 27vw;
   height: 40vw;
   position: absolute;
   z-index: 1;
-  left: 50%;
+  left: 45%;
+  top: 40%;
 }
+

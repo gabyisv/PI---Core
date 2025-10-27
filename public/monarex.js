@@ -84,7 +84,7 @@ function login() {
     if (email != 'brandao61@gmail.com' || senha != 'Sptech@123') {
         msg.innerHTML = `E-mail ou senha incorreto.`
     } else {    
-        window.location.href = "index-brandao.html";
+        window.location.href = "informacoes.html";
     }
 
 }
@@ -184,7 +184,7 @@ const cth = document.getElementById("chart-horario");
             usePointStyle: true,
             pointStyle: 'circle',
             font: {
-              size: 8
+              size: 11
             }
           }
         }
@@ -277,7 +277,7 @@ const cth = document.getElementById("chart-horario");
             usePointStyle: true,
             pointStyle: 'circle',
             font: {
-              size: 8
+              size: 11
             }
           }
         }
@@ -310,13 +310,13 @@ const cth = document.getElementById("chart-horario");
   new Chart(cti, {
     type: "bar",
     data: {
-      labels: ["1"],
+      labels: [""],
       datasets: [
         {
           label: "Critíco",
           data: [10],
           borderWidth: 1,
-          backgroundColor: "#D67A7680",
+          backgroundColor: "#B3000099",
           borderColor: "#D67A7680",
           borderRadius: 50,
         },
@@ -324,7 +324,7 @@ const cth = document.getElementById("chart-horario");
           label: "Alerta",
           data: [7],
           borderWidth: 0,
-          backgroundColor: "#FFCF0080",
+          backgroundColor: "#FFCF0090",
           borderColor: "#FFCF0080",
           borderRadius: 50,
         },
@@ -332,9 +332,10 @@ const cth = document.getElementById("chart-horario");
           label: "Normal",
           data: [5],
           borderWidth: 0,
-          backgroundColor: "#9DDEFF80",
+          backgroundColor: "#005a9e99",
           borderColor: "#9DDEFF80",
           borderRadius: 50,
+
         }
       ],
     },
@@ -351,7 +352,7 @@ const cth = document.getElementById("chart-horario");
             usePointStyle: true,
             pointStyle: 'circle',
             font: {
-              size: 8
+              size: 11
             }
           }
         }
@@ -406,7 +407,7 @@ const cth = document.getElementById("chart-horario");
             usePointStyle: true,
             pointStyle: 'circle',
             font: {
-              size: 8
+              size: 11
             }
           }
         }

@@ -25,8 +25,11 @@
           <li><a class="index" href="#">Home</a></li>
           <li><a class="outros" href="./faleConosco.html">Fale Conosco</a></li>
           <li><a class="outros" href="./sobre.html">Sobre</a></li>
-          <li><a class="outros" href="./login.html">Entrar</a></li>
-          <li><a class="outros" href="./dashMes.html">dashMes</a></li>
+
+        </ul>
+        <ul>
+          <li> <a href="./login.html">Entrar</a></li>
+          <li><a href="./cadastro.html">Cadastrar</a></li>
         </ul>
       </nav>
     </header>
@@ -42,44 +45,63 @@
         </div>
 
         <div class="btn-hero">
-          <a href="./calculadora.html"><button>Simule Agora</button></a
-          ><button>Fale Conosco</button>
+          <a href="./calculadora.html"><button>Simule Agora</button></a 
+          ><a href="./faleConosco.html"><button>Fale Conosco</button></a>
         </div>
       </div>
     </section>
 
     <!--Seção-01-->
-    <section class="sobre-nos">
-      <h2 style="color: aliceblue">Conheça a Monarex</h2>
+    <section class="section-controller">
+      <div class="title-controller">
+        <p>SOLUÇÕES</p>
+        <h2>Controle o Vazamento de Amônia</h2>
+      </div>
+      <div class="container-controller">
+        <img src="./docs/section-controller-img.png" alt="">
+        <div class="box-controller">
+          <button onclick="estender_01()">ALERTAS CONSTANTES</button>
+          <div id="panel_1" class="panel-style" style="display: block;">
+            <p>O Monarex monitora os níveis de amônia em tempo real. Receba notificações imediatas no painel. Tenha o primeiro sinal de desvio, antes que se torne um risco para a produção ou para sua equipe.</p>
+            <a href="./calculadora.html">SIMULAR</a>
+          </div>
+          <button onclick="estender_02()">CORTE DE GASTOS</button>
+          <div id="panel_2" class="panel-style"style="display: none;" >
+            <p>Evite os custos invisíveis e os prejuízos de uma parada. Um pequeno vazamento não detectado desperdiça um recurso caro (amônia) e, pior, pode levar à perda de lotes inteiros de produção. O Monarex ajuda a otimizar a manutenção e a garantir a continuidade da sua operação.</p>
+          </div>
+          <button onclick="estender_03()">SEGURANÇA NO TRABALHO</button>
+          <div id="panel_3" class="panel-style">
+            <p>Proteja seu ativo mais valioso: sua equipe. A amônia é um gás de alto risco e a segurança dos colaboradores é inegociável. O Monarex atua como um vigilante 24/7, garantindo um ambiente de trabalho seguro e fornecendo os dados exatos para uma evacuação rápida em caso de emergência.</p>
+          </div>
+          <button onclick="estender_04()">GESTÃO DE AUDITORIA</button>
+          <div id="panel_4" class="panel-style">
+            <p>Esteja sempre preparado para uma auditoria. Nossa plataforma armazena e organiza todo o histórico de leituras dos sensores e eventos de alerta. Gere relatórios de conformidade (como os exigidos pela NR 36) com apenas um clique, provando o cumprimento das normas e evitando multas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p>
-        Somos a Core, uma empresa de tecnologia e inovação fundada por alunos da
-        São Paulo Tech School. Cuja missão é proteger vidas e operações na
-        indústria frigorífica, prevenindo acidentes através de monitoramento
-        inteligente e contínuo de amônia, garantindo segurança máxima para os
-        nossos clientes.
-      </p>
-      <p>
-        Para realizarmos isso, desenvolvemos a MonARex, uma solução IoT completa
-        para detecção precoce e análise preditiva de vazamentos de amônia em
-        frigoríficos. Nosso propósito é transformar a segurança operacional,
-        protegendo vidas através de dados inteligentes.
-      </p>
-      <p>
-        Nossa visão é ser a líder de pensamento em segurança para frigoríficos,
-        transformando a indústria ao prevenir incidentes em vez de apenas
-        remediá-los, protegendo simultaneamente pessoas e dados, e
-        potencializando as operações dos nossos clientes através da inteligência
-        de dados.
-      </p>
+    <section class="section-efficiency">
+      <div class="container-efficiency">
+        <span>EFICIÊNCIA</span>
+        <h3>Leve seu Frigorifíco ao próximo passo: </h3>
+        <p>Tenha controle da segurança com mais eficiência</p>
+      </div>
+      <div class="button-efficiency">
+        <a href="./calculadora.html"><button>SIMULAR</button></a>
+        <a href="./cadastro.html"><button>CADASTRAR</button></a>
+      </div>
     </section>
 
     <!--Seção-02-->
     <section class="nossos-pilares">
+      <div class="title-controller">
+        <p>VISÃO</p>
       <h3>
-        Na Core, atuamos com base em três pilares essenciais, sempre <br />
+        Na Monarex, atuamos com base em três pilares essenciais, sempre <br />
         com o foco na segurança, confiança e cuidado com seus dados.
       </h3>
+      </div>
       <div class="container-pilar">
         <div class="pilar">
           <img src="./docs/cifrao 1.png" alt="" />
@@ -112,7 +134,10 @@
     <!--Explicando os gráficos-->
 
     <section class="features">
-      <h2>Transforme <span>dados</span> em descisçoes inteligentes</h2>
+      <div class="title-controller">
+        <p style="color: #ffff;">DASHBOARD</p>
+        <h2>Transforme <span>dados</span> em descisçoes inteligentes</h2>
+      </div>
       <div class="container-features">
         <div id="chart-horario-css" class="chart-container">
           <div class="chart-titulo">
@@ -274,3 +299,52 @@
     <script src="monarex.js"></script>
   </body>
 </html>
+<script>
+
+  //Aqui ele ta buscando o elemento pelo nome da CLASSE na pagina do HTML
+
+  function estender_01(){
+    
+
+
+
+    if (panel_1.style.display == "block") {
+      panel_1.style.display = "none";
+    } else {
+      panel_1.style.display = "block";
+    }
+
+  }
+  function estender_02(){
+
+
+
+    if (panel_2.style.display == "block") {
+      panel_2.style.display = "none";
+    } else {
+      panel_2.style.display = "block";
+    }
+
+  }
+  function estender_03(){
+
+
+
+if (panel_3.style.display == "block") {
+      panel_3.style.display = "none";
+    } else {
+      panel_3.style.display = "block";
+    }
+  }
+  function estender_04(){
+
+
+
+    if (panel_4.style.display == "block") {
+      panel_4.style.display = "none";
+    } else {
+      panel_4.style.display = "block";
+    }
+  }
+
+</script>
