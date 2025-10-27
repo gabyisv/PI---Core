@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Monarex </title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="monarex.js"></script>
+</head>
+<body>
+    <div class="body-container">
+    <div class="left">
+        <div class="container-left">
+            <div class="image-left">
+                <img src="./docs/logo.png" alt="" class="logo">
+                <h1>Sensores de Amônia</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="container-right">
+            <h1> LOGIN </h1>
+            
+
+            <div class="login-input-container">
+
+                <div class="container-email container">
+                <label for=""> E-mail </label>
+                <input type="text" placeholder="Digite o seu E-mail" id="input_emailLogin">
+                
+                </div>
+
+                <div class="container-senha container">
+                <label for=""> Senha </label>
+                <input type="password" placeholder="Digite a sua senha" id="input_senhaLogin" >
+                </div>
+
+                <button class="button-login button" onclick="login()"> Entrar </button>
+                <div id="msg"></div>
+            </div>
+
+            <div class="login-text-container">
+                <a href="#"> Esqueceu a senha? </a>
+                <p>Não tem uma conta ainda?<a href="cadastro.html"> Cadastre-se</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

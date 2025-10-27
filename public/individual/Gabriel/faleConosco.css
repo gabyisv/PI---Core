@@ -1,0 +1,192 @@
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+body{
+   background-color: #fcfdf0;
+  height: 100vh;
+  display: flex;
+  
+}
+
+
+.img{
+    height: 650px;
+    background: 
+     linear-gradient(
+      to right, 
+      rgba(155, 207, 156, 0.95) 0%,   
+      rgba(155, 207, 156, 0.95) 50%, 
+      rgba(155, 207, 156, 0) 100%     
+    ),
+    url("https://static.vecteezy.com/ti/fotos-gratis/p2/1310644-close-up-de+-uma-pessoa-trabalhando-em-um-laptop-gratis-foto.jpg");
+
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+
+
+.botoes button {
+    background: none;          
+    border: none;                
+    appearance: none;            
+    color: white;                 
+    text-decoration: underline;  
+    cursor: pointer;             
+    font: inherit;               
+    padding: 0;                  
+    margin: 0;                   
+    font-size: 30px;
+    outline: none;            
+}
+
+
+
+.texto{
+
+    margin-top: 85px;
+    margin-left: 85px;
+  margin-bottom: 85px;
+}
+
+.texto h1{
+   font-size: 65px;
+   margin-bottom: 50px;
+   color: #043f07;
+   margin-bottom: 0%;
+    
+}
+.texto h2{
+    color: aliceblue;
+       margin-bottom: -50px;
+          margin-bottom: 40px;
+          font-size: 65px;
+          margin-top: 0%;
+          margin-bottom: 0%;
+         
+}
+.texto span{
+    margin-top: 0%;
+    margin-bottom: 0;
+    font-size: 21px;
+    font-weight: 400;
+    color: #134215;
+ 
+}
+
+
+.perguntas {
+    height: auto;
+    background-color: #fcfdf0; /*fcfdf0*/
+   display: flex;
+   flex-direction: column;
+   align-items: center; 
+   gap: 5px;
+   margin: 0 auto;
+   width: 100%;
+   height: 100%;
+}
+
+.pergunta {
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start; 
+   gap: 0;
+}
+
+.pergunta span {
+   background-color: green; 
+   color: white;
+   padding: 3px 15px;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   font-size: 15px;
+   width: 30%; 
+   text-align: left; 
+}
+.pergunta input::placeholder{
+  padding-left: 10px;
+}
+
+.pergunta input {
+   width: 50vw;
+   height: 5vh;
+   border: 3px solid green;
+   border-top-right-radius: 12px;  
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+   background-color: #fcfdf0;
+}
+
+#input_duvida{
+   width: 50vw;
+   height: 10vh;
+   border: 3px solid green;
+   border-top-right-radius: 12px;  
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+   background-color: #fcfdf0;
+}
+
+.pergunta{
+    margin-top: 2%;
+}
+
+/* 
+#duvida {
+
+      background-color: green; 
+   color: white;
+   padding: 10px 15px;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   font-size: 10px;
+   width: 250px; 
+   text-align: left; 
+
+    height: 100px;
+
+
+} */
+/* 
+
+
+
+#duvida input{
+  width: 350px;
+   height: 100px;
+   border: 3px solid green;
+   border-top-right-radius: 12px;  
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+   background-color: #fcfdf0;
+} */
+
+.perguntas button{
+   width: 20vw;
+   height: 5vh;
+   margin: 10px auto;
+   border: 3px solid #003d02;
+   border-top-right-radius: 12px;  
+   border-top-left-radius: 12px;  
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+   background-color:#003d02;
+   color: white;
+   cursor: pointer;
+}
+
+.perguntas button:hover{
+  color: #ffffff;
+    background-color: #051e06;
+    transition: all 0.3s ease;
+
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 5px  rgba(0, 0, 0, 0.068);
+}
+

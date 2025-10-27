@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="dashMes.html"></script>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://kit.fontawesome.com/eebdb6e4f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1"></script>
+  </head>
+  <body class="corpo-index">
+    <!--Header-->
+    <header>
+      <div class="logo">
+        <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      </div>
+      <!--Navegação-->
+      <nav>
+        <ul>
+          <li><a class="index" href="#">Home</a></li>
+          <li><a class="outros" href="./faleConosco.html">Fale Conosco</a></li>
+          <li><a class="outros" href="./sobre.html">Sobre</a></li>
+
+        </ul>
+        <ul>
+          <li> <a href="./login.html">Entrar</a></li>
+          <li><a href="./cadastro.html">Cadastrar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Banner-->
+    <section class="hero">
+      <div class="container-hero">
+        <div class="titulo-hero">
+          <h1>
+            Proteja o <span>coração</span> da<br />
+            sua operação!
+          </h1>
+        </div>
+
+        <div class="btn-hero">
+          <a href="./calculadora.html"><button>Simule Agora</button></a 
+          ><a href="./faleConosco.html"><button>Fale Conosco</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!--Seção-01-->
+    <section class="section-controller">
+      <div class="title-controller">
+        <p>SOLUÇÕES</p>
+        <h2>Controle o Vazamento de Amônia</h2>
+      </div>
+      <div class="container-controller">
+        <img src="./docs/section-controller-img.png" alt="">
+        <div class="box-controller">
+          <button onclick="estender_01()">ALERTAS CONSTANTES</button>
+          <div id="panel_1" class="panel-style" style="display: block;">
+            <p>O Monarex monitora os níveis de amônia em tempo real. Receba notificações imediatas no painel. Tenha o primeiro sinal de desvio, antes que se torne um risco para a produção ou para sua equipe.</p>
+            <a href="./calculadora.html">SIMULAR</a>
+          </div>
+          <button onclick="estender_02()">CORTE DE GASTOS</button>
+          <div id="panel_2" class="panel-style"style="display: none;" >
+            <p>Evite os custos invisíveis e os prejuízos de uma parada. Um pequeno vazamento não detectado desperdiça um recurso caro (amônia) e, pior, pode levar à perda de lotes inteiros de produção. O Monarex ajuda a otimizar a manutenção e a garantir a continuidade da sua operação.</p>
+          </div>
+          <button onclick="estender_03()">SEGURANÇA NO TRABALHO</button>
+          <div id="panel_3" class="panel-style">
+            <p>Proteja seu ativo mais valioso: sua equipe. A amônia é um gás de alto risco e a segurança dos colaboradores é inegociável. O Monarex atua como um vigilante 24/7, garantindo um ambiente de trabalho seguro e fornecendo os dados exatos para uma evacuação rápida em caso de emergência.</p>
+          </div>
+          <button onclick="estender_04()">GESTÃO DE AUDITORIA</button>
+          <div id="panel_4" class="panel-style">
+            <p>Esteja sempre preparado para uma auditoria. Nossa plataforma armazena e organiza todo o histórico de leituras dos sensores e eventos de alerta. Gere relatórios de conformidade (como os exigidos pela NR 36) com apenas um clique, provando o cumprimento das normas e evitando multas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-efficiency">
+      <div class="container-efficiency">
+        <span>EFICIÊNCIA</span>
+        <h3>Leve seu Frigorifíco ao próximo passo: </h3>
+        <p>Tenha controle da segurança com mais eficiência</p>
+      </div>
+      <div class="button-efficiency">
+        <a href="./calculadora.html"><button>SIMULAR</button></a>
+        <a href="./cadastro.html"><button>CADASTRAR</button></a>
+      </div>
+    </section>
+
+    <!--Seção-02-->
+    <section class="nossos-pilares">
+      <div class="title-controller">
+        <p>VISÃO</p>
+      <h3>
+        Na Monarex, atuamos com base em três pilares essenciais, sempre <br />
+        com o foco na segurança, confiança e cuidado com seus dados.
+      </h3>
+      </div>
+      <div class="container-pilar">
+        <div class="pilar">
+          <img src="./docs/cifrao 1.png" alt="" />
+          <p>
+            Oferecer tecnologia de ponta com simplicidade e custo acessível.
+          </p>
+        </div>
+        <div class="pilar" style="border-color: #2a862e">
+          <img src="./docs/aperto-de-mao 1.png" alt="" />
+          <p>
+            Ser a base precisa e confiável para a sua tomada de decisão crítica.
+          </p>
+        </div>
+        <div class="pilar" style="border-color: #2a862e">
+          <img src="./docs/cuidado 1.png" alt="" />
+          <p>
+            Zelar pelo bem-estar das pessoas e pela operação do seu negócio.
+          </p>
+        </div>
+        <div class="pilar">
+          <img src="./docs/escudo 1.png" alt="" />
+          <p>
+            Garantir a proteção máxima dos colaboradores contra vazamentos de
+            amônia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--Explicando os gráficos-->
+
+    <section class="features">
+      <div class="title-controller">
+        <p style="color: #ffff;">DASHBOARD</p>
+        <h2>Transforme <span>dados</span> em descisçoes inteligentes</h2>
+      </div>
+      <div class="container-features">
+        <div id="chart-horario-css" class="chart-container">
+          <div class="chart-titulo">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <p>Horários de Picos</p>
+          </div>
+          <canvas id="chart-horario"></canvas>
+        </div>
+        <div id="chart-incidente" class="chart-container">
+          <div class="chart-titulo">
+            <i class="fa-solid fa-chart-simple"></i>
+            <p>Incidentes</p>
+          </div>
+          <canvas id="chart-incidentes"></canvas>
+        </div>
+        <div class="conteudo-features">
+          <div class="titulo-features">
+            <p>Gráficos Construtivos</p>
+          </div>
+          <div class="texto-features">
+            <p>
+              Deixe a complexidade de lado. Nossa plataforma converte números e
+              métricas em visualizações claras e intuitivas, permitindo que você
+              entenda o cenário rapidamente. Acompanhe tendências, identifique
+              padrões e tome decisões baseadas em informações precisas, não em
+              suposições.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container-features">
+        <div class="conteudo-features">
+          <div class="titulo-features">
+            <p>Constantes</p>
+          </div>
+          <div class="texto-features">
+            <p>
+              Fique por dentro de tudo o que acontece, no momento em que
+              acontece. Nosso sistema de monitoramento inteligente classifica
+              cada evento por nível de importância, desde a normalidade até
+              alertas que exigem sua atenção e eventos críticos que demandam
+              ação imediata.
+            </p>
+          </div>
+        </div>
+        <section class="elementos-01">
+        <div class="status">
+          <div class="texto-status">
+            <div class="icone-status">
+              <i class="fa fa-refresh fa-2xs"></i>
+            </div>
+            <div class="titulo-status">
+              <p>Status</p>
+            </div>
+          </div>
+          <div class="saida-status">
+            <div class="icone-saida">
+              <i class="fa-solid fa-triangle-exclamation fa-xs"></i>
+            </div>
+            <div class="titulo-saida">
+              <p>Critíco</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status" id="normal">
+          <div class="texto-status">
+            <div class="icone-status">
+              <i class="fa fa-refresh fa-2xs"></i>
+            </div>
+            <div class="titulo-status">
+              <p>Status</p>
+            </div>
+          </div>
+          <div class="saida-status">
+            <div class="icone-saida">
+              <i class="fa-solid fa-circle-check fa-xs"></i>
+            </div>
+            <div class="titulo-saida">
+              <p>Normal</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status" id="alert">
+          <div class="texto-status">
+            <div class="icone-status">
+              <i class="fa fa-refresh fa-2xs"></i>
+            </div>
+            <div class="titulo-status">
+              <p>Status</p>
+            </div>
+          </div>
+          <div class="saida-status">
+            <div class="icone-saida">
+              <i class="fa-solid fa-exclamation fa-xs"></i>
+            </div>
+            <div class="titulo-saida">
+              <p>Alerta</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="last-section">
+      <div class="container-last">
+        <div class="conteudo-last">
+          <h3>Tudo isso em um único lugar!</h3>
+        <p>Clareza total. Controle Absoluto. Junte seus insghts e antecipe o futuro do seu negócio</p>
+          <div class="btn-hero">
+          <a href="./calculadora.html"><button>Simule Agora</button></a>
+        </div>
+      </div>
+        
+        <div class="img-mes"><img src="./docs/Dashboard-mes.png" alt="dashboard mes"></div>
+        <div class="img-dia"><img src="./docs/Dashboard Dia.png" alt="dashboard diario"></div>
+      </div>
+    </section>
+
+    <!--Footer-->
+
+    <footer>
+      <div class="container-footer">
+        <div class="redes-footer">
+          <p>Encontre a gente nas redes sociais</p>
+          <div class="imgs-footer">
+            <img src="./docs/instagram 1.png" alt="" />
+            <img src="./docs/whatsapp 1.png" alt="" />
+            <img src="./docs/facebook 1.png" alt="" />
+          </div>
+        </div>
+        <div class="explore-footer">
+          <p class="titulo-footer">Explore</p>
+          <p>Home</p>
+          <p>Serviços</p>
+        </div>
+        <div class="contato-footer">
+          <p class="titulo-footer">Endereço</p>
+          <p>
+            Rua Haddock Lobo 595, São Paulo,<br />
+            SP 01414-905
+          </p>
+          <br />
+          <p class="titulo-footer">Contato</p>
+          <p>monarex@gmail.com</p>
+          <p>+55 11 4002-8922</p>
+        </div>
+      </div>
+      <div class="direitos-footer">
+        <p>© 2025 Core. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="monarex.js"></script>
+  </body>
+</html>
+<script>
+
+  //Aqui ele ta buscando o elemento pelo nome da CLASSE na pagina do HTML
+
+  function estender_01(){
+    
+
+
+
+    if (panel_1.style.display == "block") {
+      panel_1.style.display = "none";
+    } else {
+      panel_1.style.display = "block";
+    }
+
+  }
+  function estender_02(){
+
+
+
+    if (panel_2.style.display == "block") {
+      panel_2.style.display = "none";
+    } else {
+      panel_2.style.display = "block";
+    }
+
+  }
+  function estender_03(){
+
+
+
+if (panel_3.style.display == "block") {
+      panel_3.style.display = "none";
+    } else {
+      panel_3.style.display = "block";
+    }
+  }
+  function estender_04(){
+
+
+
+    if (panel_4.style.display == "block") {
+      panel_4.style.display = "none";
+    } else {
+      panel_4.style.display = "block";
+    }
+  }
+
+</script>

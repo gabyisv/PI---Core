@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./styles/style.css" />
   <script src="https://kit.fontawesome.com/eebdb6e4f5.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1"></script>
 
   <title>Document</title>
 </head>
 
-<body>
+<body class="Dashboard">
   <nav class="menu-nav">
-    <div class="logo-nav">
+    <div class="logo-nav-lateral">
       <a href="./index.html"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      <div class="menu-container">
       <ul>
         <li>
           <a href="./dashMes.html"><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
@@ -23,12 +25,16 @@
           <a href="#"><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
         </li>
         <li>
-          <a href="./funcionarios.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
+          <a href="./telaFunc.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
         </li>
         <li>
           <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
         </li>
+        <li>
+            <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
+          </li>
       </ul>
+      </div>
     </div>
 
     <div class="sair-nav">
@@ -37,7 +43,7 @@
     </div>
   </nav>
 
-  <div class="cabecalho-mensal" style="margin-left: 245px; margin-right: 10px;">
+  <div id class="cabecalho-mensal" style="margin-left: 245px; margin-right: 20px; margin-top: 5px;">
         <h1>Dashboard <span>Diário</span></h1>
         <div class="imagem-cabecalho">
           <i class="fa-solid fa-bell"></i>
@@ -51,6 +57,30 @@
     
 
     <section class="section-graphic">
+      <div class="container-row">
+    <div class="container-status-sensor">
+      <div class="flex-row-box">
+        <img src="./docs/Vector (3).png" alt="">
+        <p>Status</p>
+      </div>
+      <div class="flex-row-box-status">
+        <img src="./docs/Vector (4).png" alt="">
+        <p>Normal</p>
+      </div>
+    </div>
+
+    <div class="container-leak-camara">
+      <div class="flex-row-box">
+      <p> Câmaras com Vazamentos </p>
+      </div>
+      <div class="box-style-leak">
+        <p> Câmara 01</p>
+      </div>
+      <div class="box-style-leak-color">
+        <p> Câmara 02</p>
+      </div>
+    </div>
+    </div>
     <div class="container-camara">
       <div class="camara-text">
         <p> Selecione a Câmara </p>
@@ -85,71 +115,49 @@
           <option value="sensor-03">Sensor 03</option>
           <option value="sensor-04">Sensor 04</option>
           <option value="sensor-05">Sensor 05</option>
-          <option value="sensor-06">Sensor 06</option>
-          <option value="sensor-07">Sensor 07</option>
-          <option value="sensor-08">Sensor 08</option>
-          <option value="sensor-09">Sensor 09</option>
-          <option value="sensor-10">Sensor 10</option>
-          <option value="sensor-11">Sensor 11</option>
-          <option value="sensor-12">Sensor 12</option>
-          <option value="sensor-13">Sensor 13</option>
-          <option value="sensor-14">Sensor 14</option>
-          <option value="sensor-15">Sensor 15</option>
         </select>
       </div>
     </div>
+    <section class="elementos-01">
+     <div
+          class="chart-container"
+          
+        >
+          <div class="chart-titulo">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <p>Horários de Picos</p>
+          </div>
+          <canvas id="chart-horario"></canvas>
+        </div>
 
-    <div class="container-graphic-div-line">
-      <div class="flex-row-box">
-        <img src="./docs/mage_hour-glass-fill.png" alt="">
-        <p> Horários de Picos </p>
-      </div>
-      <div class="graphic-div graphic-line">
-        <canvas id="myChart"></canvas>
-      </div>
-    </div>
-
-    <div class="container-graphic-div-radar">
-      <div class="flex-row-box">
-        <p> Mapa de Calor da Câmara </p>
-      </div>
-      <div class="graphic-div graphic-radar">
-        <canvas id="radar"></canvas>
-      </div>
-    </div>
+    </section>
   </section>
 
-  <section class="section-info">
-    <div class="container-ppm">
-      <div class="flex-row-box">
-        <img src="./docs/Vector.png" alt="">
-        <p> PPM </p>
-      </div>
-
-      <div class="container-box-value">
-        <div class="box-value">
-          <div class="flex-row-box">
-            <img src="./docs/Vector (1).png" alt="">
-            <p> Atual </p>
+  <section class="section-diaria">
+    
+    <div id="container-ppm-diaria" class="ppm-container">
+          <div class="titulo-ppm">
+            <i class="fa-solid fa-atom"></i>
+            <p>PPM</p>
           </div>
-          <p> 01 </p>
-        </div>
-        <div class="box-value">
-          <div class="flex-row-box">
-            <img src="./docs/Group.png" alt="">
-            <p>Média</p>
+          <div class="card">
+            <div class="card-ppm">
+              <p><span class="saida-ppm">02</span></p>
+              <p>Último</p>
+              
+            </div>
+            <div class="card-ppm">
+              <p><span class="saida-ppm">11</span></p>
+              <p>Média</p>
+              
+            </div>
+            <div class="card-ppm">
+              <p><span class="saida-ppm">18</span></p>
+              <p>Máximo</p>
+              
+            </div>
           </div>
-          <p> 03 </p>
         </div>
-        <div class="box-value">
-          <div class="flex-row-box">
-            <img src="./docs/Vector (2).png" alt="">
-            <p>Máximo</p>
-          </div>
-          <p> 06 </p>
-        </div>
-      </div>
-    </div>
 
     <div class="container-table">
       <div class="flex-row-box">
@@ -201,202 +209,23 @@
             <td>00:00:00</td>
             <td>00:00:00</td>
           </tr>
-          <tr class="tr02">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr01">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr02">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr01">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr02">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr01" >
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr02">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr01">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr02">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
-          <tr class="tr01">
-            <td>01</td>
-            <td>Normal</td>
-            <td>02</td>
-            <td>00:00:00</td>
-            <td>00:00:00</td>
-          </tr>
+    
         </tbody>
-      </table>
+        
+      </table><div class="final-table"></div>
     </div>
 
-    <div class="container-row">
-    <div class="container-status-sensor">
-      <div class="flex-row-box">
-        <img src="./docs/Vector (3).png" alt="">
-        <p>Status</p>
-      </div>
-      <div class="flex-row-box-status">
-        <img src="./docs/Vector (4).png" alt="">
-        <p>Normal</p>
-      </div>
-    </div>
-
-    <div class="container-leak-camara">
-      <div class="flex-row-box">
-      <p> Câmaras com Vazamentos </p>
-      </div>
-      <div class="box-style-leak">
-        <p> Câmara 01</p>
-      </div>
-      <div class="box-style-leak-color">
-        <p> Câmara 02</p>
-      </div>
-    </div>
-    </div>
+    
 
   </div>
   </section>
   </div>
-  
+
+
+  <script src="monarex.js"></script>
 </body>
 
 </html>
 
-<script>
 
-  const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['00:00', '05:00', '10:00', '15:00', '20:00', '23:00'],
-      datasets: [{
-        label: 'Horários de Pico',
-        data: [1, 5, 8, 10, 12, 15, 18, 20, 21, 23, 25, 27, 28, 30, 32, 33, 31, 29, 26, 24, 22, 21, 20, 18],
-        pointRadius: 0,
-        backgroundColor: '#4CAF50',
-        borderColor: '#4CAF50',
-        tension: 0.2
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-
-  });
-
-
-  const ctxRadar = document.getElementById('radar');
-
-
-  const data = {
-    labels: [
-      'Sensor 01',
-      'Sensor 02',
-      'Sensor 03',
-      'Sensor 04',
-      'Sensor 05',
-      'Sensor 06',
-      'Sensor 07',
-      'Sensor 08',
-      'Sensor 09',
-      'Sensor 10',
-      'Sensor 11',
-      'Sensor 12',
-      'Sensor 13',
-      'Sensor 14',
-      'Sensor 15'
-    ],
-    datasets: [{
-      label: 'Vazamento! Alto Risco',
-      data: [70, 60, 30, 0, 0, 0, 0, 0, 0, 0, 48, 60, 60, 70, 80],
-      fill: true,
-      backgroundColor: '#c00505',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    }, {
-      label: 'Risco Moderado',
-      data: [80, 80, 50, 40, 20, 10, 20, 20, 30, 30, 60, 70, 95, 100, 100],
-      fill: true,
-      backgroundColor: '#eeff03a1',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(54, 162, 235)'
-    },
-    {
-      label: 'Risco Baixo',
-      data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
-      fill: true,
-      backgroundColor: '#09971c86',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(54, 162, 235)'
-    }
-    ]
-  };
-
-  const config = {
-    type: 'radar',
-    data: data,
-    options: {
-      elements: {
-        line: {
-          borderWidth: 3
-        }
-      }
-    },
-  };
-
-  new Chart(ctxRadar, config);
-
-</script>
+  
