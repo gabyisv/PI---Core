@@ -262,6 +262,39 @@
       </div>
     </section>
 
+
+
+
+    
+  <section class="features-perguntas perguntas-section">
+
+    <h1>Ficou Alguma Dúvida?</h1>
+    <br>
+    <h2> Entre em contato com a nossa equipe! </h2>
+
+    <div class="perguntas" id="pergunta_tela">
+
+      <div class="pergunta">
+        <span>Nome:</span>
+        <input type="text" id="input_nome" placeholder="Digite aqui...">
+      </div>
+
+      <div class="pergunta">
+        <span>Email:</span>
+        <input type="text" id="input_nome" placeholder="Digite aqui...">
+      </div>
+
+      <div class="pergunta">
+        <span>Sugestão/Dúvida</span>
+        <input type="text" id="input_duvida" placeholder="Digite aqui...">
+      </div>
+      <button onclick="enviar()"><span>Enviar</span></button>
+      <div id="msg_pergunta_tela" style="display :none;">
+        <p class="msg-pergunta" > Mensagem enviada com Sucesso! </p>
+      </div>
+    </div>
+    </section>
+
     <!--Footer-->
 
     <footer>
@@ -302,6 +335,10 @@
 <script>
 
   //Aqui ele ta buscando o elemento pelo nome da CLASSE na pagina do HTML
+
+  function enviar(){
+    msg_pergunta_tela.style.display = "block"
+  }
 
   function estender_01(){
     
