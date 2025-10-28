@@ -1,3 +1,4 @@
+
 function cadastrar() {
 
     var razao = input_razaoEmpresa.value
@@ -77,6 +78,7 @@ function login() {
     var email = input_emailLogin.value
     var senha = input_senhaLogin.value
 
+
     if (email == '' ||senha == '') {
         alert('Preencha todos os Campos!')
     } 
@@ -85,7 +87,9 @@ function login() {
         msg.innerHTML = `E-mail ou senha incorreto.`
     } else {    
         window.location.href = "informacoes.html";
-    }
+        validacaoLogin = true
+        
+    } 
 
 }
 
@@ -417,3 +421,20 @@ const cth = document.getElementById("chart-horario");
     },
   });
 
+
+
+
+
+  //FUNÇÃO VAZAMENTO
+
+  function vazar(){
+    
+    if (alertaCaixa.style.display == "block") {
+      alertaCaixa.style.display = "none";
+    } else {
+      alertaCaixa.style.display = "block";
+    }
+  }
+  function fecharVazamento(){
+      alertaCaixa.style.display = "none";
+  }

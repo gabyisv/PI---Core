@@ -251,11 +251,19 @@ table {
   gap: 12px;
   margin-top: 5px;
   background-color: #005a9e;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
+  color: #fff ;
+  
   padding: 5px;
   border-radius: 12px;
+}
+
+.flex-row-box-status button{
+  background-color: #003d0200;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffff;
+  cursor: pointer;
 }
 .container-leak-camara {
   background-color: #ebf4eb;

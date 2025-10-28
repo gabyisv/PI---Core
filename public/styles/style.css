@@ -21,6 +21,7 @@
 @import url('./components/footer.css');
 @import url('./components/header.css');
 @import url('./components/navLateral.css');
+@import url('./components/alertaEstilo.css');
 
 /*Páginas*/
 @import url('./home.css');

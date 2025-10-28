@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/style.css">
-  <title>Dashboard</title>
+  <title>Calculadora Financeira</title>
   <script src="calculadora.js"></script>
 </head>
 
@@ -13,20 +13,23 @@
 
   <!--Header-->
   <header>
-    <div class="logo">
-      <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo"></a>
-    </div>
-    <!--Navegação-->
-    <nav>
-      <ul>
-        <li><a class="index" href="#">Home</a></li>
-        <li><a class="outros" href="./faleConosco.html">Fale Conosco</a></li>
-        <li><a class="outros" href="./sobre.html">Sobre</a></li>
-        <li><a class="outros" href="./login.html">Entrar</a></li>
-        <li><a class="outros" href="./dashMes.html">dashMes</a></li>
-      </ul>
-    </nav>
-  </header>
+      <div class="logo">
+        <a href="#"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      </div>
+      <!--Navegação-->
+      <nav>
+        <ul>
+          <li><a class="outros" href="./index.html">Home</a></li>
+          <li><a class="outros" href="./sobre.html">Sobre</a></li>
+          <li><a class="index" href="#">Calculadora</a></li>
+
+        </ul>
+        <ul>
+          <li> <a href="./login.html">Entrar</a></li>
+          <li><a href="./cadastro.html">Cadastrar</a></li>
+        </ul>
+      </nav>
+    </header>
   <div class="titulo-header">
     <img src="./docs/streamline-ultimate_cash-search-bold.png" alt="">
     <h1>Simulador Financeiro</h1>
@@ -43,41 +46,25 @@
             falhas!</h1>
         </div>
 
-
-
         <div class="container-pergunta">
           <div class="row-pergunta">
             <div class="pergunta">
-              <span>Selecione o porte da sua empresa:</span>
-              <select id="select_porte">
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="pequeno">Pequeno (Até 10 câmaras frias)</option>
-                <option value="medio">Médio (11 a 30 câmaras frias)</option>
-                <option value="grande">Grande (Mais de 30 câmaras frias)</option>
-              </select>
+              <span>Digite o número de câmaras:</span>
+              <input type="text" id="input_camara">
             </div>
 
-
             <div class="pergunta">
-              <span>Quantidade de funcionários na área de refrigeração:</span>
-              <input type="text" id="input_funcionarios" placeholder="Número de funcionários" />
+              <span>Digite a área da camara em metros quadrados:</span>
+              <input type="text" id="input_area_camara">
             </div>
           </div>
 
-          <!-- <div class="row-pergunta">
-            <div class="pergunta">
-              <span>Idade média dos funcionários:</span>
-              <input type="text" id="input_idade" placeholder="Idade média" />
-            </div>
-
-
-            <div class="pergunta">
-              <span>Salário médio dos funcionários (R$):</span>
-              <input type="text" id="input_salario" placeholder="Salário médio" />
-            </div>
-          </div> -->
-
           <div class="row-pergunta">
+            <div class="pergunta">
+              <span>Quantidade de funcionários na área de refrigeração:</span>
+              <input type="text" id="input_funcionario" placeholder="Número de funcionários" />
+            </div>
+
             <div class="pergunta">
               <span>Selecione o cenário do acidente:</span>
               <select id="select_cenario">
@@ -87,18 +74,16 @@
                 <option value="grave">Grave impacto</option>
               </select>
             </div>
-
-
-            <button onclick="calcular()" class="button-calcular">Calcule agora</button>
           </div>
+          <button onclick="calcular()" class="button-calcular">Calcule agora</button>
         </div>
       </div>
-
-
-
     </div>
+
     <div id="div_mensagem"> </div>
+
   </div>
+
   <div class="container-card-calculadora">
     <div class="card-calculadora">
       <div class="card-conteudo">
@@ -136,5 +121,4 @@
 
 
 </body>
-
 </html>

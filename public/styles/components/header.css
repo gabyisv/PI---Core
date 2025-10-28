@@ -20,6 +20,7 @@ header nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 65px;
     padding-right: 40px;
 }
 
@@ -34,4 +35,16 @@ header nav ul a{
     text-decoration: none;
     font-weight: 500;
     color: #F3FFEC;
+}
+#lia{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#img-perfil-home{
+    border-radius: 50px;
+    width: 50px;
+    
 }

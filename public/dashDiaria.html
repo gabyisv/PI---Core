@@ -50,6 +50,27 @@
           <a href="./perf.html"><img src="./docs/fernando-brandao-icon.jpg" alt="" /></a>
         </div>
     </div>
+
+    <!--Vazamento-->
+    <div class="alerta_caixa" id="alertaCaixa" style="display: none;">
+        <button onclick="fecharVazamento()" class="botao_fechar" id="fecharBotao">×</button>
+
+        <div class="alerta_icon">
+            <img class="imagem_alerta" src="./docs/imagens-saida.png" alt="alerta de imagem">
+        </div>
+
+        <div class="alerta_titulo">
+            ALERTA DE VAZAMENTO
+        </div>
+
+        <div class="alerta_texto">
+            Sensor 01 reportou dados na Câmara 01.
+        </div>
+
+        <button class="alerta_botao" id="alertaBotao"><a href="./dashMes.html">VER DETALHES <img src="./docs/iconamoon_enter.png" alt="ver detalhes"></a>
+            
+        </button>
+    </div>
   
   
   <div class="container-dashboard-content">
@@ -65,7 +86,7 @@
       </div>
       <div class="flex-row-box-status">
         <img src="./docs/Vector (4).png" alt="">
-        <p>Normal</p>
+        <button onclick="vazar()"><p>Normal</p></button>
       </div>
     </div>
 
@@ -98,14 +119,13 @@
         </select>
 
         <select name="#" id="#" class="temp-select">
-          <option value="#" disabled selected> Selecione </option>
+          <option value="#" disabled selected> Selecione o Horário</option>
+          <option value="0">Atual</option>
           <option value="24-horas">Últimas 24 horas</option>
-          <option value="7-dias">Últimos 7 dias</option>
-          <option value="30-dias">Últimos 30 dias</option>
-          <option value="mes-atual">Mês Atual</option>
-          <option value="mes-anterior">Mês Anterior</option>
-          <option value="ano-atual">Ano Atual</option>
-          <option value="ano-anterior">Ano Anterior</option>
+          <option value="7-dias">Últimas 12 horas</option>
+          <option value="30-dias">Últimas 6 horas</option>
+          <option value="mes-atual">Últimas 3 horas</option>
+
         </select>
 
         <select name="#" id="#" class="sensor-select">

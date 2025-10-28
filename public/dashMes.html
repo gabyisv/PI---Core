@@ -45,13 +45,34 @@
       </div>
     </nav>
 
+    <!--Vazamento-->
+    <div class="alerta_caixa" id="alertaCaixa" style="display: none;">
+        <button onclick="fecharVazamento()" class="botao_fechar" id="fecharBotao">×</button>
+
+        <div class="alerta_icon">
+            <img class="imagem_alerta" src="./docs/imagens-saida.png" alt="alerta de imagem">
+        </div>
+
+        <div class="alerta_titulo">
+            ALERTA DE VAZAMENTO
+        </div>
+
+        <div class="alerta_texto">
+            Sensor 01 reportou dados na Câmara 01.
+        </div>
+
+        <button class="alerta_botao" id="alertaBotao"><a href="./dashDiaria.html">VER DETALHES <img src="./docs/iconamoon_enter.png" alt="ver detalhes"></a>
+
+    </div>
+
+
     <div class="container-dashboard">
       <!--Cabecalho-->
       <div class="cabecalho-mensal">
         <h1>Dashboard <span>Mensal</span></h1>
         <div class="imagem-cabecalho">
           <i class="fa-solid fa-bell"></i>
-          <a href=""><img src="./docs/fernando-brandao-icon.jpg" alt="" /></a>
+          <a href="./perf.html"><img src="./docs/fernando-brandao-icon.jpg" alt="" /></a>
         </div>
       </div>
 
@@ -64,9 +85,10 @@
         <p>Status</p>
       </div>
       <div class="flex-row-box-status" style="background-color: #B30000;">
-    <i class="fa-solid fa-triangle-exclamation fa-xs"></i>
+    <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
 
-        <p>Critíco</p>
+        
+        <button onclick="vazar()"><p>Critíco</p></button>
       </div>
     </div>
 
@@ -90,6 +112,7 @@
             <i class="fa-solid fa-caret-down"></i>
           </select>
         </div>
+        
 
         <!-- PPM -->
         <div class="ppm-container">
