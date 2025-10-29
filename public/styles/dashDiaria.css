@@ -195,10 +195,11 @@ table {
   margin: 12px 0 0 0;
   border-radius: 20px;
   width: 100%;
+  
 }
 
 .container-table .flex-row-box p {
-  padding: 12px;
+  padding: 10px;
 }
 
 .header-table th {

@@ -144,11 +144,13 @@ const cth = document.getElementById("chart-horario");
     ],
     datasets: [
       {
+        
         label: "Horário de Pico",
         data: [
           2, 1, 8, 5, 6, 5, 0, 5, 5, 0, 1, 6, 5, 0, 5, 9, 0, 8, 5, 5, 4, 1, 3,
           0,
         ],
+        hoverOffset: 4,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
         tension: 0.1,
@@ -320,7 +322,7 @@ const cth = document.getElementById("chart-horario");
           label: "Critíco",
           data: [10],
           borderWidth: 1,
-          backgroundColor: "#B3000099",
+          backgroundColor: "#",
           borderColor: "#D67A7680",
           borderRadius: 50,
         },
@@ -391,10 +393,11 @@ const cth = document.getElementById("chart-horario");
       labels: ["Seguro", "Moderado", "Critico"],
       datasets: [
         {
-          label: "My First Dataset",
-          data: [300, 50, 100],
-          backgroundColor: ["#134215", "#2A862E", "#9FD8A1"],
+          label: "Percentual  ",
+          data: [250, 40, 70],
+          backgroundColor: ["#9DDEFF80", "#FFCF0090", "#B3000099"],
           hoverOffset: 4,
+          borderColor: "#ebf4eb"
         },
       ],
     },
