@@ -77,15 +77,22 @@ a {
 }
 .container-controller{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   justify-content: space-around;
   gap: 20px;
   padding: 20px;
 
 }
-.container-controller img{
-  max-width: 35%;
+
+.container-controller-img{
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+}
+
+.container-controller .container-controller-img img{
+  max-width: 70%;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
 
@@ -131,7 +138,7 @@ a {
   outline: none;
   font-size: 15px;
   transition: 1s;
-  
+
 }
 
 .active, .accordion:hover {
@@ -146,6 +153,21 @@ a {
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
   font-weight: 400;
+  padding-bottom: 20px;
+  gap: 50px;
+   transition: max-height 0.2s ease-out;  
+}
+
+.btn-panel{
+  width: 100%;
+  margin-top: 30px;
+}
+.panel-style .btn-panel a{
+  background-color: #000f01;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
 }
 
 
@@ -199,6 +221,16 @@ a {
   border-radius: 25px;
   font-size: 12px;
   cursor: pointer;
+}
+.button-efficiency button:hover{
+   color: #ffffff;
+    background-color: #19631b;
+    transition: all 0.3s ease;
+
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 5px  rgba(0, 0, 0, 0.068);
 }
 
 /*Seção-02*/
