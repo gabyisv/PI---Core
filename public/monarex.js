@@ -83,7 +83,7 @@ function login() {
         alert('Preencha todos os Campos!')
     } 
     
-    if (email != 'brandao61@gmail.com' || senha != 'Sptech@123') {
+    if (email != 'brandao@gmail.com' || senha != 'Sptech@123') {
         msg.innerHTML = `E-mail ou senha incorreto.`
     } else {    
         window.location.href = "informacoes.html";
