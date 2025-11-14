@@ -180,3 +180,18 @@ body {
 input {
     color: white;
 }
+
+#cadastro_empresa {
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+}
+
+#cadastro_empresa button{
+
+    width: 100%;
+}

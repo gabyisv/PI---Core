@@ -19,25 +19,25 @@
     </div>
 
     <div class="right">
-        <div class="container-right">
+        <div id="cadastro_supervisor" class="container-right">
             <h1> CADASTRO </h1>
 
             <div class="cadastro-input-container">
 
                 <div class="container-nome container">
-                <label for=""> Razão Social</label>
-                <input type="text" placeholder="Digite a razão social da sua empresa" id="input_razaoEmpresa">
+                <label for=""> Nome</label>
+                <input type="text" placeholder="Digite o seu nome" id="input_nomeSupervisor">
+                </div>
+
+                <div class="container-nome container">
+                <label for=""> Sobrenome</label>
+                <input type="text" placeholder="Digite o seu nome" id="input_nomeSupervisor">
                 </div>
 
                 <div class="container-email container">
                 <label for=""> E-mail </label>
                 <input type="text" placeholder="Digite o seu E-mail" id="input_email" oninput="email()">
                 <div id="msg"></div>
-                </div>
-
-                <div class="container-cnpj container">
-                <label for=""> CNPJ </label>
-                <input type="text" placeholder="Digite o CNPJ da empresa" id="input_cnpj" maxlength="14" oninput="cnpj()">
                 </div>
 
                 <div class="container-senha container">
@@ -53,14 +53,49 @@
                 <div id="msgConfirm"></div>
                 </div>
 
-                <button class="button-cadastro button" onclick="cadastrar()"> Cadastrar </button>
+                <button class="button-cadastro button" onclick="proxima()"> Cadastrar </button>
             </div>
 
-            <div class="cadastro-text-container">
+            <div id="cadastro-empresa" class="cadastro-text-container">
                 <p>Já é cadastrado? <a href="login.html"> Logue Aqui </a></p>
             </div>
+        </div>
+
+        
+             <div id="cadastro_empresa" class="cadastro-input-container" style="display: none;">
+
+                <h1>CADASTRO DA EMPRESA</h1>
+
+                <div class="container-cnpj container">
+                <label for=""> Razão Social </label>
+                <input type="text" placeholder="Digite a razão social da empresa" id="input_razaoEmpresa" maxlength="14" oninput="cnpj()">
+                </div>
+
+                <div class="container-cnpj container">
+                <label for=""> CNPJ </label>
+                <input type="text" placeholder="Digite o CNPJ da empresa" id="input_cnpj" maxlength="14" oninput="cnpj()">
+                </div>
+
+                <button class="button-cadastro button" onclick="cadastrar()"> Cadastrar </button>
+
+            
         </div>
     </div>
     </div>
 </body>
 </html>
+
+<script>
+
+    function proxima(){
+
+        cadastro_supervisor.style.display = "none";
+
+        cadastro_empresa.style.display = "flex";
+
+    }
+
+
+    function cadastrar(){}
+
+</script>
