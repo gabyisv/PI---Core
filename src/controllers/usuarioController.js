@@ -24,6 +24,7 @@ function autenticar(req, res) {
                                         nomeUsuario: resultadoAutenticar[0].nomeUsuario,
                                         sobrenomeUsuario: resultadoAutenticar[0].sobrenomeUsuario,
                                         senhaUsuario: resultadoAutenticar[0].senhaUsuario
+                                        
                                     });
                                 } 
                         else if (resultadoAutenticar.length == 0) {
@@ -49,6 +50,9 @@ function cadastrar(req, res) {
     var sobrenome = req.body.sobrenomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var razao = req.body.razaoServer;
+    var cnpj = req.body.cnpjServer;
+    
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -63,7 +67,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, sobrenome, email, senha)
+        usuarioModel.cadastrar(nome, sobrenome, email, senha, razao, cnpj)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -81,7 +85,41 @@ function cadastrar(req, res) {
     }
 }
 
+// function cadastrarEmpresas(req, res) {
+//     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+//     var cnpj = req.body.cnpjServer;
+//     var razao = req.body.razaoServer;
+  
+
+//     // Faça as validações dos valores
+//     if (razao == undefined) {
+//         res.status(400).send("Sua razao está undefined!");
+//     }
+//     else if (cnpj == undefined) {
+//         res.status(400).send("Seu cnpj está undefined!");
+//     } else {
+
+//         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+//         usuarioModel.cadastrarEmpresas(cnpj, razao)
+//             .then(
+//                 function (resultado) {
+//                     res.json(resultado);
+//                 }
+//             ).catch(
+//                 function (erro) {
+//                     console.log(erro);
+//                     console.log(
+//                         "\nHouve um erro ao realizar o cadastro! Erro: ",
+//                         erro.sqlMessage
+//                     );
+//                     res.status(500).json(erro.sqlMessage);
+//                 }
+//             );
+//     }
+// }
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    // cadastrarEmpresas
 }

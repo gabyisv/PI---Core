@@ -1,102 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Monarex </title>
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Monarex</title>
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="monarex.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="body-container">
-    <div class="left">
+      <div class="left">
         <div class="container-left">
-            <div class="image-left">
-                <img src="./docs/logo.png" alt="" class="logo">
-                <h1>Sensores de Amônia</h1>
-            </div>
+          <div class="image-left">
+            <img src="./docs/logo.png" alt="" class="logo" />
+            <h1>Sensores de Amônia</h1>
+          </div>
         </div>
+      </div>
+
+      <div class="right">
+        <div
+          style="display: none"
+          id="cadastro_supervisor"
+          class="container-right"
+        >
+          <h1>CADASTRO</h1>
+
+          <div class="cadastro-input-container">
+            <div class="container-nome container">
+              <label for=""> Nome</label>
+              <input
+                type="text"
+                placeholder="Digite o seu nome"
+                id="nome_input"
+              />
+            </div>
+
+            <div class="container-nome container">
+              <label for=""> Sobrenome</label>
+              <input
+                type="text"
+                placeholder="Digite o seu nome"
+                id="input_sobrenome"
+              />
+            </div>
+
+            <div class="container-email container">
+              <label for=""> E-mail </label>
+              <input
+                type="text"
+                placeholder="Digite o seu E-mail"
+                id="email_input"
+              />
+              <div id="msg"></div>
+            </div>
+
+            <div class="container-senha container">
+              <label for=""> Senha </label>
+              <input
+                type="password"
+                placeholder="Crie uma senha forte"
+                id="senha_input"
+              />
+              <div id="msgsenha"></div>
+              <p class="text-pass">
+                Na senha tem que haver ao menos 1 caracter especial, 1 letra
+                maiúscula e 1 número
+              </p>
+            </div>
+
+            <div class="container-senha container">
+              <label for=""> Confirme a sua Senha </label>
+              <input
+                type="password"
+                placeholder="Repita a senha criada"
+                id="confirmacao_senha_input"
+              />
+              <div id="msgConfirm"></div>
+            </div>
+
+            <button class="button-cadastro button" onclick="cadastrar()">
+              Cadastrar
+            </button>
+          </div>
+
+          <div id="mensagem_erro"></div>
+          <div id="cadastro-empresa" class="cadastro-text-container">
+            <p>Já é cadastrado? <a href="login.html"> Logue Aqui </a></p>
+          </div>
+        </div>
+
+        <div
+          id="cadastro_empresa"
+          class="cadastro-input-container"
+          style="display: flex"
+        >
+          <h1>CADASTRO DA EMPRESA</h1>
+
+          <div class="container-cnpj container">
+            <label for=""> Razão Social </label>
+            <input
+              type="text"
+              placeholder="Digite a razão social da empresa"
+              id="input_razaoEmpresa"
+              maxlength="14"
+              oninput="cnpj()"
+            />
+          </div>
+
+          <div class="container-cnpj container">
+            <label for=""> CNPJ </label>
+            <input
+              type="text"
+              placeholder="Digite o CNPJ da empresa"
+              id="input_cnpj"
+              maxlength="14"
+              oninput="cnpj()"
+            />
+          </div>
+
+          <button class="button-cadastro button" onclick="testeStorage()">
+            Cadastrar
+          </button>
+        </div>
+      </div>
     </div>
-
-    <div class="right">
-        <div id="cadastro_supervisor" class="container-right">
-            <h1> CADASTRO </h1>
-
-            <div class="cadastro-input-container">
-
-                <div class="container-nome container">
-                <label for=""> Nome</label>
-                <input type="text" placeholder="Digite o seu nome" id="nome_input">
-                </div>
-
-                <div class="container-nome container">
-                <label for=""> Sobrenome</label>
-                <input type="text" placeholder="Digite o seu nome" id="input_sobrenome">
-                </div>
-
-                <div class="container-email container">
-                <label for=""> E-mail </label>
-                <input type="text" placeholder="Digite o seu E-mail" id="email_input">
-                <div id="msg"></div>
-                </div>
-
-                <div class="container-senha container">
-                <label for=""> Senha </label>
-                <input type="password" placeholder="Crie uma senha forte" id="senha_input">
-                <div id="msgsenha"></div>
-                <p class="text-pass"> Na senha tem que haver ao menos 1 caracter especial, 1 letra maiúscula e 1 número</p>
-                </div>
-
-                <div class="container-senha container">
-                <label for=""> Confirme a sua Senha </label>
-                <input type="password" placeholder="Repita a senha criada" id="confirmacao_senha_input">
-                <div id="msgConfirm"></div>
-                </div>
-
-                <button class="button-cadastro button" onclick="cadastrar()"> Cadastrar </button>
-            </div>
-
-            <div id="mensagem_erro"></div>
-            <div id="cadastro-empresa" class="cadastro-text-container">
-                <p>Já é cadastrado? <a href="login.html"> Logue Aqui </a></p>
-            </div>
-        </div>
-<!-- 
-        
-             <div id="cadastro_empresa" class="cadastro-input-container" style="display: none;">
-
-                <h1>CADASTRO DA EMPRESA</h1>
-
-                <div class="container-cnpj container">
-                <label for=""> Razão Social </label>
-                <input type="text" placeholder="Digite a razão social da empresa" id="input_razaoEmpresa" maxlength="14" oninput="cnpj()">
-                </div>
-
-                <div class="container-cnpj container">
-                <label for=""> CNPJ </label>
-                <input type="text" placeholder="Digite o CNPJ da empresa" id="input_cnpj" maxlength="14" oninput="cnpj()">
-                </div>
-
-                <button class="button-cadastro button" onclick="cadastrar()"> Cadastrar </button>
-
-            
-        </div>
-    </div> -->
-    </div>
-</body>
+  </body>
 </html>
 
 <script>
+  // Array para armazenar empresas cadastradas para validação de código de ativação
+  /// let listaEmpresasCadastradas = [];
+  sessionStorage.CNPJ = "";
+  sessionStorage.RAZAO = "";
 
-    // function proxima(){
-
-    //     cadastro_supervisor.style.display = "none";
-    //     cadastro_empresa.style.display = "flex";
-
-    // }
-
-      // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  function testeStorage() {
+    sessionStorage.RAZAO = input_razaoEmpresa.value;
+    sessionStorage.CNPJ = input_cnpj.value;
+    cadastro_supervisor.style.display = "flex";
+    cadastro_empresa.style.display = "none";
+  }
 
   function cadastrar() {
     // aguardar();
@@ -117,11 +160,11 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-    //   cardErro.style.display = "block";
+      //   cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
 
-    //   finalizarAguardar();
+      //   finalizarAguardar();
       return false;
     } else {
       setInterval(1000);
@@ -139,14 +182,16 @@
         nomeServer: nomeVar,
         sobrenomeServer: sobrenomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar
+        senhaServer: senhaVar,
+        cnpjServer: sessionStorage.CNPJ,
+        razaoServer: sessionStorage.RAZAO
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-        //   cardErro.style.display = "block";
+          //   cardErro.style.display = "block";
 
           mensagem_erro.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
@@ -156,7 +201,7 @@
           });
 
           limparFormulario();
-        //   finalizarAguardar();
+          //   finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -169,8 +214,66 @@
     return false;
   }
 
-//   function sumirMensagem() {
-//     cardErro.style.display = "none";
-//   }
+  // async function cadastrarEmpresas() {
+  //   var razaoVar = input_razaoEmpresa.value;
+  //   var cnpjVar = input_cnpj.value;
 
+  //   cadastro_supervisor.style.display = "flex";
+  //   cadastro_empresa.style.display = "none";
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+
+    // Verificando se há algum campo em branco
+  //   if (cnpjVar == "" || razaoVar == "") {
+  //     //   cardErro.style.display = "block";
+  //     mensagem_erro.innerHTML =
+  //       "(Mensagem de erro para todos os campos em branco)";
+
+  //     //   finalizarAguardar();
+  //     return false;
+  //   } else {
+  //     setInterval(1000);
+  //   }
+
+  //   // Enviando o valor da nova input
+  //   fetch("/usuarios/cadastrarEmpresas", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       // crie um atributo que recebe o valor recuperado aqui
+  //       // Agora vá para o arquivo routes/usuario.js
+  //       cnpjServer: cnpjVar,
+  //       razaoServer: razaoVar,
+  //     }),
+  //   })
+  //     .then(function (resposta) {
+  //       console.log("resposta: ", resposta);
+
+  //       if (resposta.ok) {
+  //         //   cardErro.style.display = "block";
+
+  //         mensagem_erro.innerHTML =
+  //           "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+  //         limparFormulario();
+  //         //   finalizarAguardar();
+  //       } else {
+  //         throw "Houve um erro ao tentar realizar o cadastro!";
+  //       }
+  //     })
+  //     .catch(function (resposta) {
+  //       console.log(`#ERRO: ${resposta}`);
+  //       // finalizarAguardar();
+  //     });
+
+  //   return false;
+  // }
+
+  //   function sumirMensagem() {
+  //     cardErro.style.display = "none";
+  //   }
 </script>
