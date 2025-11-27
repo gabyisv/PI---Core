@@ -132,7 +132,7 @@
               
             </div>
             <div class="card-ppm">
-              <p><span class="saida-ppm">18</span></p>
+              <p><span id="kpiMaximo" class="saida-ppm"></span></p>
               <p>Máximo</p>
               
             </div>
@@ -219,11 +219,39 @@
 
 
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  
+    // let proximaAtualizacao;
 
-    let proximaAtualizacao;
+    window.onload = iniciarKpis();
 
-    window.onload = exibirAquariosDoUsuario();
+    function iniciarKpis(){
+
+
+      //KPI PPM MÁXIMO
+
+      fetch('/kpi/maximo/',{
+        method: 'POST',
+        headers: {
+          'Content-type':'application/json',
+        },
+        body: JSON.stringify({
+          idEmpresaServer: sessionStorage.ID_EMPRESA
+        })
+      }).then(function(response) {
+        console.log('entrei no then do fetch maximo');
+
+        if(response.ok){
+            response.json().then((json) => {
+              if(json && json.length > 0 && json[0].max_sensor != undefined){
+                kpiMaximo.innerHTML = json[0].max_sensor
+              }else{
+                kpiMaximo.innerHTML = 'Sem dados'
+              }
+            });
+        }
+      })
+    }
 
     function exibirAquariosDoUsuario() {
         var aquarios = JSON.parse(sessionStorage.AQUARIOS);

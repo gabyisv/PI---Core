@@ -8,33 +8,32 @@ function autenticar(emailUsuario, senhaUsuario) {
     senhaUsuario
   );
   var instrucaoSql = `
-        SELECT idUsuario, nomeUsuario, sobrenomeUsuario, emailUsuario, senhaUsuario FROM usuario WHERE emailUsuario= '${emailUsuario}' AND senhaUsuario = '${senhaUsuario}';
-    `;
+  SELECT idUsuario, emailUsuario, nomeUsuario, idEmpresa FROM usuario JOIN empresa ON idEmpresa = fkEmpresa WHERE emailUsuario= '${emailUsuario}' AND senhaUsuario = '${senhaUsuario}';    `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
-function cadastrarEmpresas(razao, cnpj) {
-  console.log(
-    "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",
-    razao,
-    cnpj
-  );
+// function cadastrarEmpresas(razao, cnpj) {
+//   console.log(
+//     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",
+//     razao,
+//     cnpj
+//   );
 
-  // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-  //  e na ordem de inserção dos dados.
-  var instrucaoSql = `
-        INSERT INTO empresa (razaoSocial, cnpj) VALUES ('${razao}','${cnpj}');
-    `;
-  console.log("Executando a instrução SQL: \n" + instrucaoSql);
-  database.executar(instrucaoSql);
+//   // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+//   //  e na ordem de inserção dos dados.
+//   var instrucaoSql = `
+//         INSERT INTO empresa (razaoSocial, cnpj) VALUES ('${razao}','${cnpj}');
+//     `;
+//   console.log("Executando a instrução SQL: \n" + instrucaoSql);
+//   database.executar(instrucaoSql);
 
-  var instrucaoSql2 = `
-        SELECT idEmpresa FROM empresa ORDER BY idEmpresa DESC LIMIT 1;
-    `;
-  console.log("Executando a instrução SQL: \n" + instrucaoSql2);
-  return database.executar(instrucaoSql2);
-}
+//   var instrucaoSql2 = `
+//         SELECT idEmpresa FROM empresa ORDER BY idEmpresa DESC LIMIT 1;
+//     `;
+//   console.log("Executando a instrução SQL: \n" + instrucaoSql2);
+//   return database.executar(instrucaoSql2);
+// }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
 function cadastrar(razao, cnpj,nomeUsuario,

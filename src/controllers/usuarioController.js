@@ -23,7 +23,8 @@ function autenticar(req, res) {
                                         emailUsuario: resultadoAutenticar[0].emailUsuario,
                                         nomeUsuario: resultadoAutenticar[0].nomeUsuario,
                                         sobrenomeUsuario: resultadoAutenticar[0].sobrenomeUsuario,
-                                        senhaUsuario: resultadoAutenticar[0].senhaUsuario
+                                        senhaUsuario: resultadoAutenticar[0].senhaUsuario,
+                                        idEmpresa: resultadoAutenticar[0].idEmpresa
                                         
                                     });
                                 } 
