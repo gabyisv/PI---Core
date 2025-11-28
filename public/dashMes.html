@@ -122,12 +122,12 @@
           </div>
           <div class="card">
             <div class="card-ppm">
-              <p><span class="saida-ppm">02</span></p>
-              <p>Último</p>
+              <p><span id="kpiMinimo" class="saida-ppm">02</span></p>
+              <p>Mínimo</p>
               
             </div>
             <div class="card-ppm">
-              <p><span class="saida-ppm">11</span></p>
+              <p><span id="kpiMedio" class="saida-ppm">11</span></p>
               <p>Média</p>
               
             </div>
@@ -243,10 +243,14 @@
 
         if(response.ok){
             response.json().then((json) => {
-              if(json && json.length > 0 && json[0].max_sensor != undefined){
-                kpiMaximo.innerHTML = json[0].max_sensor
+              if(json && json.length > 0 && json.max_sensor != undefined){
+                kpiMaximo.innerHTML = json.max_sensor;
+                kpiMedio.innerHTML = json.media_sensor;
+                kpiMinimo.innerHTML = json.min_sensor;
               }else{
                 kpiMaximo.innerHTML = 'Sem dados'
+                kpiMedio.innerHTML = 'Sem dados'
+                kpiMinimo.innerHTML = 'Sem dados'
               }
             });
         }
