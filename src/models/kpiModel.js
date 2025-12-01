@@ -11,7 +11,7 @@ function buscarMaximo(idEmpresa){
         JOIN quadrante as q ON s.idQuadrante = q.idQuadrante AND s.pkCamara = q.pkCamara
         JOIN camara as c ON s.pkCamara = c.idCamara
         JOIN empresa as e ON c.fkEmpresa = e.idEmpresa
-        WHERE e.idEmpresa = ${idEmpresa};;
+        WHERE e.idEmpresa = ${idEmpresa};
     `
 
     console.log(`executando função SQL`)
