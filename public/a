@@ -313,9 +313,10 @@
     }
 
     function verificarStatus(valorPPM) {
-      if (valorPPM >= 15) {
+      const ppm = Number(valorPPM);
+      if (ppm >= 15) {
         return'CRÍTICO';
-      } else if (valorPPM >= 10) {
+      } else if (ppm >= 10) {
         return'ALERTA';
       } else {
         return'NORMAL';
@@ -500,5 +501,8 @@
       lista_vazamento.innerHTML += card;
     });
   }
+
+
+
 
 </script>
