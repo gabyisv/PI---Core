@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/eebdb6e4f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+</head>
+<body class="Dashboard">
+
+    <nav class="menu-nav">
+      <div class="logo-nav-lateral">
+        <a href="./index.html"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+        <div class="menu-container">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
+          </li>
+          <li>
+            <a href="./dashDiaria.html"><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
+          </li>
+          <li>
+            <a href="./telaFunc.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
+          </li>
+          <li>
+            <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
+          </li>
+          <li>
+            <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
+          </li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="container-bobIA">
+        
+      <div class="sair-nav">
+        <p>Sair</p>
+        <img src="./docs/exit-icon.png" alt="sair" />
+      </div>
+    </nav>
+
+    <div class="container-dashboard-bob">
+        <div class="features-bob">
+            <div class="title"><h3>Olá <span id="nome">Usuario</span></h3></div>
+            
+        </div>
+
+
+        <div class="box-bob">
+            <div class="container-sobre-suporte">
+                <img src="./docs/Suporte-1.drawio.png" alt="">
+            </div>
+            <div class="button-bob">
+                <button onclick="abrirModal()"><img src="./docs/icon-bob.png" alt=""></button>
+            </div>
+            
+        <div id="modal_bob" class="modal-bob">
+            <h1>MonIA</h1>
+        
+        <br><br>
+        
+        <!-- <h3>Resposta da IA:</h3> -->
+        <div id="resposta"><br></div>
+        <div id="perguntaText"></div>
+        
+        <div class="entrada-bob">
+            <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea><button onclick="gerarResposta()"><i class="fa-solid fa-paper-plane fa-xl"></i></button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        
+        async function gerarResposta() {
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            resposta.style.display = 'block';
+            perguntaText.style.display = 'block';
+            resposta.style.backgroundColor = '#fff'
+            perguntaText.style.backgroundColor = '#051a06'
+            document.getElementById('perguntaText').in+74
+            nerText = data.pergunta;
+            document.getElementById('resposta').innerText = data.resultado;
+        }
+
+
+        function abrirModal(){
+
+            if(modal_bob.style.display == "flex" ){
+                modal_bob.style.display = "none"
+            }else{
+                 modal_bob.style.display = "flex"
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
