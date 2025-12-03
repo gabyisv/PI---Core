@@ -67,6 +67,10 @@
             // finalizarAguardar();
             return false;
         }
+
+        if(emailVar.includes("@suporteMonarex.com") && senhaVar == "sup@210Mon#5rex"){
+            sessionStorage.SUPORTE = true
+        }
         
 
         console.log("FORM LOGIN: ", emailVar);

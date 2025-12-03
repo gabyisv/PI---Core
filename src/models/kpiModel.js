@@ -35,7 +35,24 @@ function buscarMaximo_diario(idEmpresa)
     return database.executar(instrucaoSql);
 }
 
+function tempoResposta(idEmpresa){
+    
+    var instrucaoSql = `
+    SELECT time_format((sec_to_time(AVG(TIME_TO_SEC(TIMEDIFF(horaResposta, horaVazamento))))),'%H:%i:%s') AS Media
+	FROM responsavel
+    JOIN usuario 
+    ON fkUsuario = idUsuario
+    JOIN empresa
+    ON fkEmpresa = idEmpresa
+    WHERE idEmpresa = ${idEmpresa};
+    `;
+
+    console.log("teste  executando função SQL\n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarMaximo,
-    buscarMaximo_diario
+    buscarMaximo_diario,
+    tempoResposta
 }

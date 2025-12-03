@@ -35,6 +35,9 @@
           <li>
             <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
           </li>
+          <li id="liSuporte">
+           
+          </li>
         </ul>
         </div>
       </div>
@@ -223,6 +226,11 @@
     // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
   
     // let proximaAtualizacao;
+
+    if(sessionStorage.SUPORTE == true){
+
+      liSuporte.innerHTML = ` <a href="./bobIA.html"><i class="fa-solid fa-headset"></i>Suporte</a>`
+    }
 
     window.onload = iniciarKpis();
     

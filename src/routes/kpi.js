@@ -11,4 +11,7 @@ router.post("/maximo_diario", function (req, res) {
   kpiController.buscarMaximo_diario(req, res);
 })
 
+router.post("/tempoResposta", function (req, res) {
+  kpiController.tempoResposta(req, res);
+})
 module.exports = router;
