@@ -133,7 +133,7 @@
               
             </div>
             <div class="card-ppm">
-              <p><span  class="saida-ppm"></span></p>
+              <p><span id="kpiMaximo" class="saida-ppm"></span></p>
               <p>Máximo</p>
               
             </div>
@@ -252,6 +252,7 @@
                 kpiMaximo.innerHTML = json[0].max_sensor;
                 kpiMedio.innerHTML = json[0].media_sensor;
                 kpiMinimo.innerHTML = json[0].min_sensor;
+                console.log("testea")
               }else{
                 kpiMaximo.innerHTML = 'Sem dados'
                 kpiMedio.innerHTML = 'Sem dados'
