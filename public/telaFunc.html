@@ -59,7 +59,7 @@
     <div class="container-func-features">
       <div class="KPIs">
       <div class="ativos">
-        <h1>21</h1>
+        <h1 id="funcAtivos"></h1>
         <span>Funcionários ativos</span>
       </div>
       <div class="Temp_resposta">
@@ -67,7 +67,7 @@
         <span>Tempo de resposta médio</span>
       </div>
       <div class="incidentes">
-        <h1>18</h1>
+        <h1 id="totalIncidentes"></h1>
         <span>Incidentes resolvidos</span>
       </div>
       </div>
@@ -164,7 +164,7 @@
         </tr>
         <tr>
           <td><input type="checkbox"></td>
-          <td>Fernanda</td>
+          <td>Fernanda</td> 
           <td>7</td>
           <td>Coordenadora</td>
           <td>Câmara 7</td>
@@ -175,9 +175,6 @@
       </tbody>
     </table>
     </div> <div class="final">
-      <div id="final1">
-        <button onclick="editar()"><span><i class="fa-solid fa-pen"></i>Editar</span></button>
-      </div>
       <div id="final2">
         <button onclick="excluir()"><span><i class="fa-solid fa-trash"></i>Excluir</span></button>
 
@@ -204,11 +201,13 @@
     }).then(function (response){
       console.log(response)
       if(response.ok){
-  
         
         response.json().then((json) =>{
-          
+
+          funcAtivos.innerHTML= json[0].FuncAtivos;
+          totalIncidentes.innerHTML= json[0].Incidentes;
           tempoMedio.innerHTML = json[0].Media;
+          
         })
 
 
