@@ -13,7 +13,7 @@
     ></script>
 </head>
 
-<body>
+<body onload="tempoResposta()">
 
   
     <nav class="menu-nav">
@@ -63,7 +63,7 @@
         <span>Funcionários ativos</span>
       </div>
       <div class="Temp_resposta">
-        <h1>02:25</h1>
+        <h1 id="tempoMedio"></h1>
         <span>Tempo de resposta médio</span>
       </div>
       <div class="incidentes">
@@ -188,3 +188,33 @@
 </body>
 
 </html>
+
+<script>
+
+    function tempoResposta(){
+
+      fetch('kpi/tempoResposta/',{
+        method: 'POST',
+        headers: {
+          'Content-type':'application/json',
+        },
+        body: JSON.stringify({
+        idEmpresaServer: sessionStorage.ID_EMPRESA
+      })
+    }).then(function (response){
+      console.log(response)
+      if(response.ok){
+  
+        
+        response.json().then((json) =>{
+          
+          tempoMedio.innerHTML = json[0].Media;
+        })
+
+
+      }
+    })
+
+    }
+
+</script>
