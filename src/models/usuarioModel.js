@@ -1,4 +1,4 @@
-const { cadastrarEmpresa } = require("../controllers/usuarioController");
+const { cadastrarEmpresa, listarFuncionarios } = require("../controllers/usuarioController");
 var database = require("../database/config");
 
 function autenticar(emailUsuario, senhaUsuario) {
@@ -82,8 +82,32 @@ function cadastrar(nomeUsuario,
     });
 }
 
+
+function funcionarioCamara(idEmpresa){
+
+  var instrucaoSql =` SELEct concat(usuario.nomeUsuario, ' ', usuario.sobrenomeUsuario) as Nome,  
+		usuario.cargo as Cargo,
+        concat('Camara ',camara.numeroCamara) as Camara,
+        usuario.telefone as Contato,
+        empresa.razaoSocial as Empresa
+        from responsavel
+        JOIN usuario 
+        ON responsavel.fkUsuario = usuario.idUsuario
+        Join camara
+        ON responsavel.fkCamara = camara.idCamara
+        JOin empresa
+        on usuario.fkEmpresa = empresa.idEmpresa
+        WHERE idEmpresa = ${idEmpresa};
+        `
+
+      console.log("teste  executando função SQL\n" + instrucaoSql);
+      return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
   autenticar,
-  cadastrar
+  cadastrar,
+  funcionarioCamara
   // cadastrarEmpresas
 };

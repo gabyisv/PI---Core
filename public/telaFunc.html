@@ -13,7 +13,7 @@
     ></script>
 </head>
 
-<body onload="tempoResposta()">
+<body onload="tempoResposta(), funcionariosCamara()">
 
   
     <nav class="menu-nav">
@@ -91,88 +91,21 @@
     <table class="tabela-funcionarios">
       <thead>
         <tr>
-          <th></th>
-          <th>Nome</th>
-          <th>ID</th>
-          <th>Cargo</th>
-          <th>Departamento</th>
-          <th>Data de Admissão</th>
-          <th>Contato</th>
-          <th>Status</th>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>Câmara</th>
+              <th>Contato </th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Gaby</td>
-          <td>1</td>
-          <td>Gerente</td>
-          <td>Câmara 1</td>
-          <td>01/02/2020</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Lucas</td>
-          <td>2</td>
-          <td>Supervisor</td>
-          <td>Câmara 2</td>
-          <td>10/05/2021</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Mariana</td>
-          <td>3</td>
-          <td>Assistente</td>
-          <td>Câmara 3</td>
-          <td>15/09/2019</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Carlos</td>
-          <td>4</td>
-          <td>Técnico</td>
-          <td>Câmara 4</td>
-          <td>20/11/2022</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Ana</td>
-          <td>5</td>
-          <td>Analista</td>
-          <td>Câmara 5</td>
-          <td>03/03/2023</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>João</td>
-          <td>6</td>
-          <td>Auxiliar</td>
-          <td>Câmara 6</td>
-          <td>12/01/2024</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td>Fernanda</td> 
-          <td>7</td>
-          <td>Coordenadora</td>
-          <td>Câmara 7</td>
-          <td>22/07/2020</td>
-          <td>Ativo</td>
-          <td>Ativo</td>
-        </tr>
-      </tbody>
+          <tbody id="funcionarioCamara">
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+            </tr>
+      
+          </tbody>
     </table>
     </div> <div class="final">
       <div id="final2">
@@ -209,11 +142,51 @@
           tempoMedio.innerHTML = json[0].Media;
           
         })
-
-
       }
     })
-
     }
+
+    function funcionariosCamara(){
+        
+      fetch('usuarios/camaraUsuarios',{
+        method: 'POST',
+        headers: {
+          'Content-type':'application/json',
+        },
+        body: JSON.stringify({
+        idEmpresaServer: sessionStorage.ID_EMPRESA
+      })
+    }).then(function (response){
+      console.log(response)
+      if(response.ok){
+
+          
+
+        var tbody = document.getElementById("funcionarioCamara");
+
+          tbody.innerHTML = "";
+
+response.json().then(function (json) {
+
+          for (let i = 0; i < json.length; i++) {
+              var usuario = json[i];
+
+              var tr = document.createElement("tr");
+
+              tr.innerHTML = `
+              <td> ${usuario.Nome} </td>
+              <td> ${usuario.Cargo} </td>
+              <td> ${usuario.Camara} </td>
+              <td> ${usuario.Contato} </td>
+              `;
+
+        tbody.appendChild(tr);
+      }
+});
+    }
+    
+    })
+  
+}
 
 </script>
