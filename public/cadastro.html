@@ -52,7 +52,7 @@
                 placeholder="Digite o seu E-mail"
                 id="email_input"
               />
-              <div id="msg"></div>
+              <div id="msg_erro_email" class="msg_erro"></div>
             </div>
 
             <div class="container-senha container">
@@ -61,8 +61,9 @@
                 type="password"
                 placeholder="Crie uma senha forte"
                 id="senha_input"
+                oninput="validarSenha()"
               />
-              <div id="msgsenha"></div>
+              <div id="msg_erro_senha" class="msg_erro"></div>
               <p class="text-pass">
                 Na senha tem que haver ao menos 1 caracter especial, 1 letra
                 maiúscula e 1 número
@@ -75,8 +76,9 @@
                 type="password"
                 placeholder="Repita a senha criada"
                 id="confirmacao_senha_input"
+                oninput="validarSenha()"
               />
-              <div id="msgConfirm"></div>
+              <div id="msg_erro_senha" class="msg_erro"></div>
             </div>
 
             <button class="button-cadastro button" onclick="cadastrar()">
@@ -131,6 +133,97 @@
 <script>
 
 
+  function numeroSenha(senhaVar) {
+    var numeros = '1234567890' 
+
+    for (var i = 0; i < senhaVar.length; i++) {
+      if(numeros.includes(senhaVar[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
+
+
+  function caracterEspecial(senhaVar) {
+    var caracter = '!@#$%&*'
+
+    for(var i = 0; i < senhaVar.length; i++) {
+      if(caracter.includes(senhaVar[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
+
+
+  function validarSenha() {
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+    if (senhaVar == '') {
+      msg_erro_senha.innerHTML = `A senha deve ser preenchida`
+      return false;
+    }
+
+    if (senhaVar.length < 8 ) {
+      msg_erro_senha.innerHTML = `A senha precisa conter no mínimo 8 caracteres`
+      return false;
+    }
+
+    if(!numeroSenha(senhaVar)) {
+      msg_erro_senha.innerHTML = `A senha precisa ter pelo menos um número`
+      return false;
+    }
+
+    if(!caracterEspecial(senhaVar)) {
+      msg_erro_senha.innerHTML = `A senha precisa ter ao menos um caracter especial`
+      return false;
+    }
+
+    if(senhaVar == senhaVar.toLowerCase()) {
+      msg_erro_senha.innerHTML = `A senha precisa ter ao menos uma letra maiuscula`
+      return false;
+    }
+
+    if (senhaVar != confirmacaoSenhaVar) {
+      msg_erro_senha.innerHTML = `As senhas devem ser iguais`
+      return false;
+    }
+
+    msg_erro_senha.innerHTML = ''
+    return true;
+  }
+
+
+
+  function validarEmail() { 
+    var emailVar = email_input.value;
+  
+    if (emailVar == "") {
+        msg_erro_email.innerHTML = `O e-mail deve ser preenchido.`;
+        return false;
+    }
+
+    if (!emailVar.includes('@')) {
+        msg_erro_email.innerHTML = `O e-mail precisa ter um @ para ser cadastrado.`;
+        return false;
+    } 
+    
+    if (!emailVar.endsWith('.com')) {
+        msg_erro_email.innerHTML = `É necessário que o e-mail termine com ".com" para ser cadastrado`;
+        return false;
+    }
+    
+    msg_erro_email.innerHTML = '';
+    return true; 
+}
+  
+
   // Array para armazenar empresas cadastradas para validação de código de ativação
   /// let listaEmpresasCadastradas = [];
   sessionStorage.CNPJ = "";
@@ -167,28 +260,29 @@
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var sobrenomeVar = input_sobrenome.value;
-    var emailVar = email_input.value;
+     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
     
 
-    // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      sobrenomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
-      //   cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      //   finalizarAguardar();
-      return false;
-    } else {
-      setInterval(1000);
+    if (nomeVar == "") {
+        mensagem_erro.innerHTML = "O campo Nome não pode estar vazio.";
+        return false; 
     }
+
+
+    if (!validarEmail()) { 
+        mensagem_erro.innerHTML = "Verifique o formato do e-mail.";
+        return false; 
+    }
+
+
+    if (!validarSenha()) {
+        mensagem_erro.innerHTML = "Verifique os requisitos da senha.";
+        return false; 
+    }
+    
+
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {

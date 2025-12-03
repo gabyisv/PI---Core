@@ -195,3 +195,14 @@ input {
 
     width: 100%;
 }
+
+.msg_erro {
+  font-size: 12px;
+  color: white;
+} 
+
+
+#mensagem_erro {
+      font-size: 12px;
+  color: white;
+}
