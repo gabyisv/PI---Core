@@ -25,6 +25,8 @@ var app = express();
 var usuarioRouter = require("./src/routes/usuarios");
 var avisosRouter = require("./src/routes/avisos");
 var empresasRouter = require("./src/routes/empresas");
+var kpiRouter = require("./src/routes/kpi");
+var camaraRouter = require("./src/routes/camara");
 var kpiRouter = require("./src/routes/kpi")
 var sensoresRouter = require("./src/routes/sensores")
 
@@ -38,6 +40,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/avisos", avisosRouter);
 app.use("/empresas", empresasRouter);
 app.use("/kpi", kpiRouter);
+app.use("/camara", camaraRouter);
 app.use("/sensores", sensoresRouter)
 
 app.use((req, res, next) => {

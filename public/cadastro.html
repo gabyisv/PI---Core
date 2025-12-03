@@ -129,10 +129,29 @@
 </html>
 
 <script>
+
+
   // Array para armazenar empresas cadastradas para validação de código de ativação
   /// let listaEmpresasCadastradas = [];
   sessionStorage.CNPJ = "";
   sessionStorage.RAZAO = "";
+
+
+   function cnpj() {
+     var cnpj = input_cnpj.value
+     if(cnpj.length == 2){
+             input_cnpj.value += '.'
+     } 
+      if(cnpj.length == 6){
+             input_cnpj.value += '.'
+     } 
+     if(cnpj.length == 10){
+             input_cnpj.value += '/'
+     } 
+     if(cnpj.length == 15){
+             input_cnpj.value += '-'
+     } 
+ }
 
   function testeStorage() {
     sessionStorage.RAZAO = input_razaoEmpresa.value;
@@ -151,6 +170,7 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    
 
     // Verificando se há algum campo em branco
     if (

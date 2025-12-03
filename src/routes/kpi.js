@@ -7,12 +7,8 @@ router.post("/maximo", function (req, res) {
   kpiController.buscarMaximo(req, res);
 })
 
-router.post("/medio", function (req, res) {
-  kpiController.buscarMedio(req, res);
-})
-
-router.post("/ultimo", function (req, res) {
-  kpiController.buscarUltimo(req, res);
+router.post("/maximo_diario", function (req, res) {
+  kpiController.buscarMaximo_diario(req, res);
 })
 
 module.exports = router;
