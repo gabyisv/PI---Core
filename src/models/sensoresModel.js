@@ -52,9 +52,9 @@ JOIN quadrante q ON s.idQuadrante = q.idQuadrante AND s.pkCamara = q.pkCamara
 JOIN camara c ON q.pkCamara = c.idCamara
 JOIN empresa e ON c.fkEmpresa = e.idEmpresa
 WHERE
-e.idEmpresa = ${idEmpresa} 
+e.idEmpresa = ${idEmpresa}
 AND
-m.dataHora >= '2024-12-01 00:00:00' AND m.dataHora < '2025-01-01 00:00:00' 
+m.dataHora >= '2025-12-01 00:00:00' 
 AND pkSensor = ${idSensor};
     `
 

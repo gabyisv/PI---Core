@@ -62,8 +62,27 @@ function colocarDadosdePPM(req, res) {
         });
 }
 
+
+function dadosMediosPPM(req, res) {
+    const idEmpresa = req.body.idEmpresaServer;
+    const mes = req.body.mesServer;
+
+    if (!idEmpresa || !mes) {
+        return res.status(400).send("Dados insuficientes.");
+    }
+
+    camaraModel.dadosMediosPPM(idEmpresa, mes)
+        .then(resultado => {
+            res.status(200).json(resultado);
+        })
+        .catch(erro => {
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     listar_vazamento,
     buscarMedidas,
-    colocarDadosdePPM
+    colocarDadosdePPM,
+    dadosMediosPPM
 }

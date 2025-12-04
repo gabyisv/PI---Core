@@ -100,7 +100,7 @@
 
         <div class="selection-mes">
           <select name="" id="select_mes">
-            <option selected value="#">Selecione o Mês</option>
+            <option  value="#">Selecione o Mês</option>
             <option value="01">Janeiro</option>
             <option value="02">Fevereiro</option>
             <option value="03">Março</option>
@@ -112,10 +112,10 @@
             <option value="09">Setembro</option>
             <option value="10">Outubro</option>
             <option value="11">Novembro</option>
-            <option value="12">Dezembro</option>
+            <option selected value="12">Dezembro</option>
             <i class="fa-solid fa-caret-down"></i>
           </select>
-          <button onclick="pesquisar()">Pesquisar</button>
+          <button id="buttonPesquisar" onclick="pesquisar()">Pesquisar</button>
         </div>
         
 
@@ -146,7 +146,7 @@
       </section>
 
       <section class="elementos-02">
-        <div
+        <div style=" width: 700px;"
           class="chart-container"
           
         >
@@ -154,7 +154,7 @@
             <i class="fa-solid fa-hourglass-half"></i>
             <p>Horários de Picos</p>
           </div>
-          <canvas id="chart-horario"></canvas>
+          <canvas id="chart-incidentes"></canvas>
         </div>
         <div
           class="chart-container"
@@ -168,53 +168,7 @@
         </div>
       </section>
 
-      <section class="elementos-03">
-        <div
-          class="chart-container"
-  
-        >
-          <div class="chart-titulo">
-            <i class="fa-solid fa-chart-simple"></i>
-            <p>Incidentes</p>
-          </div>
-          <canvas id="chart-incidentes"></canvas>
-        </div>
-
-        <div class="cards-03">
-          <div class="resposta-card">
-            <div class="saida-atual">
-              <div class="titulo-atual">
-                <p>Tempo Médio de Resposta</p>
-                <i class="fa-solid fa-circle-info"></i>
-              </div>
-              <div class="tempo-medio">00:00</div>
-            </div>
-            <div class="saida-anterior">
-              <div class="titulo-anterior"><p>Mes Anterior</p></div>
-              <div class="tempo-medio">00:00</div>
-            </div>
-          </div>
-
-          <!-- <div class="ranking-card">
-            <div class="titulo-ranking">
-              <p>Top 5 Sensores por Incidentes</p>
-              <i class="fa-solid fa-circle-info"></i>
-            </div>
-          </div>
-          <div class="tabela-ranking"></div>
-          -->
-        </div>
-
-        <div
-          class="chart-container"
-        >
-          <div class="chart-titulo">
-            <i class="fa-solid fa-shield-heart"></i>
-            <p>Concentração de Status</p>
-          </div>
-          <canvas id="chart-seguranca"></canvas>
-        </div>
-      </section>
+      
     </div>
 
 
@@ -228,23 +182,32 @@
   
     // let proximaAtualizacao;
 let graficoPPM;
+ idSensor = 1
     if(sessionStorage.SUPORTE == true){
 
       liSuporte.innerHTML = ` <a href="./bobIA.html"><i class="fa-solid fa-headset"></i>Suporte</a>`
       liJira.innerHTML = `<a href="https://vinimendesdasilvaa.atlassian.net/jira/software/projects/KAN/list"></i>Suporte</a>`      
     }
 
-    window.onload = iniciarKpis();
+    window.onload = pesquisar();
     
   function pesquisar(){
-    iniciarKpis(),
-    colocarDadosdePPM();
+    iniciarKpis();
+  colocarDadosdePPM();
+  criarChartIncidentes(); 
+  criarChartSeguranca();
+  criarChartHorario();  
+  
   }
     function iniciarKpis(){
-
+     
       var mes = select_mes.value;
      
         sessionStorage.MES = mes;
+
+        if(sessionStorage.MES = '#'){
+          sessionStorage.MES = 12
+        }
       fetch('/kpi/maximo/',{
         method: 'POST',
         headers: {
@@ -252,7 +215,8 @@ let graficoPPM;
         },
         body: JSON.stringify({
           idEmpresaServer: sessionStorage.ID_EMPRESA, 
-          mesServer: sessionStorage.MES
+          mesServer: sessionStorage.MES,
+          // idSensorServer: idSensor
         })
       }).then(function(response) {
         console.log('entrei no then do fetch maximo');
@@ -272,7 +236,67 @@ let graficoPPM;
             });
         }
       })
+
+      
   }
+
+
+  function incidentes(){
+    fetch(`/sensores/incidentes/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify({
+                idEmpresaServer: sessionStorage.ID_EMPRESA,
+                idSensorServer: idSensor 
+            }),
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+                    if (json && json.length > 0 && json[0].TotalCritico != undefined) {
+                        plotarIncidentes(json);
+                    }
+                })
+            }
+        });
+        
+  }
+
+
+  function dadosMediosPPM() {
+    var mes = select_mes.value;
+
+    fetch('/camara/medidas-ppm', {
+      method: 'POST',
+      headers: {
+        'Content-type':'application/json',
+      },
+      body: JSON.stringify({
+        idEmpresaServer: sessionStorage.ID_EMPRESA, 
+        mesServer: mes
+      })
+    })
+    .then(response => {
+      if (!response.ok) throw new Error("Erro " + response.status);
+      return response.json();
+    })
+    .then(dados => {
+
+      if (dados.length === 0) {
+        alert("Nenhum dado encontrado.");
+        return;
+      }
+
+      const labels2 = dados.map(item => item.momento_grafico);
+      const valores2 = dados.map(item => item.sensor_analogico);
+
+      renderizarGraficoPPM2(labels2, valores2);
+    })
+    .catch(err => console.error("Erro:", err));
+  }
+
+
    function colocarDadosdePPM() {
     var mes = select_mes.value;
 
@@ -326,6 +350,73 @@ let graficoPPM;
       renderizarGraficoPPM(labels, valores);
     })
     .catch(err => console.error("Erro:", err));
+  }
+
+
+  function renderizarGraficoPPM2(labels2, valores2) {
+const cty = document.getElementById('chart-horario').getContext('2d');
+    const dataDinamica = {
+      labels: labels2,
+      datasets: [{
+        label: "PPM (Partes por Milhão)",
+        data: valores2,
+        hoverOffset: 4,
+        fill: true,
+        borderColor: "#4CAF50",
+        backgroundColor: "#4CAF5050",
+        pointRadius: 3,
+        tension: 0.4,
+      }],
+    };
+
+    const configDinamica = {
+      type: "line",
+      data: dataDinamica,
+      options: {
+        layout: { padding: { bottom: 9 } },
+        plugins: {
+          annotation: {
+            annotations: {
+              linhaLimite: {
+                type: 'line',
+                yMin: 20,
+                yMax: 20,
+                borderColor: 'red',
+                borderWidth: 2
+              }
+            }
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              usePointStyle: true,
+              pointStyle: 'circle',
+              font: { size: 11 }
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            min: 0,
+            max: 30,
+            ticks: { font: { size: 7 } },
+          },
+          x: {
+            ticks: { font: { size: 7 } },
+          },
+        },
+      },
+    };
+
+    if (graficoPPM2) {
+      graficoPPM2.data.labels = labels2;
+      graficoPPM2.data.datasets[0].data = valores2;
+      graficoPPM2.update();
+    } else {
+      graficoPPM2 = new Chart(cty, configDinamica);
+    }
   }
 
 

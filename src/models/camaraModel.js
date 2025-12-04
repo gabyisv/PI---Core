@@ -81,9 +81,24 @@ function colocarDadosdePPM(idEmpresa,mes){
     return database.executar(instrucaoSql);
 }
 
+function dadosMediosPPM(idEmpresa, mes){
+    var instrucaoSql2 = `  SELECT 
+            m.sensor_analogico,
+            DATE_FORMAT(m.dataHora, '%d/%m %H:%i') AS momento_grafico
+        FROM medida m
+        JOIN sensor s ON s.idSensor = m.pkSensor
+        JOIN camara c ON c.idCamara = s.pkCamara
+        WHERE c.fkEmpresa = ${idEmpresa}
+          AND MONTH(m.dataHora) = ${mes}
+        ORDER BY m.dataHora ASC;` ;
+   console.log( `Executando função SQL : ${instrucaoSql2}` );
+    return database.executar(instrucaoSql2);
+}
+
 
 module.exports = {
     listar_vazamento,
     buscarMedidas,
-    colocarDadosdePPM
+    colocarDadosdePPM,
+    dadosMediosPPM
 };
