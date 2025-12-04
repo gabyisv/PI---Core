@@ -100,9 +100,24 @@ function funcionarioCamara(req,res){
       });
 }
 
+
+function verDados(req,res){
+      var idUsuario = req.body.idUsuarioServer
+      usuarioModel.verDados(idUsuario)
+      .then(function (resultado){
+    
+        console.log("O controller recebeu o idUsuario", idUsuario);
+        res.status(200).json(resultado);
+      }) 
+      .catch(function (erro){
+        res.status(500).json(erro.sqlMessage);
+      });
+    }
+
+
 module.exports = {
     autenticar,
     cadastrar,
-    funcionarioCamara
-    // cadastrarEmpresas
+    funcionarioCamara,
+    verDados
 }

@@ -104,10 +104,26 @@ function funcionarioCamara(idEmpresa){
       return database.executar(instrucaoSql);
 }
 
+function verDados(idUsuario){
+
+  var instrucaoSql = `
+        SELECT u.nomeUsuario as Nome , u.sobrenomeUsuario as Sobrenome, u.emailUsuario as Email, u.telefone as Telefone , u.cargo as Cargo ,
+		    e.cnpj as Cnpj, u.senhaUsuario as Senha, endr.cep as Cep, endr.Uf as UF, endr.numero as Numero, endr.complemento as Complemento , endr.logradouro as Logradouro
+        FROM usuario as u
+        JOIN empresa as e
+        ON u.fkEmpresa = e.idEmpresa
+        JOIN endereco as endr
+        ON endr.fkEmpresa = e.idEmpresa
+        WHERE u.idUsuario = ${idUsuario};
+  `
+        console.log("teste  executando função SQL\n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
   autenticar,
   cadastrar,
-  funcionarioCamara
-  // cadastrarEmpresas
+  funcionarioCamara,
+  verDados
 };

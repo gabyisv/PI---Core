@@ -12,12 +12,9 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-
-
-// router.post("/cadastrarEmpresas", function (req, res) {
-//     usuarioController.cadastrarEmpresas(req, res);
-// });
-
+router.post("/verDados", function (req, res) {
+     usuarioController.verDados(req, res);
+});
 
 
 module.exports = router;
