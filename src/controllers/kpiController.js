@@ -41,6 +41,7 @@ function tempoResposta(req, res){
   });
 }
 
+
 function mostrarAlerta(req, res) {
   var idEmpresa = req.body.idEmpresaServer
   kpiModel.mostrarAlerta(idEmpresa)
@@ -81,6 +82,7 @@ console.log("ID da Empresa recebido no Controller:", idEmpresa);
 module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
+    tempoResposta,
     tempoResposta,
     mostrarAlerta,
     historicoSensor

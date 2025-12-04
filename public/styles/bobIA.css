@@ -52,22 +52,25 @@
     justify-content: space-between;
   
 }
-.modal-bob textarea{
+.modal-bob input{
     border-radius: 30px;
     border: none;
     color: white;
+    align-items: center;
     background-color: #020600db;
     padding: 10px;
     width: 100%;
     overflow: hidden; 
     font-size: 15px;
 }
-.modal-bob textarea::placeholder{
+.modal-bob input::placeholder{
     padding: 10px;
+
 } 
 .modal-bob h3{
     margin-top: 5px;
     color: #9FD8A1;
+    text-align: center;
 }
 .modal-bob h1{
     text-align: center;

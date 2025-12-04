@@ -63,6 +63,8 @@ and dataHora = (select dataHora from medida order by dataHora desc limit 1) LIMI
     return database.executar(instrucaoSql)
 }
 
+
+
 function historicoSensor(idEmpresa) {
     var instrucaoSql = `
         SELECT
@@ -89,6 +91,8 @@ function historicoSensor(idEmpresa) {
 module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
+    tempoResposta,
+    mostrarAlerta,
     tempoResposta,
     mostrarAlerta,
     historicoSensor
