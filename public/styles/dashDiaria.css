@@ -61,7 +61,7 @@
 
 
 .container-camara {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
