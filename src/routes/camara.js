@@ -13,5 +13,8 @@ router.get("/vazamento/:idEmpresa", function(req, res) {
 router.get("/medidas-ppm/:idCamara", function(req,res) {
     camaraController.buscarMedidas(req,res)
 })
+router.post ("/medidas-ppm", function(req,res){
+    camaraController.colocarDadosdePPM(req,res)
+})
 
 module.exports = router;

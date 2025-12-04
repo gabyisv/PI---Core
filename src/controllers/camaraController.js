@@ -24,7 +24,7 @@ function listar_vazamento (req, res) {
 
 function buscarMedidas (req, res) {
 
-    const idCamara = req.params.idCamara;
+    cc
 
     if (idCamara == undefined) {
         res.status(400).send("ID da Câmara não fornecido.");
@@ -45,7 +45,27 @@ function buscarMedidas (req, res) {
         });
 }
 
+
+
+function colocarDadosdePPM(req, res) {
+    const idEmpresa = req.body.idEmpresaServer;
+    const mes = req.body.mesServer;
+
+    if (!idEmpresa || !mes) {
+        return res.status(400).send("Dados insuficientes.");
+    }
+
+    camaraModel.colocarDadosdePPM(idEmpresa, mes)
+        .then(resultado => {
+            res.status(200).json(resultado);
+        })
+        .catch(erro => {
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     listar_vazamento,
-    buscarMedidas
+    buscarMedidas,
+    colocarDadosdePPM
 }

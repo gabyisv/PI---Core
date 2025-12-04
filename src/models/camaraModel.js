@@ -64,7 +64,26 @@ function buscarMedidas(idCamara) {
 
 // Lembre-se de EXPORTAR a nova função no final do arquivo:
 
+function colocarDadosdePPM(idEmpresa,mes){
+    var instrucaoSql = `
+        SELECT 
+            m.sensor_analogico,
+            DATE_FORMAT(m.dataHora, '%d/%m %H:%i') AS momento_grafico
+        FROM medida m
+        JOIN sensor s ON s.idSensor = m.pkSensor
+        JOIN camara c ON c.idCamara = s.pkCamara
+        WHERE c.fkEmpresa = ${idEmpresa}
+          AND MONTH(m.dataHora) = ${mes}
+        ORDER BY m.dataHora ASC;
+    `;
+
+    console.log( `Executando função SQL : ${instrucaoSql}` );
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     listar_vazamento,
-    buscarMedidas
+    buscarMedidas,
+    colocarDadosdePPM
 };

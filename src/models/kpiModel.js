@@ -23,7 +23,7 @@ function buscarMaximo_diario(idEmpresa)
     var instrucaoSql = `
          SELECT MAX(m.sensor_analogico) as max_sensor,
 			MIN(m.sensor_analogico) as min_sensor,
-            AVG(m.sensor_analogico) as media_sensor
+            ROUND(AVG(m.sensor_analogico),0) as media_sensor
         FROM medida as m
         JOIN sensor as s ON m.pkSensor = s.idSensor
         JOIN quadrante as q ON s.idQuadrante = q.idQuadrante AND s.pkCamara = q.pkCamara
@@ -38,7 +38,7 @@ function buscarMaximo_diario(idEmpresa)
 function tempoResposta(idEmpresa){
     
     var instrucaoSql = `
-  	SELECT time_format((sec_to_time(AVG(TIME_TO_SEC(TIMEDIFF(horaResposta, horaVazamento))))),'%H:%i:%s') AS Media,
+  	SELECT time_format((sec_to_time(AVG(TIME_TO_SEC(    ))))),'%H:%i:%s') AS Media,
 	COUNT(idUsuario) AS FuncAtivos,
             count(horaResposta) AS Incidentes
     FROM responsavel	
@@ -51,6 +51,17 @@ function tempoResposta(idEmpresa){
 
     console.log("teste  executando função SQL\n" + instrucaoSql);
     return database.executar(instrucaoSql);
+}
+
+function mostrarAlerta(idEmpresa) {
+    var instrucaoSql = `
+select idSensor as sensor, numeroCamara as camara from sensor JOIN medida on pkSensor = idSensor 
+JOIN camara ON pksensor = idsensor  join empresa on fkEmpresa = idEmpresa where fkempresa = ${idEmpresa} AND sensor_analogico > 25 
+and dataHora = (select dataHora from medida order by dataHora desc limit 1) LIMIT 1;
+    `;
+    
+    console.log("executando função SQL \n" + instrucaoSql);
+    return database.executar(instrucaoSql)
 }
 
 function buscarSensores(idEmpresa){
@@ -74,6 +85,8 @@ WHERE fkEmpresa = ${idEmpresa};
 module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
+    tempoResposta,
+    mostrarAlerta,
     tempoResposta,
     buscarSensores
 }
