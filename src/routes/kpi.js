@@ -18,4 +18,8 @@ router.post("/tempoResposta", function (req, res) {
 router.post("/alerta" ,function(req, res ) {
   kpiController.mostrarAlerta(req, res);
 })
+
+router.post("/historico-sensor" ,function(req, res ) {
+  kpiController.historicoSensor(req, res);
+})
 module.exports = router;

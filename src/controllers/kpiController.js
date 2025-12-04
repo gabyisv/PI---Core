@@ -66,6 +66,29 @@ function mostrarAlerta(req, res) {
   })
 }
 
+function historicoSensor(req, res) {
+    var idEmpresa = req.body.idEmpresaServer;
+    if (idEmpresa == undefined) {
+console.log("ID da Empresa recebido no Controller:", idEmpresa);
+        console.log("ERRO: ID da Empresa não recebido na requisição.");
+        res.status(400).send("O ID da Empresa está indefinido!");
+        return; }
+
+         kpiModel.historicoSensor(idEmpresa)
+        .then(function (resultado) {           
+            console.log("O controller recebeu o idEmpresa", idEmpresa);
+            if (resultado.length == 0) {
+                res.status(204).send("Nenhuma leitura de sensor encontrada para esta empresa.");
+            } else {
+                res.status(200).json(resultado);
+            }
+        })
+        .catch(function (erro) {
+            console.log("Houve um erro no Controller ao buscar o histórico:", erro);
+     res.status(500).json(erro.sqlMessage || "Erro interno do servidor ao processar o SQL.");
+        });
+}
+
 
 module.exports = {
     buscarMaximo,
@@ -73,7 +96,8 @@ module.exports = {
     tempoResposta,
     buscarSensores,
     tempoResposta,
-    mostrarAlerta
+    mostrarAlerta,
+    historicoSensor
   }
 
 
