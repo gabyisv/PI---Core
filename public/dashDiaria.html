@@ -266,11 +266,18 @@
 
             statusSensor.innerHTML = `<img src="./docs/Vector (4).png" alt=""> ${status}`;
           } else {
-            kpiMaximo.innerHTML = 'Sem dados'
-            kpiMedio.innerHTML = 'Sem dados'
-            kpiMinimo.innerHTML = 'Sem dados'
-            statusSensor.innerHTML = 'Erro'
+            kpiMaximo.innerHTML = '0'
+            kpiMedio.innerHTML = '0'
+            kpiMinimo.innerHTML = '0'
+            statusSensor.innerHTML = 'Normal'
+            
+            
           }
+          if(statusSensor.innerHTML == 'Normal'){
+              lista_vazamento.innerHTML = "<p> Nenhuma </p>"
+            }else{
+              lista_vazamento.innerHTML = "<p> Câmara 1 </p>"
+            }
         });
       }
     })
@@ -525,7 +532,7 @@
       })
       .catch(error => {
         console.error('Erro ao iniciar Vazamentos: ', error);
-        lista_vazamento.innerHTML = "<p> Câmara 1 </p>"
+        
       })
   }
 
