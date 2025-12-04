@@ -14,4 +14,8 @@ router.post("/maximo_diario", function (req, res) {
 router.post("/tempoResposta", function (req, res) {
   kpiController.tempoResposta(req, res);
 })
+
+router.post("/alerta" ,function(req, res ) {
+  kpiController.mostrarAlerta(req, res);
+})
 module.exports = router;

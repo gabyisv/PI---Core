@@ -53,26 +53,8 @@
   </div>
 
   <!--Vazamento-->
-  <div class="alerta_caixa" id="alertaCaixa" style="display: none;">
-    <button onclick="fecharVazamento()" class="botao_fechar" id="fecharBotao">×</button>
+  <div class="alerta_caixa oculto" id="alertaCaixa"></div>
 
-    <div class="alerta_icon">
-      <img class="imagem_alerta" src="./docs/imagens-saida.png" alt="alerta de imagem">
-    </div>
-
-    <div class="alerta_titulo">
-      ALERTA DE VAZAMENTO
-    </div>
-
-    <div class="alerta_texto">
-      Sensor 01 reportou dados na Câmara 01.
-    </div>
-
-    <button class="alerta_botao" id="alertaBotao"><a href="./dashMes.html">VER DETALHES <img
-          src="./docs/iconamoon_enter.png" alt="ver detalhes"></a>
-
-    </button>
-  </div>
 
 
   <div class="container-dashboard-content">
@@ -87,8 +69,9 @@
             <p>Status</p>
           </div>
 
-          <div class="flex-row-box-status">
-            <img src="./docs/Vector (4).png" alt="">
+
+          <div id="statusCor" class="flex-row-box-status">
+
             <button onclick="vazar()">
               <p id="statusSensor"></p>
             </button>
@@ -106,35 +89,35 @@
 
       </div>
       <div class="container-camara">
-    <div class="camara-text">
-        <p> Selecione a Câmara </p>
-        <p> Período </p>
-        <p> Sensor </p>
-    </div>
-    <div class="container-camara-selects">
-        <select name="#" id="selectCamara" class="camara-select">
+        <div class="camara-text">
+          <p> Selecione a Câmara </p>
+          <p> Período </p>
+          <p> Sensor </p>
+        </div>
+        <div class="container-camara-selects">
+          <select name="#" id="selectCamara" class="camara-select">
             <option value="#" disabled> Selecione </option>
             <option value="1" selected> Câmara 01</option>
             <option value="2">Câmara 02</option>
-        </select>
+          </select>
 
-        <select name="#" id="selectTempo" class="temp-select">
+          <select name="#" id="selectTempo" class="temp-select">
             <option value="#" disabled selected> Selecione o Horário</option>
             <option value="0">Atual</option>
             <option value="24-horas">Últimas 24 horas</option>
             <option value="12-horas">Últimas 12 horas</option>
             <option value="6-horas">Últimas 6 horas</option>
             <option value="3-horas">Últimas 3 horas</option>
-        </select>
+          </select>
 
-        <select name="#" id="selectSensor" class="sensor-select">
+          <select name="#" id="selectSensor" class="sensor-select">
             <option value="#" disabled selected> Selecione </option>
             <option value="sensor-01">Sensor 01</option>
             <option value="sensor-02">Sensor 02</option>
             <option value="sensor-03">Sensor 03</option>
-        </select>
-    </div>
-</div>
+          </select>
+        </div>
+      </div>
       <section class="elementos-01">
         <div class="chart-container">
           <div class="chart-titulo">
@@ -173,62 +156,27 @@
         </div>
       </div>
 
-      <div class="container-table">
-        <div class="flex-row-box">
-          <p> Histórico </p>
-        </div>
-        <table>
-          <thead class="header-table">
+      <div class="container-table-func">
+    <table class="tabela-funcionarios">
+      <thead>
+        <tr>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>Câmara</th>
+              <th>Contato </th>
+        </tr>
+      </thead>
+          <tbody id="funcionarioCamara">
             <tr>
-              <th>Sensor</th>
-              <th>Status</th>
-              <th>PPM</th>
-              <th>Leitura</th>
-              <th>Tempo de Alerta</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
             </tr>
-          </thead>
-          <tbody class="body-table">
-            <tr class="tr01">
-              <td>01</td>
-              <td>Normal</td>
-              <td>02</td>
-              <td>00:00:00</td>
-              <td>00:00:00</td>
-            </tr>
-            <tr class="tr02">
-              <td>01</td>
-              <td>Normal</td>
-              <td>02</td>
-              <td>00:00:00</td>
-              <td>00:00:00</td>
-            </tr>
-            <tr class="tr01">
-              <td>01</td>
-              <td>Normal</td>
-              <td>02</td>
-              <td>00:00:00</td>
-              <td>00:00:00</td>
-            </tr>
-            <tr class="tr02">
-              <td>01</td>
-              <td>Normal</td>
-              <td>02</td>
-              <td>00:00:00</td>
-              <td>00:00:00</td>
-            </tr>
-            <tr class="tr01">
-              <td>01</td>
-              <td>Normal</td>
-              <td>02</td>
-              <td>00:00:00</td>
-              <td>00:00:00</td>
-            </tr>
-
+      
           </tbody>
-
-        </table>
-        <div class="final-table"></div>
-      </div>
+    </table>
+    </div> 
 
 
 
@@ -243,9 +191,9 @@
 
 
 <script>
-  
-  var proximaAtualizacaoPPM; 
-  var proximaAtualizacaoKPI; 
+
+  var proximaAtualizacaoPPM;
+  var proximaAtualizacaoKPI;
 
 
   const kpiMaximo = document.getElementById('kpiMaximo');
@@ -254,76 +202,158 @@
   const statusSensor = document.getElementById('statusSensor');
   const lista_vazamento = document.getElementById('lista_vazamento');
   const cth = document.getElementById("chart-horario");
+  const alertaCaixa = document.getElementById('alertaCaixa');
   var graficoPPM;
 
 
   window.onload = function () {
-    iniciarKpi;
-    renderizarGraficoPPM();
+    iniciarKpi();
+    renderizarGraficoPPM([], []);
     const selectCamara = document.getElementById('selectCamara');
     const selectTempo = document.getElementById('selectTempo');
 
-   
+
     if (selectCamara && selectCamara.value && selectCamara.value !== '#') {
       iniciarDashboardEUpdates();
-    
+
 
     }
 
     if (selectCamara) selectCamara.addEventListener('change', iniciarDashboardEUpdates);
     if (selectTempo) selectTempo.addEventListener('change', iniciarDashboardEUpdates);
   };
-  
-  
-  function iniciarKpi(){
-    
+
+
+  function iniciarKpi() {
+
     //KPI PPM MÁXIMO
-      
-      fetch('/kpi/maximo_diario/',{
-        method: 'POST',
-        headers: {
-          'Content-type':'application/json',
-        },
-        body: JSON.stringify({
-          idEmpresaServer: sessionStorage.ID_EMPRESA
-        })
-      }).then(function(response) {
-        console.log('entrei no then do fetch maximo');
-        
-        if(response.ok){
-          
-          response.json().then((json) => {
-            console.log(json)
-            if(json && json.length > 0 && json[0].max_sensor != undefined){
-              kpiMaximo.innerHTML = json[0].max_sensor;
-              kpiMedio.innerHTML = json[0].media_sensor;
-              kpiMinimo.innerHTML = json[0].min_sensor;
-              
-              const status = verificarStatus(json.max_sensor);
-              statusSensor.innerHTML = status;
-            }else{
-              kpiMaximo.innerHTML = 'Sem dados'
-              kpiMedio.innerHTML = 'Sem dados'
-              kpiMinimo.innerHTML = 'Sem dados'
-              statusSensor.innerHTML = 'Erro'
-            }
-          });
-        }
+
+    fetch('/kpi/maximo_diario/', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        idEmpresaServer: sessionStorage.ID_EMPRESA
       })
-    }
+    }).then(function (response) {
+      console.log('entrei no then do fetch maximo');
 
-    function verificarStatus(valorPPM) {
-      if (valorPPM >= 15) {
-        return'CRÍTICO';
-      } else if (valorPPM >= 10) {
-        return'ALERTA';
-      } else {
-        return'NORMAL';
+      if (response.ok) {
+
+        response.json().then((json) => {
+          console.log(json)
+          if (json && json.length > 0 && json[0].max_sensor != undefined) {
+            kpiMaximo.innerHTML = json[0].max_sensor;
+            kpiMedio.innerHTML = json[0].media_sensor;
+            kpiMinimo.innerHTML = json[0].min_sensor;
+
+            const status = verificarStatus(Number(json[0].max_sensor));
+
+            statusSensor.innerHTML = `<img src="./docs/Vector (4).png" alt=""> ${status}`;
+          } else {
+            kpiMaximo.innerHTML = 'Sem dados'
+            kpiMedio.innerHTML = 'Sem dados'
+            kpiMinimo.innerHTML = 'Sem dados'
+            statusSensor.innerHTML = 'Erro'
+          }
+        });
       }
+    })
+
+
+
+    mostrarAlerta()
+  }
+
+  function mostrarAlerta() {
+    fetch('/kpi/alerta/', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        idEmpresaServer: sessionStorage.ID_EMPRESA
+      })
+    }).then(response => {
+      console.log('entrei no then do fetch alerta');
+
+      if (response.ok) {
+        response.json().then((json) => {
+          console.log(json)
+          if (json && json.length > 0 && json[0].sensor != undefined) {
+
+            var sensor = json[0].sensor;
+            var camara = json[0].camara;
+            console.log('DADOS DOS SENSORES', sensor, camara)
+
+            exibirAlerta(sensor, camara)
+
+          }
+        })
+      }
+    })
+  }
+
+  function exibirAlerta(sensor, camara) {
+    if (!alertaCaixa) {
+      console.error("Erro: Elemento 'alertaCaixa' não encontrado no DOM.");
+      return;
     }
 
-    function iniciarDashboardEUpdates() {
-   
+    // Injeta o conteúdo HTML
+    alertaCaixa.innerHTML = `
+<button onclick="fecharVazamento()" class="botao_fechar" id="fecharBotao">×</button>
+<div class="alerta_icon">
+    <img class="imagem_alerta" src="./docs/imagens-saida.png" alt="alerta de imagem">
+</div>
+<div class="alerta_titulo">ALERTA DE VAZAMENTO</div>
+<div class="alerta_texto">
+    Sensor ${sensor} reportou dados na Câmara ${camara}.
+</div>
+<button class="alerta_botao" id="alertaBotao">
+    <a href="./dashMes.html">VER DETALHES 
+ <img src="./docs/iconamoon_enter.png" alt="ver detalhes">
+    </a>
+</button>`;
+
+    // Remove a classe CSS que o oculta, tornando-o visível
+    alertaCaixa.classList.remove('oculto');
+    alertaCaixa.classList.add('alerta-ativo');
+  }
+
+  function fecharVazamento() {
+    if (alertaCaixa) {
+      // Adiciona a classe CSS 'oculto' novamente
+      alertaCaixa.classList.add('oculto');
+      alertaCaixa.style.display = 'none'
+      // Opcional: Remove a classe de animação e limpa o conteúdo
+      alertaCaixa.classList.remove('alerta-ativo');
+      alertaCaixa.innerHTML = '';
+    }
+  }
+
+
+
+  function verificarStatus(valorMaximo) { // Renomeei para maior clareza
+    if (valorMaximo >= 15) {
+      statusCor.style.backgroundColor = "#B30000";
+      return `CRITICO`; // Deve retornar apenas a string
+
+    } else if (valorMaximo >= 10) {
+      statusCor.style.backgroundColor = "#ffaa00";
+      return `ALERTA`; // Deve retornar apenas a string
+    } else {
+      fecharVazamento();
+      statusCor.style.backgroundColor = "#003d02";
+      return `NORMAL`; // Deve retornar apenas a string
+    }
+  }
+
+
+
+  function iniciarDashboardEUpdates() {
+
     if (proximaAtualizacaoPPM !== undefined) {
       clearTimeout(proximaAtualizacaoPPM);
     }
@@ -332,7 +362,7 @@
     }
 
     const selectCamara = document.getElementById('selectCamara');
-    const idCamara = selectCamara ? selectCamara.value : idCamara; 
+    const idCamara = selectCamara ? selectCamara.value : idCamara;
     if (idCamara && idCamara !== '#') {
       buscarDadosPPM(idCamara);
     }
@@ -454,10 +484,11 @@
     iniciarKpi(idCamara);
     iniciar_vazamentos();
 
-    proximaAtualizacaoKPI = setTimeout(() => atualizarKPIsVazamentosLoop(idCamara), 10000);}
+    proximaAtualizacaoKPI = setTimeout(() => atualizarKPIsVazamentosLoop(idCamara), 10000);
+  }
 
 
-  
+
 
   function iniciar_vazamentos() {
     const idEmpresa = sessionStorage.ID_EMPRESA;
