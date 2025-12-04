@@ -352,12 +352,12 @@
 
 
   function  verificarStatus (valorMaximo) { // Renomeei para maior clareza
-    if (valorMaximo >= 15) {
+    if (valorMaximo >= 50) {
       mostrarAlerta();
       statusCor.style.backgroundColor = "#B30000";
       return `CRITICO`; // Deve retornar apenas a string
 
-    } else if (valorMaximo >= 10) {
+    } else if (valorMaximo >= 15) {
       statusCor.style.backgroundColor = "#ffaa00";
       return `ALERTA`; // Deve retornar apenas a string
     } else {
@@ -452,9 +452,16 @@
             annotations: {
               linhaLimite: {
                 type: 'line',
-                yMin: 20,
-                yMax: 20,
+                yMin: 50,
+                yMax: 50,
                 borderColor: 'red',
+                borderWidth: 2
+              },
+              linhaLimites: {
+                type: 'line',
+                yMin: 15,
+                yMax: 15,
+                borderColor: 'yellow',
                 borderWidth: 2
               }
             }
@@ -473,11 +480,11 @@
         scales: {
           y: {
             min: 0,
-            max: 30,
-            ticks: { font: { size: 7 } },
+            max: 60,
+            ticks: { font: { size: 10 } },
           },
           x: {
-            ticks: { font: { size: 7 } },
+            ticks: { font: { size: 10 } },
           },
         },
       },

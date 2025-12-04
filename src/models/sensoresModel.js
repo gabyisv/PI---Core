@@ -6,7 +6,7 @@ function buscarSensores(idEmpresa){
         SELECT 
 SUM(CASE WHEN s.atividade = 1 THEN 1 ELSE 0 END) AS ativos,
 SUM(CASE WHEN s.atividade = 0 THEN 1 ELSE 0 END) AS inativos,
-SUM(CASE WHEN s.atividade > 5 THEN 1 ELSE 0 END) AS emAlertas
+SUM(CASE WHEN s.atividade > 2 THEN 1 ELSE 0 END) AS emAlertas
 FROM sensor s
 JOIN quadrante q ON s.idQuadrante = q.idQuadrante
 JOIN camara c ON q.pkCamara = c.idCamara

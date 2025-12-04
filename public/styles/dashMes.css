@@ -19,6 +19,42 @@
   margin-bottom: 10px;
   
 }
+.container-legendas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      
+          font-weight: 500;
+          height: 400px;
+          width: 100%;
+          margin-bottom: 10px;
+}
+.box-legenda{
+  display: flex;
+  background-color: #ebf4eb;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  
+  align-items: flex-start;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  gap: 10px;
+  font-size: 20px;
+
+}
+.text-legend{
+  color: white;
+  
+}
+.forma-legenda{
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  
+  
+}
 .cabecalho-mensal h1{
   font-size: 18px;
   color: #003d02;

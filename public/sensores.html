@@ -52,8 +52,8 @@
             </div>
         </div>
 
-        <section class="elementos-01">
-            <div class="status">
+        <section style="gap: 50px; margin-bottom: 30px;" class="elementos-01">
+            <div style="display: none;" class="status">
                 <div class="texto-status">
                     <div class="icone-status">
                         <i class="fa fa-refresh fa-2xs"></i>
@@ -178,7 +178,7 @@
           <th>Câmara ID</th> 
           <th>Tempo de Leitura</th>
           <th>Atividade</th>
-          <th>Classificação</th>
+
         </tr>
       </thead>
       <tbody id="historicoSensorBody"> 
@@ -248,7 +248,7 @@
                         emAlerta.innerHTML = json[0].emAlertas
 
                         if (json[0].emAlertas == 0) {
-                            emAlerta.innerHTML = 'Nenhum'
+                            emAlerta.innerHTML = '1'
                         }
                     } else {
                         ativos.innerHTML = 'Sem dados'
@@ -393,11 +393,18 @@
                         annotations: {
                             linhaLimite: {
                                 type: 'line',
-                                yMin: 20,
-                                yMax: 20,
+                                yMin: 60,
+                                yMax: 60,
                                 borderColor: 'red',
                                 borderWidth: 2
-                            }
+                            },
+                            linhaLimites: {
+                type: 'line',
+                yMin: 15,
+                yMax: 15,
+                borderColor: 'yellow',
+                borderWidth: 2
+              }
                         }
                     },
                     legend: {
@@ -416,17 +423,17 @@
                 scales: {
                     y: {
                         min: 0,
-                        max: 30,
+                        max: 60,
                         ticks: {
                             font: {
-                                size: 7
+                                size: 10
                             }
                         },
                     },
                     x: {
                         ticks: {
                             font: {
-                                size: 7
+                                size: 10
                             }
                         },
                     },
@@ -476,7 +483,7 @@
                         <td> ${leitura.numero_camara} </td>
                         <td> ${leitura.tempo_leitura} </td>
                         <td>${leitura.Atividade}</td>
-                        <td>${leitura.classificacao}</td>
+                        
                     `;
 
                     tbody.appendChild(tr);

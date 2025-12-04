@@ -68,20 +68,7 @@ and dataHora = (select dataHora from medida order by dataHora desc limit 1) LIMI
 function historicoSensor(idEmpresa) {
     var instrucaoSql = `
         SELECT
-            m.sensor_analogico AS ppm,
-            DATE_FORMAT(m.dataHora, '%d/%m/%Y %H:%i:%s') AS tempo_leitura, 
-            s.idSensor AS id_sensor,
-            c.numeroCamara AS numero_camara
-        FROM
-            medida m
-        JOIN
-            sensor s ON m.pkSensor = s.idSensor
-        JOIN
-            camara c ON s.pkCamara = c.idCamara
-        WHERE
-            c.fkEmpresa = ${idEmpresa} 
-        ORDER BY
-            m.dataHora DESC;
+            * FROM vw_historico WHERE ${idEmpresa} ;
     `
 
     console.log("executando função SQL \n" + instrucaoSql); 

@@ -168,6 +168,19 @@
         </div>
       </section>
 
+      <section class="container-legendas">
+        <div class="box-legenda">
+          <div style="background-color: #B30000;" class="forma-legenda">
+            <p>Critíco</p><p class="text-legend"> Acima de 50</p> 
+          </div>
+          <div style="background-color: rgb(253, 188, 10);" class="forma-legenda">
+            <p>Em Alerta</p> <p class="text-legend">Acima de 15</p>
+          </div>
+          <div style="background-color: rgb(0, 119, 255);" class="forma-legenda">
+            <p>Normal</p> <p class="text-legend">0 a 14</p>
+          </div>
+        </div>
+      </section>
       
     </div>
 
@@ -383,6 +396,13 @@ const cty = document.getElementById('chart-horario').getContext('2d');
                 yMax: 20,
                 borderColor: 'red',
                 borderWidth: 2
+              },
+              linhaLimites: {
+                type: 'line',
+                yMin: 15,
+                yMax: 15,
+                borderColor: 'yellow',
+                borderWidth: 2
               }
             }
           },
@@ -400,11 +420,11 @@ const cty = document.getElementById('chart-horario').getContext('2d');
         scales: {
           y: {
             min: 0,
-            max: 30,
-            ticks: { font: { size: 7 } },
+            max: 60,
+            ticks: { font: { size: 10 } },
           },
           x: {
-            ticks: { font: { size: 7 } },
+            ticks: { font: { size: 10 } },
           },
         },
       },
@@ -538,9 +558,16 @@ const ctx = document.getElementById('chart-maximo').getContext('2d');
             annotations: {
               linhaLimite: {
                 type: 'line',
-                yMin: 20,
-                yMax: 20,
+                yMin: 50,
+                yMax: 50,
                 borderColor: 'red',
+                borderWidth: 2
+              },
+              linhaLimites: {
+                type: 'line',
+                yMin: 15,
+                yMax: 15,
+                borderColor: 'yellow',
                 borderWidth: 2
               }
             }
@@ -559,11 +586,11 @@ const ctx = document.getElementById('chart-maximo').getContext('2d');
         scales: {
           y: {
             min: 0,
-            max: 30,
-            ticks: { font: { size: 7 } },
+            max: 60,
+            ticks: { font: { size: 10 } },
           },
           x: {
-            ticks: { font: { size: 7 } },
+            ticks: { font: { size: 10 } },
           },
         },
       },
@@ -583,6 +610,15 @@ const ctx = document.getElementById('chart-maximo').getContext('2d');
           sessionStorage.clear();
           window.location.href ='../index.html'
         }
+
+        function fecharVazamento() {
+    if (alertaCaixa) {
+        alertaCaixa.classList.add('oculto');
+        alertaCaixa.style.display = 'none'; 
+        alertaCaixa.classList.remove('alerta-ativo');
+        alertaCaixa.innerHTML = '';
+    }
+  }
 
 
 </script>
