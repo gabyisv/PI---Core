@@ -17,22 +17,9 @@
         <a href="./index.html"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
         <div class="menu-container">
         <ul>
-          <li>
-            <a href="./dashMes.html"><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
-          </li>
-          <li>
-            <a href="./dashDiaria.html"><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
-          </li>
-          <li>
-            <a href="./telaFunc.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
-          </li>
-          <li>
-            <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
-          </li>
-          <li>
-            <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
-          </li>
           <li id="liSuporte">
+          </li>
+           <li id="liJira">
           </li>
         </ul>
         </div>
@@ -48,7 +35,7 @@
 
     <div class="container-dashboard-bob">
         <div class="features-bob">
-            <div class="title"><h3>Olá <span id="nome">Usuario</span></h3></div>
+            <div class="title"><h3>Olá <span id="nome">Suporte</span></h3></div>
             
         </div>
 
@@ -87,6 +74,7 @@
       if(permisaoSuporte == 'true'){
 
       liSuporte.innerHTML = `<a href="./bobIA.html"><i class="fa-solid fa-headset"></i>Suporte</a>`
+      liJira.innerHTML = `<a href="https://vinimendesdasilvaa.atlassian.net/jira/software/projects/KAN/list"><i class="fa-solid fa-bars-progress"></i></i>Jira</a>`
     }
         }
         

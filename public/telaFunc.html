@@ -34,14 +34,19 @@
             <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
           </li>
           <li>
-            <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
+            <a href="https://monarex.atlassian.net/servicedesk/customer/portal/1/group/-1"><i class="fa-solid fa-angles-up"></i>Central de Atendimento</a>
+          </li>
+          </li>
+          <li id="liSuporte">
+          </li>
+          <li id="liJira">
           </li>
         </ul>
         </div>
       </div>
 
     <div class="sair-nav">
-      <p>Sair</p>
+      <a onclick="sair()">Sair</a>
       <img src="./docs/exit-icon.png" alt="sair" />
     </div>
   </nav>
@@ -121,7 +126,20 @@
 
 <script>
 
+  
+
     function tempoResposta(){
+
+
+
+      const permisaoSuporte = sessionStorage.getItem('SUPORTE');
+      const liSuporte = document.getElementById('liSuporte');
+
+      if(permisaoSuporte == 'true'){
+
+      liSuporte.innerHTML = `<a href="./bobIA.html"><i class="fa-solid fa-headset"></i>Suporte</a>`
+      liJira.innerHTML = `<a href="https://vinimendesdasilvaa.atlassian.net/jira/software/projects/KAN/list"><i class="fa-solid fa-bars-progress"></i></i>Jira</a>`
+    }
 
       fetch('kpi/tempoResposta/',{
         method: 'POST',
@@ -188,5 +206,12 @@ response.json().then(function (json) {
     })
   
 }
+
+function sair(){
+          
+          sessionStorage.clear();
+          window.location.href ='../index.html'
+        }
+
 
 </script>

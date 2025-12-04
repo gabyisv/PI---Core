@@ -41,18 +41,6 @@ function tempoResposta(req, res){
   });
 }
 
-function buscarSensores(req, res){
-  var idEmpresa = req.body.idEmpresaServer
-  kpiModel.tempoResposta(idEmpresa)
-  .then(function (resultado){
-
-    console.log("O controller recebeu o idEmpresa", idEmpresa);
-    res.status(200).json(resultado);
-  }) 
-  .catch(function (erro){
-    res.status(500).json(erro.sqlMessage);
-  });
-}
 
 function mostrarAlerta(req, res) {
   var idEmpresa = req.body.idEmpresaServer
@@ -94,7 +82,6 @@ module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
     tempoResposta,
-    buscarSensores,
     tempoResposta,
     mostrarAlerta,
     historicoSensor

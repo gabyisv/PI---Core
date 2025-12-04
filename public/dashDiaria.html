@@ -32,16 +32,18 @@
             <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
           </li>
           <li>
-            <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
+            <a href="https://monarex.atlassian.net/servicedesk/customer/portal/1/group/-1"><i class="fa-solid fa-angles-up"></i>Central de Atendimento</a>
           </li>
           <li id="liSuporte">
+          </li>
+           <li id="liJira">
           </li>
         </ul>
       </div>
     </div>
 
     <div class="sair-nav">
-      <p>Sair</p>
+      <a onclick="sair()">Sair</a>
       <img src="./docs/exit-icon.png" alt="sair" />
     </div>
   </nav>
@@ -344,7 +346,7 @@
 
 
 
-  function verificarStatus(valorMaximo) { // Renomeei para maior clareza
+  function  q(valorMaximo) { // Renomeei para maior clareza
     if (valorMaximo >= 15) {
       statusCor.style.backgroundColor = "#B30000";
       return `CRITICO`; // Deve retornar apenas a string
@@ -582,4 +584,11 @@ function historicoSensor() {
         }
     })
 }
+
+
+function sair(){
+          
+          sessionStorage.clear();
+          window.location.href ='../index.html'
+        }
 </script>

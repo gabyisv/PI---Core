@@ -1,10 +1,10 @@
-var kpiModel = require("../models/kpiModel");
+var sensoresModel = require("../models/sensoresModel");
 
 
 function buscarSensores(req, res){
     var idEmpresa = req.body.idEmpresaServer
 
-kpiModel.buscarSensores(idEmpresa)
+sensoresModel.buscarSensores(idEmpresa)
     .then(function (resultado) {
       //aqui precisa informar que o resultado vai voltar para o front em resposta JSON
       console.log("O ultController recebeu o idEmpresa", idEmpresa);
@@ -19,7 +19,7 @@ function buscarGrafPPM(req, res){
     var idEmpresa = req.body.idEmpresa
     var idSensor = req.body.idSensor
 
-kpiModel.buscarGrafPPM(idEmpresa)
+sensoresModel.buscarGrafPPM(idEmpresa)
     .then(function (resultado) {
       //aqui precisa informar que o resultado vai voltar para o front em resposta JSON
       console.log("O ultController recebeu o idEmpresa", idEmpresa);
@@ -30,8 +30,71 @@ kpiModel.buscarGrafPPM(idEmpresa)
     });
 }
 
+function buscarIncidentes(req, res){
+    var idEmpresa = req.body.idEmpresaServer
+    var idSensor = req.body.idSensorServer
+
+sensoresModel.buscarIncidentes(idEmpresa, idSensor)
+    .then(function (resultado) {
+      //aqui precisa informar que o resultado vai voltar para o front em resposta JSON
+      console.log("O ultController recebeu o idEmpresa", idEmpresa);
+      res.status(200).json(resultado);
+    })
+    .catch(function (erro) {
+      res.status(500).json(erro.sqlMessage);
+    });
+}
+function buscarMedidas (req, res) {
+    const idCamara = req.params.idCamara;
+    const idSensor = req.query.idSensor;   
+    const periodo = req.query.periodo;
+    if (idCamara == undefined) {
+        res.status(400).send("ID da Câmara não fornecido.");
+        return;
+    }
+    sensoresModel.buscarMedidas(idCamara, idSensor, periodo)
+        .then(function (resultado) {
+           
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhuma medição de PPM encontrada para esta câmara.");
+            }
+        })
+        .catch(function (erro) {
+            console.error("ERRO no Controller (buscarMedidasPPM):", erro);
+            res.status(500).json(erro.sqlMessage || "Erro interno do servidor.");
+        });
+}
+
+function historicoSensor(req, res) {
+    var idEmpresa = req.body.idEmpresaServer;
+    if (idEmpresa == undefined) {
+console.log("ID da Empresa recebido no Controller:", idEmpresa);
+        console.log("ERRO: ID da Empresa não recebido na requisição.");
+        res.status(400).send("O ID da Empresa está indefinido!");
+        return; }
+
+         sensoresModel.historicoSensor(idEmpresa)
+        .then(function (resultado) {           
+            console.log("O controller recebeu o idEmpresa", idEmpresa);
+            if (resultado.length == 0) {
+                res.status(204).send("Nenhuma leitura de sensor encontrada para esta empresa.");
+            } else {
+                res.status(200).json(resultado);
+            }
+        })
+        .catch(function (erro) {
+            console.log("Houve um erro no Controller ao buscar o histórico:", erro);
+     res.status(500).json(erro.sqlMessage || "Erro interno do servidor ao processar o SQL.");
+        });
+}
+
 
 module.exports = {
     buscarSensores,
-    buscarGrafPPM
+    buscarGrafPPM,
+    buscarIncidentes,
+    buscarMedidas,
+    historicoSensor
 }

@@ -33,17 +33,18 @@
             <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
           </li>
           <li>
-            <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
+            <a href="https://monarex.atlassian.net/servicedesk/customer/portal/1/group/-1"><i class="fa-solid fa-angles-up"></i>Central de Atendimento</a>
           </li>
           <li id="liSuporte">
-           
+          </li>
+           <li id="liJira">
           </li>
         </ul>
         </div>
       </div>
 
       <div class="sair-nav">
-        <p>Sair</p>
+        <a onclick="sair()">Sair</a>
         <img src="./docs/exit-icon.png" alt="sair" />
       </div>
     </nav>
@@ -230,6 +231,7 @@ let graficoPPM;
     if(sessionStorage.SUPORTE == true){
 
       liSuporte.innerHTML = ` <a href="./bobIA.html"><i class="fa-solid fa-headset"></i>Suporte</a>`
+      liJira.innerHTML = `<a href="https://vinimendesdasilvaa.atlassian.net/jira/software/projects/KAN/list"></i>Suporte</a>`      
     }
 
     window.onload = iniciarKpis();
@@ -274,6 +276,29 @@ let graficoPPM;
    function colocarDadosdePPM() {
     var mes = select_mes.value;
 
+
+
+
+
+    fetch(`/sensores/incidentes/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify({
+                idEmpresaServer: sessionStorage.ID_EMPRESA,
+                idSensorServer: idSensor 
+            }),
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+                    if (json && json.length > 0 && json[0].TotalCritico != undefined) {
+                        plotarIncidentes(json);
+                    }
+                })
+            }
+        });
+
     fetch('/camara/medidas-ppm', {
       method: 'POST',
       headers: {
@@ -302,6 +327,98 @@ let graficoPPM;
     })
     .catch(err => console.error("Erro:", err));
   }
+
+
+  function plotarIncidentes(json) {
+        
+        if (!json || json.length === 0) {
+            console.warn("Nenhuma resposta de dados para plotar incidentes.");
+            return;
+        }
+        const totais = json[0];
+
+        const dadosCritico = [totais.TotalCritico];
+        const dadosAlerta = [totais.TotalAlerta];
+        const dadosNormal = [totais.TotalNormal];
+
+        const labelsEixoX = ['Contagem Total de Incidentes'];
+
+        const cti = document.getElementById("chart-incidentes");
+
+        new Chart(cti, {
+            type: "bar",
+            data: {
+                labels: labelsEixoX,
+                datasets: [
+                    {
+                        label: "Crítico",
+                        data: dadosCritico,
+                        borderWidth: 1,
+                        backgroundColor: '#e30000',
+                        borderColor: '#e30000',
+                        borderRadius: 5,
+                    },
+                    {
+                        label: "Alerta",
+                        data: dadosAlerta,
+                        borderWidth: 1,
+                        backgroundColor: '#cb980b',
+                        borderColor: '#cb980b',
+                        borderRadius: 5,
+                    },
+                    {
+                        label: "Normal",
+                        data: dadosNormal,
+                        borderWidth: 1,
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                        borderColor: 'rgba(54, 162, 235, 0.8)',
+                        borderRadius: 5,
+                    }
+
+                ],
+            },
+            options: {
+                layout: {
+                    padding: {
+                        bottom: 9
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'circle',
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 10,
+                        ticks: {
+                            font: {
+                                size: 10
+                            }
+                        },
+                    },
+
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 10
+                            }
+                        },
+                    },
+                },
+            },
+        });
+    }
 
 
  function renderizarGraficoPPM(labels, valores) {
@@ -369,6 +486,12 @@ const ctx = document.getElementById('chart-maximo').getContext('2d');
       graficoPPM = new Chart(ctx, configDinamica);
     }
   }
+
+  function sair(){
+          
+          sessionStorage.clear();
+          window.location.href ='../index.html'
+        }
 
 
 </script>
