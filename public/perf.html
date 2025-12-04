@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <script
-      src="https://kit.fontawesome.com/eebdb6e4f5.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
-  </head>
-  <body class="Dashboard">
-    <nav id="menu-nav" class="menu-nav">
-      <div class="logo-nav-lateral">
-        <a href="./index.html"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
-        <div class="icon-nav">
-          <img src="./docs/fernando-brandao-icon.jpg" alt="">
-          <h2>Seja Bem-Vindo, Brandão</h2>
-        
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="https://kit.fontawesome.com/eebdb6e4f5.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body class="Dashboard" onload="verDados()">
+  <nav id="menu-nav" class="menu-nav">
+    <div class="logo-nav-lateral">
+      <a href="./index.html"><img src="./docs/Logo-Monarex.png" alt="logo" /></a>
+      <div class="icon-nav">
+        <img src="./docs/fernando-brandao-icon.jpg" alt="">
+        <h2>Seja Bem-Vindo, Brandão</h2>
+
         <ul>
           <li>
             <a href="./dashMes.html"><i class="fa-solid fa-table fa-lg"></i>Mensal</a>
           </li>
           <li>
-            <a href="./dashDiaria.html"
-              ><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a
-            >
+            <a href="./dashDiaria.html"><i class="fa-solid fa-table-columns fa-lg"></i>Diário</a>
           </li>
           <li>
             <a href="./funcionarios.html"><i class="fa-solid fa-users fa-lg"></i>Funcionários</a>
@@ -34,8 +31,8 @@
             <a href="./sensores.html"><i class="fa-solid fa-circle fa-lg"></i>Sensores</a>
           </li>
         </ul>
-        </div>
       </div>
+    </div>
 
       <div class="sair-nav">
         <a onclick="sair()">Sair</a>
@@ -43,178 +40,135 @@
       </div>
     </nav>
 
-    <div class="container-dashboard-perfil">
-      <section class="perfil">
-        <h1 class="text-title-perfil">Perfil</h1>
-        <div class="container-perfil">
-          <div class="box-01-perfil">
-            <div class="nome-perfil">
-              <p class="text-input">Nome:</p>
-              <input
-                placeholder="Digite seu nome.."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
-            </div>
-            <div class="email-perfil">
-              <p class="text-input">Email:</p>
-              <input
-                placeholder="Digite seu email..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
-            </div>
-            <div class="cnpj-perfil">
-              <p class="text-input">CNPJ:</p>
-              <input
-                placeholder="Digite seu CNPJ..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
-            </div>
+  <div class="container-dashboard-perfil">
+    <section class="perfil">
+      <h1 class="text-title-perfil">Perfil</h1>
+      <div class="container-perfil">
+        <div class="box-01-perfil">
+          <div class="nome-perfil">
+            <p class="text-input">Nome:</p>
+            <input placeholder="Digite seu nome.." class="input-perfil" type="text" id="input_nome" />
           </div>
-          <div class="box-02-perfil">
-            <div class="sobrenome-perfil">
-              <p class="text-input">Sobrenome</p>
-              <input
-                placeholder="Digite seu sobrenome..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
+          <div class="email-perfil">
+            <p class="text-input">Email:</p>
+            <input placeholder="Digite seu email..." class="input-perfil" type="text" id="input_email" />
+          </div>
+          <div class="cnpj-perfil">
+            <p class="text-input">CNPJ:</p>
+            <input placeholder="Digite seu CNPJ..." class="input-perfil" type="text" id="input_cnpj" />
+          </div>
+        </div>
+        <div class="box-02-perfil">
+          <div class="sobrenome-perfil">
+            <p class="text-input">Sobrenome</p>
+            <input placeholder="Digite seu sobrenome..." class="input-perfil" type="text" id="input_sobrenome" />
+          </div>
+          <div class="container-forms">
+            <div class="telefone-perfil">
+              <p class="text-input">telefone:</p>
+              <input placeholder="Digite seu telefone..." class="input-perfil" type="text" id="input_telefone" />
             </div>
-            <div class="container-forms">
-              <div class="telefone-perfil">
-                <p class="text-input">telefone:</p>
-                <input
-                  placeholder="Digite seu telefone..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
 
-              <div class="cargo-perfil">
-                <p class="text-input">cargo:</p>
-                <input
-                  placeholder="Digite seu vargo..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
-            </div>
-            <div class="cnpj-perfil">
-              <p class="text-input">CNPJ:</p>
-              <input
-                placeholder="Digite seu CNPJ..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
+            <div class="cargo-perfil">
+              <p class="text-input">cargo:</p>
+              <input placeholder="Digite seu cargo..." class="input-perfil" type="text" id="input_cargo" />
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="senha">
-        <h1 class="text-title-perfil">Senha</h1>
-        <div class="container-perfil">
-          <div class="box-01-perfil">
-            <div class="senha-perfil">
-              <p class="text-input">Senha Antiga:</p>
-              <input
-                placeholder="Digite sua senha antiga.."
-                class="input-perfil"
-                type="text"
-                id="input-senha"
-              />
-            </div>
-            <div class="senha-perfil">
-              <p class="text-input">Nova Senha:</p>
-              <input
-                placeholder="Digite sua nova senha..."
-                class="input-perfil"
-                type="text"
-                id="input-senha-nova"
-              />
-            </div>
-            <div class="confirme-senha-perfil">
-              <p class="text-input">Confirme a Nova Senha</p>
-              <input
-                placeholder="Digite sua nova senha..."
-                class="input-perfil"
-                type="text"
-                id="input-nome"
-              />
-            </div>
+    <section class="senha">
+      <h1 class="text-title-perfil">Senha</h1>
+      <div class="container-perfil">
+        <div class="box-01-perfil">
+          <div class="senha-perfil">
+            <p class="text-input">Senha Antiga:</p>
+            <input placeholder="Digite sua senha antiga.." class="input-perfil" type="text" id="input_senha" />
           </div>
-          <div class="container-layout">
-            <div class="container-forms-endereco">
-              <div class="cep-perfil">
-                <p class="text-input">CEP:</p>
-                <input
-                  placeholder="Digite seu cep..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
-
-              <div class="uf-perfil">
-                <p class="text-input">UF:</p>
-                <input
-                  placeholder="Digite seu UF..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
-              <div class="numero-perfil">
-                <p class="text-input">Número:</p>
-                <input
-                  placeholder="Digite seu número..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
-            </div>
-            <div class="container-perfil-2">
-              <div class="complemento-perfil">
-                <p class="text-input">Complemento:</p>
-                <input
-                  placeholder="Digite seu complemento..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
-              <div class="complemento-perfil">
-                <p class="text-input">Logradouro:</p>
-                <input
-                  placeholder="Digite seu logradouro..."
-                  class="input-perfil"
-                  type="text"
-                  id="input-nome"
-                />
-              </div>
-              </div>
-              
-            </div>
-            
+          <div class="senha-perfil">
+            <p class="text-input">Nova Senha:</p>
+            <input placeholder="Digite sua nova senha..." class="input-perfil" type="text" id="input_senha_nova" />
           </div>
-          <div class="buttons-perfil">
-      
-                  <button onclick="">Editar</button>
-              
-                  <button onclick="">Salvar Alterações</button>
-     
+          <div class="confirme-senha-perfil">
+            <p class="text-input">Confirme a Nova Senha</p>
+            <input placeholder="Digite sua nova senha..." class="input-perfil" type="text"
+              id="input_senha_confirmacao" />
+          </div>
         </div>
-      </section>
-    </div>
-  </body>
+        <div class="container-layout">
+          <div class="container-forms-endereco">
+            <div class="cep-perfil">
+              <p class="text-input">Logradouro:</p>
+              <input placeholder="Digite seu cep..." class="input-perfil" type="text" id="input_logradouro" />
+            </div>
+
+            <div class="uf-perfil">
+              <p class="text-input">UF:</p>
+              <input placeholder="Digite seu UF..." class="input-perfil" type="text" id="input_uf" style="padding-right: 10px;" />
+            </div>
+            <div class="numero-perfil">
+              <p class="text-input">Número:</p>
+              <input placeholder="Digite seu número..." class="input-perfil" type="text" id="input_numero" />
+            </div>
+          </div>
+          <div class="container-perfil-2">
+            <div class="complemento-perfil">
+              <p class="text-input">Complemento:</p>
+              <input placeholder="Digite seu complemento..." class="input-perfil" type="text" id="input_complemento" />
+            </div>
+            <div class="complemento-perfil">
+              <p class="text-input">CEP:</p>
+              <input placeholder="Digite seu logradouro..." class="input-perfil" type="text" id="input_cep" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="buttons-perfil">
+        <button onclick="">Salvar Alterações</button>
+      </div>
+    </section>
+  </div>
+</body>
+
 </html>
+
+<script>
+
+
+  function verDados() {
+
+    fetch('usuarios/verDados', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        idUsuarioServer: sessionStorage.ID_USUARIO
+      })
+    }).then(function (response) {
+      console.log(response)
+      if (response.ok) {
+
+        response.json().then((json) => {
+          input_nome.value = json[0].Nome;
+          input_email.value = json[0].Email;
+          input_cnpj.value = json[0].Cnpj;
+          input_sobrenome.value = json[0].Sobrenome;
+          input_telefone.value = json[0].Telefone;
+          input_cargo.value = json[0].Cargo;
+          input_senha.value = json[0].Senha;
+          input_cep.value = json[0].Cep;
+          input_uf.value = json[0].UF;
+          input_numero.value = json[0].Numero;
+          input_complemento.value = json[0].Complemento;
+          input_logradouro.value = json[0].Logradouro;
+        });
+      };
+    });
+
+  }
+
+</script>
