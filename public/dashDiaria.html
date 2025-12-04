@@ -53,7 +53,8 @@
   </div>
 
   <!--Vazamento-->
-  <!-- <div class="alerta_caixa oculto" id="alertaCaixa"></div> -->
+  <div class="alerta_caixa oculto" id="alertaCaixa"></div>
+  
 
 
 
@@ -156,7 +157,7 @@
         </div>
       </div>
 
-      <div class="container-table-func">
+      <div class="tabela">
     <table class="tabela-funcionarios">
       <thead>
         <tr>
@@ -172,7 +173,8 @@
         </tr>
       </tbody>
     </table>
-</div>
+      </div>
+
 
 
 
@@ -258,9 +260,6 @@
       }
     })
 
-
-
-    mostrarAlerta()
   }
 
   function mostrarAlerta() {
@@ -290,6 +289,7 @@
         })
       }
     })
+    
   }
 
   function exibirAlerta(sensor, camara) {
@@ -313,20 +313,20 @@
  <img src="./docs/iconamoon_enter.png" alt="ver detalhes">
     </a>
 </button>`;
-
-    // Remove a classe CSS que o oculta, tornando-o visível
+// 1. Remove a classe que oculta o elemento
     alertaCaixa.classList.remove('oculto');
+    // 2. Garante que o display não está 'none'
+    alertaCaixa.style.display = 'block'; // Ou 'flex', dependendo do seu CSS
+    // 3. Adiciona a classe de estilo/animação
     alertaCaixa.classList.add('alerta-ativo');
   }
 
   function fecharVazamento() {
     if (alertaCaixa) {
-      // Adiciona a classe CSS 'oculto' novamente
-      alertaCaixa.classList.add('oculto');
-      alertaCaixa.style.display = 'none'
-      // Opcional: Remove a classe de animação e limpa o conteúdo
-      alertaCaixa.classList.remove('alerta-ativo');
-      alertaCaixa.innerHTML = '';
+        alertaCaixa.classList.add('oculto');
+        alertaCaixa.style.display = 'none'; // Se você usar 'block' ou 'flex' acima, use 'none' aqui.
+        alertaCaixa.classList.remove('alerta-ativo');
+        alertaCaixa.innerHTML = '';
     }
   }
 
@@ -334,6 +334,7 @@
 
   function verificarStatus(valorMaximo) { // Renomeei para maior clareza
     if (valorMaximo >= 15) {
+      mostrarAlerta();
       statusCor.style.backgroundColor = "#B30000";
       return `CRITICO`; // Deve retornar apenas a string
 

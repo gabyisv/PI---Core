@@ -52,7 +52,6 @@ function tempoResposta(idEmpresa){
     console.log("teste  executando função SQL\n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
 function mostrarAlerta(idEmpresa) {
     var instrucaoSql = `
 select idSensor as sensor, numeroCamara as camara from sensor JOIN medida on pkSensor = idSensor 
