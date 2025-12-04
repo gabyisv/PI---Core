@@ -64,9 +64,33 @@ and dataHora = (select dataHora from medida order by dataHora desc limit 1) LIMI
     return database.executar(instrucaoSql)
 }
 
+function historicoSensor(idEmpresa) {
+    var instrucaoSql = `
+        SELECT
+            m.sensor_analogico AS ppm,
+            DATE_FORMAT(m.dataHora, '%d/%m/%Y %H:%i:%s') AS tempo_leitura, 
+            s.idSensor AS id_sensor,
+            c.numeroCamara AS numero_camara
+        FROM
+            medida m
+        JOIN
+            sensor s ON m.pkSensor = s.idSensor
+        JOIN
+            camara c ON s.pkCamara = c.idCamara
+        WHERE
+            c.fkEmpresa = ${idEmpresa} 
+        ORDER BY
+            m.dataHora DESC;
+    `
+
+    console.log("executando função SQL \n" + instrucaoSql); 
+    return database.executar(instrucaoSql)
+}
+
 module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
     tempoResposta,
-    mostrarAlerta
+    mostrarAlerta,
+    historicoSensor
 }

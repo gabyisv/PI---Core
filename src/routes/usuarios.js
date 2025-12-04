@@ -12,9 +12,7 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.post("/camaraUsuarios", function(req, res){
-    usuarioController.funcionarioCamara(req,res);
-})
+
 
 // router.post("/cadastrarEmpresas", function (req, res) {
 //     usuarioController.cadastrarEmpresas(req, res);

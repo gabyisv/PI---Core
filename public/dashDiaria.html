@@ -53,7 +53,7 @@
   </div>
 
   <!--Vazamento-->
-  <div class="alerta_caixa oculto" id="alertaCaixa"></div>
+  <!-- <div class="alerta_caixa oculto" id="alertaCaixa"></div> -->
 
 
 
@@ -160,23 +160,19 @@
     <table class="tabela-funcionarios">
       <thead>
         <tr>
-              <th>Nome</th>
-              <th>Cargo</th>
-              <th>Câmara</th>
-              <th>Contato </th>
+          <th>PPM</th>
+          <th>Sensor ID</th> 
+          <th>Câmara ID</th> 
+          <th>Tempo de Leitura</th>
         </tr>
       </thead>
-          <tbody id="funcionarioCamara">
-            <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-            </tr>
-      
-          </tbody>
+      <tbody id="historicoSensorBody"> 
+        <tr>
+          <td colspan="4">Carregando histórico...</td>
+        </tr>
+      </tbody>
     </table>
-    </div> 
+</div>
 
 
 
@@ -209,6 +205,7 @@
   window.onload = function () {
     iniciarKpi();
     renderizarGraficoPPM([], []);
+    historicoSensor();
     const selectCamara = document.getElementById('selectCamara');
     const selectTempo = document.getElementById('selectTempo');
 
@@ -532,4 +529,45 @@
     });
   }
 
+
+function historicoSensor() {
+    fetch('/kpi/historico-sensor/', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            idEmpresaServer: sessionStorage.ID_EMPRESA
+        })
+    }).then(function (response) {
+        console.log('Entrei no fetch de Histórico do Sensor'); 
+        if (response.ok) {
+
+            var tbody = document.getElementById("historicoSensorBody"); 
+            tbody.innerHTML = "";
+
+            response.json().then(function (leituras) {
+                if (leituras.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4">Nenhuma leitura encontrada.</td></tr>';
+                    return;
+                }
+                for (let i = 0; i < leituras.length; i++) {
+                    var leitura = leituras[i];
+                    var tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td> ${leitura.ppm} </td> 
+                        <td> ${leitura.id_sensor} </td>
+                        <td> ${leitura.numero_camara} </td>
+                        <td> ${leitura.tempo_leitura} </td>
+                    `;
+
+                    tbody.appendChild(tr);
+                }
+            });
+        } else {
+             var tbody = document.getElementById("historicoSensorBody");
+             tbody.innerHTML = '<tr><td colspan="4">Erro ao carregar o histórico.</td></tr>';
+        }
+    })
+}
 </script>

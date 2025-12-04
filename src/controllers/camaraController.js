@@ -23,9 +23,7 @@ function listar_vazamento (req, res) {
 }
 
 function buscarMedidas (req, res) {
-
-    cc
-
+    const idCamara = req.params.idCamara;
     if (idCamara == undefined) {
         res.status(400).send("ID da Câmara não fornecido.");
         return;
