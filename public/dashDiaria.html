@@ -327,18 +327,15 @@
  <img src="./docs/iconamoon_enter.png" alt="ver detalhes">
     </a>
 </button>`;
-// 1. Remove a classe que oculta o elemento
     alertaCaixa.classList.remove('oculto');
-    // 2. Garante que o display não está 'none'
-    alertaCaixa.style.display = 'block'; // Ou 'flex', dependendo do seu CSS
-    // 3. Adiciona a classe de estilo/animação
+    alertaCaixa.style.display = 'block';
     alertaCaixa.classList.add('alerta-ativo');
   }
 
   function fecharVazamento() {
     if (alertaCaixa) {
         alertaCaixa.classList.add('oculto');
-        alertaCaixa.style.display = 'none'; // Se você usar 'block' ou 'flex' acima, use 'none' aqui.
+        alertaCaixa.style.display = 'none'; 
         alertaCaixa.classList.remove('alerta-ativo');
         alertaCaixa.innerHTML = '';
     }
@@ -346,7 +343,7 @@
 
 
 
-  function  q(valorMaximo) { // Renomeei para maior clareza
+  function  verificarStatus(valorMaximo) { // Renomeei para maior clareza
     if (valorMaximo >= 15) {
       mostrarAlerta();
       statusCor.style.backgroundColor = "#B30000";
