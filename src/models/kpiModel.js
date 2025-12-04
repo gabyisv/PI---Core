@@ -38,15 +38,15 @@ function buscarMaximo_diario(idEmpresa)
 function tempoResposta(idEmpresa){
     
     var instrucaoSql = `
-  	SELECT time_format((sec_to_time(AVG(TIME_TO_SEC(    ))))),'%H:%i:%s') AS Media,
-	COUNT(idUsuario) AS FuncAtivos,
-            count(horaResposta) AS Incidentes
-    FROM responsavel	
+  	SELECT time_format((sec_to_time(AVG(TIME_TO_SEC(TIMEDIFF(horaResposta, horaVazamento))))),'%H:%i:%s') AS Media,
+			COUNT(idUsuario) AS FuncAtivos,
+            COUNT(horaResposta) AS Incidentes
+	FROM responsavel	
 		JOIN usuario 
 		ON fkUsuario = idUsuario
 		JOIN empresa
 		ON fkEmpresa = idEmpresa
-	 WHERE idEmpresa = ${idEmpresa};;
+	 WHERE idEmpresa = ${idEmpresa};
     `;
 
     console.log("teste  executando função SQL\n" + instrucaoSql);
