@@ -61,7 +61,7 @@
 
 
 .container-camara {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -315,3 +315,19 @@ table {
         height: 15%;
     }
 }
+
+/* Passo A: Forçar a Largura da Seção Diária */
+/* Este é o pai imediato ou quase imediato do seu .teste */
+.tabela {
+  margin-top: 50px;
+    height: 300px;
+    overflow-y: auto; 
+    flex-shrink: 0; 
+}
+
+table {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 200px;
+}
+

@@ -16,5 +16,10 @@ router.post("/verDados", function (req, res) {
      usuarioController.verDados(req, res);
 });
 
+router.post("/camaraUsuarios", function (req, res) {
+     usuarioController.funcionarioCamara(req, res);
+});
+
+
 
 module.exports = router;

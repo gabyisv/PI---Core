@@ -54,6 +54,7 @@ function mostrarAlerta(req, res) {
   })
 }
 
+
 function historicoSensor(req, res) {
     var idEmpresa = req.body.idEmpresaServer;
     if (idEmpresa == undefined) {

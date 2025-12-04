@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/components/alertaEstilo.css" />
   <script src="https://kit.fontawesome.com/eebdb6e4f5.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1"></script>
@@ -52,12 +53,13 @@
     <h1>Dashboard <span>Diário</span></h1>
     <div class="imagem-cabecalho">
       <i class="fa-solid fa-bell"></i>
-      <a href="./perf.html"><img src="./docs/fernando-brandao-icon.jpg" alt="" /></a>
+      <a href="./perf.html"><img src="./docs/25634.png" alt="" /></a>
     </div>
   </div>
 
   <!--Vazamento-->
-  <!-- <div class="alerta_caixa oculto" id="alertaCaixa"></div> -->
+  <div class="alerta_caixa oculto" id="alertaCaixa"></div>
+  
 
 
 
@@ -102,7 +104,7 @@
           <select name="#" id="selectCamara" class="camara-select">
             <option value="#" disabled> Selecione </option>
             <option value="1" selected> Câmara 01</option>
-            <option value="2">Câmara 02</option>
+
           </select>
 
           <select name="#" id="selectTempo" class="temp-select">
@@ -160,7 +162,7 @@
         </div>
       </div>
 
-      <div class="container-table-func">
+      <div class="tabela">
     <table class="tabela-funcionarios">
       <thead>
         <tr>
@@ -176,7 +178,8 @@
         </tr>
       </tbody>
     </table>
-</div>
+      </div>
+
 
 
 
@@ -263,18 +266,22 @@
 
             statusSensor.innerHTML = `<img src="./docs/Vector (4).png" alt=""> ${status}`;
           } else {
-            kpiMaximo.innerHTML = 'Sem dados'
-            kpiMedio.innerHTML = 'Sem dados'
-            kpiMinimo.innerHTML = 'Sem dados'
-            statusSensor.innerHTML = 'Erro'
+            kpiMaximo.innerHTML = '0'
+            kpiMedio.innerHTML = '0'
+            kpiMinimo.innerHTML = '0'
+            statusSensor.innerHTML = 'Normal'
+            
+            
           }
+          if(statusSensor.innerHTML == 'Normal'){
+              lista_vazamento.innerHTML = "<p> Nenhuma </p>"
+            }else{
+              lista_vazamento.innerHTML = "<p> Câmara 1 </p>"
+            }
         });
       }
     })
 
-
-
-    mostrarAlerta()
   }
 
   function mostrarAlerta() {
@@ -304,6 +311,7 @@
         })
       }
     })
+    
   }
 
   function exibirAlerta(sensor, camara) {
@@ -327,27 +335,25 @@
  <img src="./docs/iconamoon_enter.png" alt="ver detalhes">
     </a>
 </button>`;
-
-    // Remove a classe CSS que o oculta, tornando-o visível
     alertaCaixa.classList.remove('oculto');
+    alertaCaixa.style.display = 'block';
     alertaCaixa.classList.add('alerta-ativo');
   }
 
   function fecharVazamento() {
     if (alertaCaixa) {
-      // Adiciona a classe CSS 'oculto' novamente
-      alertaCaixa.classList.add('oculto');
-      alertaCaixa.style.display = 'none'
-      // Opcional: Remove a classe de animação e limpa o conteúdo
-      alertaCaixa.classList.remove('alerta-ativo');
-      alertaCaixa.innerHTML = '';
+        alertaCaixa.classList.add('oculto');
+        alertaCaixa.style.display = 'none'; 
+        alertaCaixa.classList.remove('alerta-ativo');
+        alertaCaixa.innerHTML = '';
     }
   }
 
 
 
-  function  q(valorMaximo) { // Renomeei para maior clareza
+  function  verificarStatus (valorMaximo) { // Renomeei para maior clareza
     if (valorMaximo >= 15) {
+      mostrarAlerta();
       statusCor.style.backgroundColor = "#B30000";
       return `CRITICO`; // Deve retornar apenas a string
 
@@ -526,7 +532,7 @@
       })
       .catch(error => {
         console.error('Erro ao iniciar Vazamentos: ', error);
-        lista_vazamento.innerHTML = "<p> Erro ao carregar lista de vazamentos </p>"
+        
       })
   }
 
