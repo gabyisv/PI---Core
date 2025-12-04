@@ -41,11 +41,25 @@ function tempoResposta(req, res){
   });
 }
 
+function buscarSensores(req, res){
+  var idEmpresa = req.body.idEmpresaServer
+  kpiModel.tempoResposta(idEmpresa)
+  .then(function (resultado){
+
+    console.log("O controller recebeu o idEmpresa", idEmpresa);
+    res.status(200).json(resultado);
+  }) 
+  .catch(function (erro){
+    res.status(500).json(erro.sqlMessage);
+  });
+}
+
 
 module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
-    tempoResposta
+    tempoResposta,
+    buscarSensores
   }
 
 

@@ -53,8 +53,27 @@ function tempoResposta(idEmpresa){
     return database.executar(instrucaoSql);
 }
 
+function buscarSensores(idEmpresa){
+    var instrucaoSql = `
+    SELECT 
+SUM(CASE WHEN s.atividade = 1 THEN 1 ELSE 0 END) AS ativos,
+SUM(CASE WHEN s.atividade = 0 THEN 1 ELSE 0 END) AS inativos,
+SUM(CASE WHEN s.atividade > 5 THEN 1 ELSE 0 END) AS emAlertas
+FROM sensor s
+JOIN quadrante q ON s.idQuadrante = q.idQuadrante
+JOIN camara c ON q.pkCamara = c.idCamara
+JOIN empresa e ON c.fkEmpresa = e.idEmpresa
+WHERE fkEmpresa = ${idEmpresa};
+    `
+    console.log("teste  executando função SQL\n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+
+}
+
+
 module.exports = {
     buscarMaximo,
     buscarMaximo_diario,
-    tempoResposta
+    tempoResposta,
+    buscarSensores
 }

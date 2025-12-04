@@ -34,6 +34,8 @@
           <li>
             <a href="./informacoes.html"><i class="fa-solid fa-circle-info fa-lg"></i>Sobre</a>
           </li>
+          <li id="liSuporte">
+          </li>
         </ul>
       </div>
     </div>
@@ -258,6 +260,14 @@
 
 
   window.onload = function () {
+    const permisaoSuporte = sessionStorage.getItem('SUPORTE');
+      const liSuporte = document.getElementById('liSuporte');
+
+      if(permisaoSuporte == 'true'){
+
+      liSuporte.innerHTML = `<a href="./bobIA.html"><i class="fa-solid fa-headset"></i>Suporte</a>`
+    }
+
     iniciarKpi;
     renderizarGraficoPPM();
     const selectCamara = document.getElementById('selectCamara');
